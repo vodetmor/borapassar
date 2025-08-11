@@ -6,7 +6,7 @@ export function VslSection() {
     <section id="vsl" className="py-12 sm:py-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl font-black sm:text-4xl lg:text-5xl tracking-tight">
-          Aprovação <span className="text-destructive">Não é Sorte</span>, é <span className="text-primary">Método</span>
+          Aprovação <span className="text-red-500">Não é Sorte</span>, é <span className="text-primary">Método</span>
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
           Se você está cansado de se sentir um fracasso nos estudos, este vídeo de 1 minuto vai te mostrar a chave para destravar seu potencial. Assista AGORA.
