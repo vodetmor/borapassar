@@ -27,25 +27,25 @@
   }
  
   .dark {
-    --background: 0 0% 8%; /* Darker Grey */
+    --background: 0 0% 8%;
     --foreground: 210 20% 98%;
     --card: 0 0% 10%;
     --card-foreground: 210 20% 98%;
     --popover: 0 0% 8%;
     --popover-foreground: 210 20% 98%;
-    --primary: 39 100% 50%; /* Vibrant Orange */
+    --primary: 142.1 76.2% 36.3%; /* Green for 'good' */
     --primary-foreground: 210 20% 98%;
     --secondary: 0 0% 12%;
     --secondary-foreground: 210 20% 98%;
     --muted: 0 0% 12%;
     --muted-foreground: 217.9 10.6% 64.9%;
-    --accent: 16 100% 50%; /* Fiery Red */
+    --accent: 16 100% 50%; /* Fiery Red / Orange for CTA */
     --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%; /* Red for 'bad' */
+    --destructive-foreground: 210 40% 98%;
     --border: 0 0% 15%;
     --input: 0 0% 15%;
-    --ring: 39 100% 50%;
+    --ring: 142.1 76.2% 36.3%;
   }
 }
  
