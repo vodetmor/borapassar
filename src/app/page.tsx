@@ -1,9 +1,11 @@
 import { VslSection } from '@/components/landing/vsl-section';
 import { InterestSection } from '@/components/landing/interest-section';
+import { ComparisonSection } from '@/components/landing/comparison-section';
 import { DesireSection } from '@/components/landing/desire-section';
 import { CtaSection } from '@/components/landing/cta-section';
 import { FaqSection } from '@/components/landing/faq-section';
 import { Footer } from '@/components/landing/footer';
+import { MethodologySection } from '@/components/landing/methodology-section';
 
 export default function Home() {
   return (
@@ -11,6 +13,8 @@ export default function Home() {
       <main className="flex-grow">
         <VslSection />
         <InterestSection />
+        <ComparisonSection />
+        <MethodologySection />
         <DesireSection />
         <CtaSection />
         <FaqSection />

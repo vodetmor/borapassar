@@ -1,13 +1,13 @@
-import { Flame, BrainCircuit, PenSquare, Rocket, TimerOff, ShieldCheck } from 'lucide-react';
+import { BrainCircuit, PenSquare, Rocket, TimerOff, ShieldCheck, Target } from 'lucide-react';
 import Image from 'next/image';
 
 const benefits = [
-  { icon: Flame, text: 'Foco Absoluto: Aprenda a eliminar distrações e entrar em "hiperfoco" em menos de 5 minutos.' },
-  { icon: BrainCircuit, text: 'Memorização Acelerada: Técnicas para gravar qualquer matéria com o mínimo esforço.' },
-  { icon: PenSquare, text: 'Redação Nota 1000: O passo a passo exato para uma redação que impressiona avaliadores.' },
-  { icon: Rocket, text: 'Estudo 2x mais Rápido: Cubra todo o edital sem surtar e com tempo de sobra.' },
-  { icon: TimerOff, text: 'Fim da Procrastinação: Vença a preguiça e transforme ansiedade em energia para estudar.' },
-  { icon: ShieldCheck, text: 'Controle Emocional: Domine o nervosismo e o "branco" na hora da prova.' },
+  { icon: Target, text: 'Metodologia 30-35-35: Otimize seu tempo de forma cirúrgica para absorver, fixar e aplicar o conhecimento.' },
+  { icon: BrainCircuit, text: 'Neurociência Aplicada: Use técnicas como Active Recall e Spaced Repetition para transformar seu cérebro em uma máquina de aprender.' },
+  { icon: PenSquare, text: 'Redação Estratégica: Um guia para construir uma redação nota 1000, mesmo que você odeie escrever.' },
+  { icon: Rocket, text: 'Planos de Estudo Adaptáveis: Cronogramas prontos para qualquer rotina, seja você iniciante ou avançado.' },
+  { icon: TimerOff, text: 'O Fim da Procrastinação: Comandos práticos para vencer a preguiça e a ansiedade que te paralisam.' },
+  { icon: ShieldCheck, text: 'Blindagem Emocional: Controle o nervosismo e o medo de dar "branco" na hora H.' },
 ];
 
 export function DesireSection() {
@@ -15,9 +15,9 @@ export function DesireSection() {
     <section id="desejo" className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Sua caixa de ferramentas para a <span className="text-primary">Aprovação</span></h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">O Arsenal Completo para a sua <span className="text-primary">Aprovação</span></h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Apresentamos o guia definitivo que vai reprogramar sua mente para o sucesso. Não é mágica, é método.
+            Isso não é um livro, é um sistema de aprovação. Veja tudo o que você vai dominar:
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

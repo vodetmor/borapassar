@@ -7,20 +7,24 @@ import {
 
 const faqs = [
   {
-    question: 'O que vou receber exatamente?',
-    answer: 'Você receberá acesso imediato a um guia completo e direto ao ponto em formato PDF. Ele é otimizado para ler em qualquer dispositivo: celular, tablet ou computador, para você estudar onde e quando quiser.',
+    question: 'Isso é só mais um cursinho ou livro chato?',
+    answer: 'Não. É um sistema de ataque. Um guia estratégico, direto ao ponto, em PDF, que você acessa na hora. Sem enrolação, sem conteúdo inútil. É o mapa da mina para a sua aprovação, para ler no celular, tablet ou onde quiser.',
   },
   {
-    question: 'Isso funciona para quem procrastina até para decidir o que comer?',
-    answer: 'Com certeza! Este guia foi criado especificamente para estudantes que se sentem travados pela procrastinação. As técnicas são simples, práticas e fáceis de aplicar, mesmo que você se considere um caso perdido.',
+    question: 'Eu procrastino muito, vai funcionar pra mim?',
+    answer: 'Este guia foi desenhado para procrastinadores crônicos. As técnicas são brutais e eficazes. Se você se sente um caso perdido, este é exatamente o método que vai reprogramar sua mente para a ação.',
   },
   {
-    question: 'A compra é segura?',
-    answer: 'Sim, 100% segura. Usamos a principal plataforma de pagamentos do mercado, com criptografia de ponta para proteger seus dados. Sua segurança é nossa prioridade.',
+    question: 'A compra é segura ou vou cair em golpe?',
+    answer: '100% segura. Usamos a principal e mais segura plataforma de pagamentos do Brasil. Seus dados estão blindados com criptografia de nível militar. Sua única preocupação deve ser em estudar.',
   },
   {
-    question: 'E se não funcionar para mim? Tenho alguma garantia?',
-    answer: 'Sim! Oferecemos uma garantia incondicional de 7 dias. Se, por qualquer motivo, você não sentir uma melhora drástica nos seus estudos e na sua motivação, basta nos enviar um e-mail e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia. O risco é todo nosso.',
+    question: 'E se eu não gostar? Qual a garantia?',
+    answer: 'Risco zero. Você tem 7 dias de garantia incondicional. Se você não sentir uma transformação na sua forma de estudar e nos seus resultados, é só pedir seu dinheiro de volta. Sem perguntas, sem estresse. Ou você ama, ou seu dinheiro volta. Simples assim.',
+  },
+    {
+    question: 'Em quanto tempo vejo resultados?',
+    answer: 'Se você aplicar o que está no guia, os resultados de foco e organização são imediatos. Em poucas semanas, sua retenção de conteúdo e velocidade de estudo terão aumentado drasticamente. A aprovação é uma consequência inevitável da aplicação do método.',
   },
 ];
 
@@ -29,9 +33,9 @@ export function FaqSection() {
     <section id="faq" className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Perguntas Frequentes</h2>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Sem Desculpas. Sem Dúvidas.</h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Ainda tem dúvidas? A gente resolve isso agora.
+            Respostas rápidas para você parar de pensar e começar a agir.
           </p>
         </div>
         <div className="mt-12 max-w-3xl mx-auto">
