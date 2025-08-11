@@ -36,7 +36,6 @@ export function VslSection() {
               <ArrowRight className="ml-2"/>
             </a>
           </Button>
-          <p className="mt-2 text-sm text-muted-foreground">Aviso: o preço vai subir. Aja rápido.</p>
         </div>
       </div>
     </section>
