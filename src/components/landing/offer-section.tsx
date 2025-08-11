@@ -17,7 +17,7 @@ export function OfferSection() {
             <div className="container mx-auto px-4">
                 <div className="text-center">
                     <h2 className="text-4xl font-black sm:text-5xl lg:text-6xl tracking-tighter">
-                        Sua Vaga no ENEM por <span className="text-primary">Menos de um Lanche</span>.
+                        Sua Vaga no ENEM por <span className="text-primary">Menos de um Lanche</span><span className="text-accent">.</span>
                     </h2>
                     <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground sm:text-xl">
                         Quanto vale a sua aprovação? Quanto custa mais um ano de cursinho e frustração? Hoje, você garante seu futuro por um valor simbólico.
