@@ -37,7 +37,7 @@ export function DesireSection() {
               alt="Visual do Guia"
               width={500}
               height={600}
-              className="rounded-lg shadow-2xl shadow-primary/20 transform rotate-3"
+              className="rounded-lg shadow-2xl shadow-primary/20 transform"
               data-ai-hint="book study guide"
             />
           </div>

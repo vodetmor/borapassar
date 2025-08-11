@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Exam Conqueror',
+  title: 'Guia Definitivo',
   description: 'O método definitivo para vencer a procrastinação e garantir sua vaga no vestibular e ENEM.',
 };
 
