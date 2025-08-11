@@ -1,4 +1,5 @@
 "use client"
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star } from 'lucide-react';
@@ -9,6 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 const testimonials = [
   {
@@ -49,6 +51,10 @@ const testimonials = [
 ];
 
 export function InterestSection() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
+  );
+
   return (
     <section id="interesse" className="py-20 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
@@ -58,6 +64,7 @@ export function InterestSection() {
         </p>
         <div className="mt-12">
             <Carousel
+                plugins={[plugin.current]}
                 opts={{
                     align: "start",
                     loop: true,
