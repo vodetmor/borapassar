@@ -25,7 +25,7 @@ export function ComparisonSection() {
               <p>❌ Tira 500 em matemática e acha que é "de humanas".</p>
               <p>❌ Zera a redação por não saber argumentar.</p>
               <p>❌ Chega na prova exausto, ansioso e sem confiança.</p>
-              <p className="text-lg font-bold text-center text-destructive pt-4">Resultado: Mais um ano de cursinho.</p>
+              <p className="text-lg font-bold text-center text-destructive pt-4">Resultado: Mais um ano de cursinho em vão.</p>
             </CardContent>
           </Card>
           <Card className="border-primary/50 border-2 bg-primary/10">
