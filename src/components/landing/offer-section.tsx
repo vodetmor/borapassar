@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Check, ArrowRight, Zap } from "lucide-react";
+import { Check, ArrowRight, Zap, BadgePercent } from "lucide-react";
 
 const includedFeatures = [
   'Metodologia 30-35-35 Validada',
@@ -43,11 +43,15 @@ export function OfferSection() {
                                 </CardContent>
                             </div>
                             <div className="flex flex-col text-center bg-zinc-900/50 p-8 border-t md:border-t-0 md:border-l border-primary/20">
-                                <p className="text-lg text-muted-foreground">De <span className="line-through text-destructive text-xl">R$47,00</span> por apenas:</p>
+                                <p className="text-lg text-muted-foreground">De <span className="line-through text-red-500 text-xl">R$47,00</span> por apenas:</p>
                                 <p className="text-7xl sm:text-8xl font-black my-4 text-primary animate-pulse">
-                                    R$17
+                                    R$17,90
                                 </p>
-                                <p className="text-muted-foreground mb-6">Pagamento único, acesso vitalício.</p>
+                                <div className="mb-6 flex justify-center items-center gap-2 text-sm font-semibold text-green-400 bg-green-900/30 border border-green-400/30 rounded-full px-3 py-1">
+                                    <BadgePercent className="w-4 h-4"/>
+                                    <span>Você economiza R$29,10 (62% OFF)</span>
+                                </div>
+
                                 <Button
                                     asChild
                                     size="lg"
@@ -59,7 +63,7 @@ export function OfferSection() {
                                         <ArrowRight className="ml-2"/>
                                     </a>
                                 </Button>
-                                <p className="mt-4 text-xs text-muted-foreground">Garantia incondicional de 7 dias. Seu risco é zero.</p>
+                                <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício. Garantia de 7 dias.</p>
                             </div>
                         </div>
                     </Card>
