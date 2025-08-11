@@ -3,17 +3,17 @@ import { ArrowRight } from 'lucide-react';
 
 export function VslSection() {
   return (
-    <section id="vsl" className="py-12 sm:py-16">
+    <section id="vsl" className="py-12 sm:py-16 bg-secondary">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl font-black sm:text-4xl lg:text-5xl tracking-tight">
-          O Sistema de Estudo que Transforma <span className="text-primary">Perdedores de Tempo</span> em <span className="text-accent">Aprovados</span> em Tempo Recorde
+          O Sistema de Estudo que Transforma <span className="text-destructive">Perdedores de Tempo</span> em <span className="text-primary">Aprovados</span> em Tempo Recorde
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
           Se você está cansado de se sentir um fracasso nos estudos, este vídeo de 1 minuto vai te mostrar a chave para destravar seu potencial. Assista AGORA.
         </p>
 
         <div className="mt-8 mb-8 aspect-video max-w-4xl mx-auto">
-          <div className="w-full h-full bg-muted rounded-lg flex items-center justify-center shadow-2xl shadow-primary/20">
+          <div className="w-full h-full bg-muted rounded-lg flex items-center justify-center shadow-2xl shadow-primary/20 border border-border">
              <iframe
                 className="w-full h-full rounded-lg"
                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"

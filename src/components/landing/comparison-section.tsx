@@ -8,11 +8,11 @@ export function ComparisonSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Existem dois caminhos. Qual o seu?</h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
-            De um lado, o método tradicional da força bruta. Do outro, a estratégia que gera resultados.
+            De um lado, o método tradicional da força bruta. Do outro, a estratégia que GERA RESULTADOS.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <Card className="border-destructive/50 border-2">
+          <Card className="border-destructive/50 border-2 bg-destructive/10">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <XCircle className="w-10 h-10 text-destructive" />
@@ -28,7 +28,7 @@ export function ComparisonSection() {
               <p className="text-lg font-bold text-center text-destructive pt-4">Resultado: Mais um ano de cursinho.</p>
             </CardContent>
           </Card>
-          <Card className="border-primary/50 border-2 bg-secondary">
+          <Card className="border-primary/50 border-2 bg-primary/10">
             <CardHeader>
                <div className="flex items-center gap-4">
                 <CheckCircle className="w-10 h-10 text-primary" />

@@ -24,8 +24,8 @@ export function DesireSection() {
           <div className="space-y-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-4">
-                <div className="flex-shrink-0 mt-1">
-                  <benefit.icon className="w-6 h-6 text-accent" />
+                <div className="flex-shrink-0 mt-1 p-2 bg-primary/10 rounded-full">
+                  <benefit.icon className="w-6 h-6 text-primary" />
                 </div>
                 <p className="text-lg"><strong className="font-bold text-foreground">{benefit.text.split(':')[0]}:</strong><span className="text-muted-foreground">{benefit.text.split(':')[1]}</span></p>
               </div>

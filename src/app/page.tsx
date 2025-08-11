@@ -6,6 +6,7 @@ import { CtaSection } from '@/components/landing/cta-section';
 import { FaqSection } from '@/components/landing/faq-section';
 import { Footer } from '@/components/landing/footer';
 import { MethodologySection } from '@/components/landing/methodology-section';
+import { OfferSection } from '@/components/landing/offer-section';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ComparisonSection />
         <MethodologySection />
         <DesireSection />
+        <OfferSection />
         <CtaSection />
         <FaqSection />
       </main>

@@ -33,7 +33,7 @@ export function MethodologySection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pillars.map((pillar) => (
-            <Card key={pillar.title} className="bg-background border-border/60 shadow-lg text-center flex flex-col">
+            <Card key={pillar.title} className="bg-background/80 border-border/60 shadow-lg text-center flex flex-col">
               <CardHeader className="items-center">
                 <div className="p-4 bg-primary/10 rounded-full mb-4">
                     <pillar.icon className="w-8 h-8 text-primary" />
