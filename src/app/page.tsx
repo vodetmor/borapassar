@@ -13,10 +13,10 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <main className="flex-grow">
         <VslSection />
-        <InterestSection />
         <ComparisonSection />
         <MethodologySection />
         <DesireSection />
+        <InterestSection />
         <OfferSection />
         <CtaSection />
         <FaqSection />
