@@ -34,7 +34,7 @@ export function DesireSection() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="https://placehold.co/500x600.png"
+              src="https://i.imgur.com/V9Dpx2L.png"
               alt="Visual do Guia"
               width={500}
               height={600}
