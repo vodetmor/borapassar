@@ -98,11 +98,9 @@ export default {
         'pulse-cta': {
           '0%, 100%': {
             transform: 'scale(1)',
-            boxShadow: '0 0 0 0 hsl(var(--accent) / 0.7)',
           },
-          '70%': {
+          '50%': {
             transform: 'scale(1.05)',
-            boxShadow: '0 0 0 10px hsl(var(--accent) / 0)',
           },
         },
       },

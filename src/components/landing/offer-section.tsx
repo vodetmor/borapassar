@@ -44,7 +44,7 @@ export function OfferSection() {
                             </div>
                             <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 border-t md:border-t-0 md:border-l border-primary/20">
                                 <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$47,00</span> por apenas:</p>
-                                <p className="text-6xl sm:text-8xl font-black my-4 text-primary animate-pulse">
+                                <p className="text-6xl sm:text-8xl font-black my-4 text-primary">
                                     R$17,90
                                 </p>
                                 <div className="mb-6 flex justify-center items-center gap-2 text-xs sm:text-sm font-semibold text-green-400 bg-green-900/30 border border-green-400/30 rounded-full px-3 py-1">
