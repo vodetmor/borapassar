@@ -17,7 +17,7 @@ export function DesireSection() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">O Arsenal Completo para a sua <span className="text-primary">Aprovação</span></h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
             Isso não é um livro, é um sistema de aprovação. Veja tudo o que você vai dominar:
           </p>
         </div>
@@ -26,9 +26,9 @@ export function DesireSection() {
             {benefits.map((benefit, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="flex-shrink-0 mt-1 p-2 bg-primary/10 rounded-full">
-                  <benefit.icon className="w-6 h-6 text-primary" />
+                  <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                 </div>
-                <p className="text-base sm:text-lg"><strong className="font-bold text-foreground">{benefit.text.split(':')[0]}:</strong><span className="text-muted-foreground">{benefit.text.split(':')[1]}</span></p>
+                <p className="text-sm sm:text-lg"><strong className="font-bold text-foreground">{benefit.text.split(':')[0]}:</strong><span className="text-muted-foreground">{benefit.text.split(':')[1]}</span></p>
               </div>
             ))}
           </div>
@@ -44,7 +44,7 @@ export function DesireSection() {
           </div>
         </div>
         <div className="mt-12 text-center">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-xl shadow-accent/20 px-8 py-6 rounded-full">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-5 sm:px-8 sm:py-6 rounded-full">
                 <a href="#oferta">
                     QUERO O ARSENAL COMPLETO
                     <ArrowRight className="ml-2" />

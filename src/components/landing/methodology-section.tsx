@@ -28,7 +28,7 @@ export function MethodologySection() {
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             A Ciência por Trás da <span className="text-primary">Aprovação</span>
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
             Nosso método não é achismo. É a Metodologia 30-35-35, fundamentada em estudos da USP e na neurociência da aprendizagem. Simples, brutal e absurdamente eficaz.
           </p>
         </div>
@@ -48,10 +48,10 @@ export function MethodologySection() {
           ))}
         </div>
          <div className="text-center mt-12">
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8">
                 Técnicas como <strong className="text-foreground">Repetição Espaçada</strong>, <strong className="text-foreground">Recordação Ativa</strong> e <strong className="text-foreground">Técnica Pomodoro</strong> são integradas para otimizar cada minuto do seu estudo.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-xl shadow-accent/20 px-8 py-6 rounded-full">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-5 sm:px-8 sm:py-6 rounded-full">
                 <a href="#oferta">
                     QUERO APLICAR O MÉTODO
                     <ArrowRight className="ml-2" />

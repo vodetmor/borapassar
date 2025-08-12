@@ -8,7 +8,7 @@ export function ComparisonSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Existem dois caminhos. Qual o seu?</h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
             De um lado, o método tradicional da força bruta. Do outro, a estratégia que GERA RESULTADOS.
           </p>
         </div>
@@ -16,38 +16,38 @@ export function ComparisonSection() {
           <Card className="border-destructive/50 border-2 bg-destructive/10">
             <CardHeader>
               <div className="flex items-center gap-4">
-                <XCircle className="w-10 h-10 text-destructive" />
+                <XCircle className="w-8 h-8 sm:w-10 sm:h-10 text-destructive" />
                 <CardTitle className="text-xl sm:text-2xl font-bold">O Estudante Comum</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 text-muted-foreground">
+            <CardContent className="space-y-3 text-sm sm:text-base text-muted-foreground">
               <p>❌ Estuda 10h por dia e sente que não aprendeu nada.</p>
               <p>❌ Lê, relê, grifa... e esquece tudo na semana seguinte.</p>
               <p>❌ Tira 500 em matemática e acha que é "de humanas".</p>
               <p>❌ Zera a redação por não saber argumentar.</p>
               <p>❌ Chega na prova exausto, ansioso e sem confiança.</p>
-              <p className="text-base sm:text-lg font-bold text-center text-red-400 pt-4">Resultado: Mais um ano de cursinho em vão.</p>
+              <p className="text-sm sm:text-lg font-bold text-center text-red-400 pt-4">Resultado: Mais um ano de cursinho em vão.</p>
             </CardContent>
           </Card>
           <Card className="border-primary/50 border-2 bg-primary/10">
             <CardHeader>
                <div className="flex items-center gap-4">
-                <CheckCircle className="w-10 h-10 text-primary" />
+                <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-primary" />
                 <CardTitle className="text-xl sm:text-2xl font-bold">O Aluno Estratégico</CardTitle>
               </div>
             </CardHeader>
-            <CardContent className="space-y-3 sm:space-y-4 text-foreground">
+            <CardContent className="space-y-3 text-sm sm:text-base text-foreground">
               <p>✅ Usa a metodologia 30-35-35 para estudar com foco total.</p>
               <p>✅ Aplica Active Recall e fixa o conteúdo para sempre.</p>
               <p>✅ Salta para +800 em matemática usando a lógica certa.</p>
               <p>✅ Tira +960 na redação com um modelo validado.</p>
               <p>✅ Chega na prova calmo, no controle e pronto para destruir.</p>
-               <p className="text-base sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado na Universidade dos Sonhos.</p>
+               <p className="text-sm sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado na Universidade dos Sonhos.</p>
             </CardContent>
           </Card>
         </div>
         <div className="mt-12 text-center">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-xl shadow-accent/20 px-8 py-6 rounded-full">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-5 sm:px-8 sm:py-6 rounded-full">
                 <a href="#oferta">
                     QUERO ME TORNAR O ALUNO ESTRATÉGICO
                     <ArrowRight className="ml-2" />

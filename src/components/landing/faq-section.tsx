@@ -34,7 +34,7 @@ export function FaqSection() {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Sem Desculpas. Sem Dúvidas.</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
             Respostas rápidas para você parar de pensar e começar a agir.
           </p>
         </div>

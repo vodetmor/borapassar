@@ -16,10 +16,10 @@ export function OfferSection() {
         <section id="oferta" className="py-16 sm:py-24 bg-secondary">
             <div className="container mx-auto px-4">
                 <div className="text-center">
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
                         SUA VAGA NO ENEM POR <span className="text-primary">MENOS DE UM LANCHE</span>.
                     </h2>
-                    <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground">
+                    <p className="mt-6 max-w-2xl mx-auto text-base sm:text-xl text-muted-foreground">
                         Quanto vale a sua aprovação? Quanto custa mais um ano de cursinho e frustração? Hoje, você garante seu futuro por um valor simbólico.
                     </p>
                 </div>
@@ -44,7 +44,7 @@ export function OfferSection() {
                             </div>
                             <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 border-t md:border-t-0 md:border-l border-primary/20">
                                 <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$47,00</span> por apenas:</p>
-                                <p className="text-6xl sm:text-8xl font-black my-4 text-primary">
+                                <p className="text-5xl sm:text-8xl font-black my-4 text-primary">
                                     R$17,90
                                 </p>
                                 <div className="mb-6 flex justify-center items-center gap-2 text-xs sm:text-sm font-semibold text-green-400 bg-green-900/30 border border-green-400/30 rounded-full px-3 py-1">
@@ -55,7 +55,7 @@ export function OfferSection() {
                                 <Button
                                     asChild
                                     size="lg"
-                                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg sm:text-xl font-bold shadow-lg shadow-accent/20 py-6 sm:py-7"
+                                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-5 sm:py-7"
                                 >
                                     <a href="#">
                                         <Zap className="mr-2"/>

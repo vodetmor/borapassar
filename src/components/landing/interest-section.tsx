@@ -54,7 +54,7 @@ export function InterestSection() {
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Enquanto você está <span className="text-red-500">pensando</span>, outros estão <span className="text-primary">passando</span>.</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+        <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
           Este não é um "método fofinho". É uma arma de aprovação em massa. Validado por quem saiu do zero e hoje está na universidade dos sonhos.
         </p>
         <div className="mt-12">
@@ -64,11 +64,11 @@ export function InterestSection() {
                     align: "start",
                     loop: true,
                 }}
-                className="w-full max-w-5xl mx-auto"
+                className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto"
             >
-                <CarouselContent>
+                <CarouselContent className="-ml-4">
                     {testimonials.map((testimonial, index) => (
-                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 p-4">
+                        <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
                             <Card className="bg-background/80 border-border/60 shadow-lg text-left h-full flex flex-col">
                                 <CardContent className="p-6 flex-grow flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
@@ -91,8 +91,8 @@ export function InterestSection() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="absolute -left-4 sm:-left-8" />
-                <CarouselNext className="absolute -right-4 sm:-right-8" />
+                <CarouselPrevious className="absolute -left-2 sm:-left-8" />
+                <CarouselNext className="absolute -right-2 sm:-right-8" />
             </Carousel>
         </div>
       </div>
