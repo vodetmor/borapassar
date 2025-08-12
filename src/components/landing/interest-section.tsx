@@ -83,7 +83,7 @@ export function InterestSection() {
                                         </Avatar>
                                         <div>
                                             <p className="font-bold">{testimonial.name}</p>
-                                            <div className="flex text-primary">
+                                            <div className="flex text-yellow-500">
                                                 <Star className="w-4 h-4 fill-current" />
                                                 <Star className="w-4 h-4 fill-current" />
                                                 <Star className="w-4 h-4 fill-current" />
