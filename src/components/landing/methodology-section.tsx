@@ -21,10 +21,10 @@ const pillars = [
 
 export function MethodologySection() {
   return (
-    <section id="metodologia" className="py-20 sm:py-24 bg-secondary">
+    <section id="metodologia" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             A Ciência por Trás da <span className="text-primary">Aprovação</span>
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
@@ -41,7 +41,7 @@ export function MethodologySection() {
                 <CardTitle className="text-xl font-bold">{pillar.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{pillar.description}</p>
+                <p className="text-muted-foreground text-sm sm:text-base">{pillar.description}</p>
               </CardContent>
             </Card>
           ))}

@@ -56,9 +56,9 @@ export function InterestSection() {
   );
 
   return (
-    <section id="interesse" className="py-20 sm:py-24 bg-secondary">
+    <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Enquanto você está pensando, outros estão sendo <span className="text-primary">aprovados</span>.</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Enquanto você está pensando, outros estão sendo <span className="text-primary">aprovados</span>.</h2>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Este não é um "método fofinho". É uma arma de aprovação em massa. Validado por quem saiu do zero e hoje está na universidade dos sonhos.
         </p>
@@ -92,7 +92,7 @@ export function InterestSection() {
                                             </div>
                                         </div>
                                     </div>
-                                    <p className="text-muted-foreground flex-grow">"{testimonial.text}"</p>
+                                    <p className="text-muted-foreground flex-grow text-sm sm:text-base">"{testimonial.text}"</p>
                                 </CardContent>
                             </Card>
                         </CarouselItem>
