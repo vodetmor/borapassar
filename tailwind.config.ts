@@ -95,7 +95,7 @@ export default {
             height: '0',
           },
         },
-        'pulse-cta': {
+        'pulse': {
           '0%, 100%': {
             transform: 'scale(1)',
           },
@@ -107,7 +107,7 @@ export default {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-cta': 'pulse-cta 2s infinite',
+        'pulse': 'pulse 2s infinite',
       },
     },
   },
