@@ -49,7 +49,7 @@ export function ComparisonSection() {
         <div className="mt-12 text-center">
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full">
                 <a href="#oferta">
-                    QUERO ME TORNAR O ALUNO ESTRATÉGICO
+                    QUERO SER ESTRATÉGICO
                     <ArrowRight className="ml-2" />
                 </a>
             </Button>
