@@ -29,7 +29,7 @@ export function VslSection() {
           <Button
             asChild
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-primary/20 px-8 sm:px-10 py-5 sm:py-6"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-primary/20 px-8 py-4 sm:px-10 sm:py-6"
           >
             <a href="#oferta">
               QUERO CONHECER O MÉTODO
