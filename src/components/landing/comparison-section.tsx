@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { XCircle, CheckCircle } from 'lucide-react';
+import { XCircle, CheckCircle, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export function ComparisonSection() {
   return (
@@ -44,6 +45,14 @@ export function ComparisonSection() {
                <p className="text-base sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado na Universidade dos Sonhos.</p>
             </CardContent>
           </Card>
+        </div>
+        <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-xl shadow-accent/20 px-8 py-6 rounded-full">
+                <a href="#oferta">
+                    Quero me tornar o aluno estratégico
+                    <ArrowRight className="ml-2" />
+                </a>
+            </Button>
         </div>
       </div>
     </section>
