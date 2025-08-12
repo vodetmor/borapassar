@@ -16,36 +16,31 @@ const testimonials = [
   {
     name: 'Carlos R.',
     avatar: 'CR',
-    image: 'https://images.unsplash.com/photo-1590237563976-797e6130b3e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBzdHVkZW50fGVufDB8fHx8MTc1NDk1NjM1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    dataAiHint: 'person student',
+    stars: 5,
     text: 'Saí de 400 para 850 em matemática. Achei que era impossível. O método é brutal.',
   },
   {
     name: 'Mariana A.',
     avatar: 'MA',
-    image: 'https://images.unsplash.com/photo-1604155474859-2ab7937a5658?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBzdHVkZW50fGVufDB8fHx8MTc1NDk1NjM1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    dataAiHint: 'person student',
+    stars: 5,
     text: 'Eu tinha pânico de redação. Depois do guia, fiz 960 sem nem suar. Surreal.',
   },
   {
-    name: 'Pedro H.',
-    avatar: 'PH',
-    image: 'https://images.unsplash.com/photo-1651407765255-153ab5dc62ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBzdHVkZW50fGVufDB8fHx8MTc1NDk1NjM1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    dataAiHint: 'person student',
-    text: 'Passei em 3 Federais pra Engenharia. Meus amigos que estudavam 12h/dia, não. A diferença? Estratégia.',
+    name: 'Roberto F.',
+    avatar: 'RF',
+    stars: 4,
+    text: 'O método é denso e exige disciplina. Não é uma fórmula mágica. Nas primeiras semanas achei pesado, mas depois que peguei o ritmo, meus resultados nos simulados melhoraram 70%. Valeu a pena, mas esteja preparado para se dedicar.',
   },
   {
     name: 'Juliana S.',
     avatar: 'JS',
-    image: 'https://images.unsplash.com/photo-1651407765255-153ab5dc62ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXJzb24lMjBzdHVkZW50fGVufDB8fHx8MTc1NDk1NjM1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    dataAiHint: 'person student',
+    stars: 5,
     text: 'O guia me deu o foco que faltava. Em 3 meses meu desempenho nos simulados dobrou. Aprovada em Medicina!',
   },
   {
     name: 'Lucas T.',
     avatar: 'LT',
-    image: 'https://images.unsplash.com/photo-1530099486328-e021101a494a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBzdHVkZW50fGVufDB8fHx8MTc1NDk1NjM1N3ww&ixlib=rb-4.1.0&q=80&w=1080',
-    dataAiHint: 'person student',
+    stars: 5,
     text: 'A parte de blindagem emocional salvou minha prova. Cheguei calmo e confiante. Fez toda a diferença.',
   },
 ];
@@ -78,17 +73,15 @@ export function InterestSection() {
                                 <CardContent className="p-6 flex-grow flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
                                         <Avatar>
-                                            <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint={testimonial.dataAiHint} />
+                                            <AvatarImage src="https://placehold.co/100x100.png" alt={testimonial.name} data-ai-hint="person student" />
                                             <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                                         </Avatar>
                                         <div>
                                             <p className="font-bold">{testimonial.name}</p>
-                                            <div className="flex text-yellow-500">
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
-                                                <Star className="w-4 h-4 fill-current" />
+                                            <div className="flex text-yellow-400">
+                                                {Array.from({ length: 5 }).map((_, i) => (
+                                                    <Star key={i} className={`w-4 h-4 ${i < testimonial.stars ? 'fill-current' : 'text-gray-600'}`} />
+                                                ))}
                                             </div>
                                         </div>
                                     </div>
