@@ -1,7 +1,6 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
-import FallingCaps from '@/components/landing/falling-caps';
 
 export const metadata: Metadata = {
   title: 'Guia Definitivo',
@@ -21,7 +20,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        <FallingCaps />
         {children}
         <Toaster/>
       </body>
