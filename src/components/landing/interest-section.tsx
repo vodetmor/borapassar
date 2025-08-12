@@ -58,7 +58,7 @@ export function InterestSection() {
   return (
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Enquanto você está pensando, outros estão sendo <span className="text-primary">aprovados</span>.</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Enquanto você está <span className="text-red-500">pensando</span>, outros estão sendo <span className="text-primary">aprovados</span>.</h2>
         <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
           Este não é um "método fofinho". É uma arma de aprovação em massa. Validado por quem saiu do zero e hoje está na universidade dos sonhos.
         </p>
