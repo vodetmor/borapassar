@@ -98,8 +98,8 @@ export function InterestSection() {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
+                <CarouselPrevious className="absolute -left-4 sm:-left-8" />
+                <CarouselNext className="absolute -right-4 sm:-right-8" />
             </Carousel>
         </div>
       </div>
