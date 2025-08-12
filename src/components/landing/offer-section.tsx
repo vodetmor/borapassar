@@ -58,7 +58,7 @@ export function OfferSection() {
                                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7"
                                 >
                                     <a href="#">
-                                        <Zap className="mr-2"/>
+                                        
                                         QUERO MINHA APROVAÇÃO
                                     </a>
                                 </Button>
