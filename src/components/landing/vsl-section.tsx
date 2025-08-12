@@ -33,7 +33,6 @@ export function VslSection() {
           >
             <a href="#oferta">
               QUERO CONHECER O MÉTODO
-              <ArrowRight className="ml-2"/>
             </a>
           </Button>
         </div>

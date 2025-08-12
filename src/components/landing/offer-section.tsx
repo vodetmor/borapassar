@@ -60,7 +60,6 @@ export function OfferSection() {
                                     <a href="#">
                                         <Zap className="mr-2"/>
                                         QUERO MINHA APROVAÇÃO
-                                        <ArrowRight className="ml-2"/>
                                     </a>
                                 </Button>
                                 <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício. Garantia de 7 dias.</p>
