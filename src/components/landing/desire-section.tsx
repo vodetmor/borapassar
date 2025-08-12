@@ -1,5 +1,6 @@
-import { BrainCircuit, PenSquare, Rocket, TimerOff, ShieldCheck, Target } from 'lucide-react';
+import { BrainCircuit, PenSquare, Rocket, TimerOff, ShieldCheck, Target, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 
 const benefits = [
   { icon: Target, text: 'Metodologia 30-35-35: Otimize seu tempo de forma cirúrgica para absorver, fixar e aplicar o conhecimento.' },
@@ -41,6 +42,14 @@ export function DesireSection() {
               data-ai-hint="book study guide"
             />
           </div>
+        </div>
+        <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold shadow-xl shadow-accent/20 px-8 py-6 rounded-full">
+                <a href="#oferta">
+                    QUERO O ARSENAL COMPLETO
+                    <ArrowRight className="ml-2" />
+                </a>
+            </Button>
         </div>
       </div>
     </section>
