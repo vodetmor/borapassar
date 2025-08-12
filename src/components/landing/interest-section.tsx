@@ -17,13 +17,13 @@ const testimonials = [
     name: 'Carlos R.',
     avatar: 'CR',
     stars: 5,
-    text: 'Saí de 400 para 850 em matemática. Achei que era impossível. O método é brutal.',
+    text: 'Eu estava completamente estagnado nos 700 pontos em matemática. O método de focar nos 20% de conteúdo que mais caem e a prática ativa simplesmente viraram o jogo. Saí de 400 para 850. É brutal, mas funciona.',
   },
   {
     name: 'Mariana A.',
     avatar: 'MA',
     stars: 5,
-    text: 'Eu tinha pânico de redação. Depois do guia, fiz 960 sem nem suar. Surreal.',
+    text: 'Minha maior barreira era a redação. O guia me deu um modelo tão claro e eficiente que passei de 600 para 960 em dois meses. A sensação de segurança na hora de escrever não tem preço. Surreal.',
   },
   {
     name: 'Roberto F.',
@@ -35,19 +35,19 @@ const testimonials = [
     name: 'Juliana S.',
     avatar: 'JS',
     stars: 5,
-    text: 'O guia me deu o foco que faltava. Em 3 meses meu desempenho nos simulados dobrou. Aprovada em Medicina!',
+    text: 'Conciliar trabalho e estudo era meu pesadelo. Os planos de estudo adaptáveis e a técnica Pomodoro integrada me deram o foco que faltava. Em 3 meses, meu desempenho dobrou. Aprovada em Medicina!',
   },
   {
     name: 'Lucas T.',
     avatar: 'LT',
     stars: 5,
-    text: 'A parte de blindagem emocional salvou minha prova. Cheguei calmo e confiante. Fez toda a diferença.',
+    text: 'Sempre tive "branco" na hora da prova. A parte de blindagem emocional e as técnicas de respiração do guia salvaram minha prova. Cheguei calmo e confiante. Fez toda a diferença no meu resultado final.',
   },
 ];
 
 export function InterestSection() {
   const plugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
   return (
@@ -73,14 +73,14 @@ export function InterestSection() {
                                 <CardContent className="p-6 flex-grow flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
                                         <Avatar>
-                                            <AvatarImage src="https://placehold.co/100x100.png" alt={testimonial.name} data-ai-hint="person student" />
+                                            <AvatarImage src={`https://placehold.co/100x100.png?text=${testimonial.avatar}`} alt={testimonial.name} data-ai-hint="person student" />
                                             <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                                         </Avatar>
                                         <div>
                                             <p className="font-bold">{testimonial.name}</p>
                                             <div className="flex text-yellow-400">
-                                                {Array.from({ length: 5 }).map((_, i) => (
-                                                    <Star key={i} className={`w-4 h-4 ${i < testimonial.stars ? 'fill-current' : 'text-gray-600'}`} />
+                                                {Array.from({ length: testimonial.stars }).map((_, i) => (
+                                                    <Star key={i} className="w-4 h-4 fill-current" />
                                                 ))}
                                             </div>
                                         </div>
