@@ -4,17 +4,48 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, BookOpen, Film, LogOut } from 'lucide-react';
+import { BookOpen, LogOut, Award } from 'lucide-react';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
+import { UnlockableModule } from '@/components/curso/unlockable-module';
 
-const modules = [
-  { title: "Módulo 1: A Mentalidade da Aprovação", description: "Reprograme sua mente para o sucesso e vença a procrastinação.", type: "video" },
-  { title: "Módulo 2: Metodologia 30-35-35 na Prática", description: "Domine a teoria, a prática e a revisão de forma estratégica.", type: "pdf" },
-  { title: "Módulo 3: Redação Nota 1000", description: "O passo a passo para uma redação que impressiona os corretores.", type: "video" },
-  { title: "Módulo 4: Matemática para quem tem Medo", description: "Desbloqueie seu potencial em exatas com o método certo.", type: "video" },
-  { title: "Módulo 5: Blindagem Emocional", description: "Controle a ansiedade e chegue no dia da prova com confiança total.", type: "pdf" },
+const mainContent = {
+  title: "Ebook: Passar não é sorte, Aprovação é Método",
+  description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
+  iframe: '<iframe src="https://drive.google.com/file/d/1y8okZ9QItbveXfSVbA6z-1lvJ8bcsDOn/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>'
+};
+
+const orderBumps = [
+  { 
+    id: 'plano30dias',
+    title: "Plano de Estudo Express: Sua Rotina de 30 Dias para o ENEM",
+    description: "Desbloqueie o cronograma de 30 dias para uma preparação focada e de alta performance.",
+    iframe: '<iframe src="https://drive.google.com/file/d/1r8TclGN2tsVOluUOmOXrJtkOUoTkqZ46/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'PLANO30'
+  },
+  { 
+    id: 'guiaredacao',
+    title: "Guia para Redação de Vestibulares", 
+    description: "Acesse o guia completo para estruturar redações nota 1000 em qualquer vestibular.",
+    iframe: '<iframe src="https://drive.google.com/file/d/1wESZbF9Nydpm6qKraGz8yjcVCAT8b2k5/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'REDACAO1000'
+  },
+  { 
+    id: 'flashcards',
+    title: "Flashcards Essenciais ENEM - 100 Conceitos Chave",
+    description: "Memorize os 100 conceitos que mais caem no ENEM com este conjunto de flashcards prontos.",
+    iframe: '<iframe src="https://drive.google.com/file/d/1SrGNsR8pnc9loE3CWmaZLLJp0797x3Te/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'FLASH100'
+  },
+  {
+    id: 'procrastinacao',
+    title: "Como Vencer a Procrastinação em 7 Dias",
+    description: "Um guia prático com desafios diários para construir uma disciplina inabalável.",
+    iframe: '<iframe src="https://drive.google.com/file/d/1q3U2ZcD68mwWAQBHfNQijDJac36GVhFO/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'ADEUSPREGUICA'
+  }
 ];
+
 
 export default function CoursePage() {
   const router = useRouter();
@@ -31,6 +62,8 @@ export default function CoursePage() {
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
+    // Also clear unlocked modules on logout
+    orderBumps.forEach(bump => localStorage.removeItem(`module_${bump.id}_unlocked`));
     router.push('/login');
   };
 
@@ -56,7 +89,6 @@ export default function CoursePage() {
                                     <Skeleton className="h-6 w-1/2 mb-2" />
                                     <Skeleton className="h-4 w-3/4" />
                                 </div>
-                                <Skeleton className="h-10 w-32 ml-4" />
                             </CardContent>
                         </Card>
                     ))}
@@ -71,40 +103,51 @@ export default function CoursePage() {
     <div className="flex flex-col min-h-screen bg-background text-foreground">
       <main className="flex-grow container mx-auto px-4 py-8 sm:py-16">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8">
-            <h1 className="text-2xl sm:text-4xl font-bold text-primary">Passar não é sorte, Aprovação é Método</h1>
+            <h1 className="text-2xl sm:text-4xl font-bold text-primary">Área do Aluno Estratégico</h1>
             <Button onClick={handleLogout} variant="outline">
                 <LogOut className="mr-2 h-4 w-4" />
                 Sair
             </Button>
         </div>
 
-        <Card className="mb-8 border-primary/20 bg-zinc-900/50 p-6 sm:p-8 text-center">
+        <Card className="mb-12 border-primary/20 bg-zinc-900/50 p-6 sm:p-8 text-center">
           <CardHeader className="p-0">
-            <CheckCircle className="mx-auto h-12 w-12 text-accent mb-4" />
-            <CardTitle className="text-xl sm:text-2xl font-bold">Bem-vindo(a), Aluno(a) VIP!</CardTitle>
+            <Award className="mx-auto h-12 w-12 text-accent mb-4" />
+            <CardTitle className="text-xl sm:text-2xl font-bold">Bem-vindo(a) de volta, Futuro(a) Aprovado(a)!</CardTitle>
             <CardDescription className="mt-2 text-base text-muted-foreground max-w-2xl mx-auto">
-              Você deu o passo mais importante para a sua aprovação. Explore o método, siga o plano e prepare-se para conquistar sua vaga.
+              Você está no caminho certo. Continue focado(a), o sucesso é uma consequência do seu esforço diário.
             </CardDescription>
           </CardHeader>
         </Card>
 
-        <div className="space-y-4">
-          {modules.map((mod, index) => (
-            <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors duration-300 bg-background/80">
-              <CardContent className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between sm:items-center">
-                <div className="flex-grow mb-4 sm:mb-0">
-                  <h3 className="text-base sm:text-lg font-bold flex items-center">
-                    {mod.type === 'video' ? <Film className="w-5 h-5 mr-3 text-primary" /> : <BookOpen className="w-5 h-5 mr-3 text-primary" />}
-                    {mod.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-1 sm:pl-8">{mod.description}</p>
-                </div>
-                <Button className="w-full sm:w-auto bg-primary hover:bg-primary/90">
-                  Acessar Conteúdo
-                </Button>
-              </CardContent>
+        <div className="space-y-8">
+            {/* Main Content */}
+            <Card className="border-border/50 bg-background/80 overflow-hidden">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                        <BookOpen className="w-8 h-8 text-primary flex-shrink-0" />
+                        <div>
+                            <CardTitle className="text-xl font-bold">{mainContent.title}</CardTitle>
+                            <CardDescription className="mt-1">{mainContent.description}</CardDescription>
+                        </div>
+                    </div>
+                </CardHeader>
+                <CardContent>
+                    <div className="aspect-video" dangerouslySetInnerHTML={{ __html: mainContent.iframe }} />
+                </CardContent>
             </Card>
-          ))}
+
+            {/* Order Bumps */}
+            {orderBumps.map((bump) => (
+                <UnlockableModule 
+                    key={bump.id}
+                    id={bump.id}
+                    title={bump.title}
+                    description={bump.description}
+                    iframeContent={bump.iframe}
+                    unlockCode={bump.unlockCode}
+                />
+            ))}
         </div>
       </main>
       <Footer />
