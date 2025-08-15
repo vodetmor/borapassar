@@ -4,12 +4,13 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { LogOut, Award } from 'lucide-react';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ModuleCard } from '@/components/curso/module-card';
 import type { Module } from '@/components/curso/module-card';
+import { CardContent } from '@/components/ui/card';
 
 const mainContent: Module = {
   id: 'ebook',
@@ -29,7 +30,7 @@ const orderBumps: Module[] = [
     description: "Desbloqueie o cronograma de 30 dias para uma preparação focada e de alta performance.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1r8TclGN2tsVOluUOmOXrJtkOUoTkqZ46/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'PLANO30',
-    coverImage: 'https://placehold.co/720x1200.png',
+    coverImage: 'https://i.imgur.com/OF7AWQT.png',
     coverImageHint: 'study plan'
   },
   { 
