@@ -138,7 +138,7 @@ export default function CoursePage() {
         <div>
             <h2 className="text-2xl font-bold mb-2">Seu Material Principal</h2>
              <p className="text-muted-foreground mb-6">Comece por aqui! Este é o guia que vai nortear toda a sua preparação.</p>
-            <div className="mb-12">
+            <div className="mb-12 max-w-md mx-auto">
                  <ModuleCard module={mainContent} />
             </div>
 
