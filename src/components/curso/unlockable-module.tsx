@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Lock, Key, Sparkles, AlertCircle, BookOpen } from 'lucide-react';
+import { Lock, Key, Sparkles, AlertCircle, BookOpen, ShoppingCart } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import confetti from 'canvas-confetti';
 
@@ -95,31 +95,51 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
                     </div>
                     <div>
                         <CardTitle className="text-xl font-bold">{title}</CardTitle>
-                        <CardDescription className="mt-1 text-muted-foreground">Este conteúdo é exclusivo para alunos com acesso VIP. Insira seu código para desbloquear.</CardDescription>
+                        <CardDescription className="mt-1 text-muted-foreground">Este conteúdo é exclusivo. Insira seu código ou adquira o acesso para desbloquear.</CardDescription>
                     </div>
                 </div>
             </CardHeader>
             <CardContent className="p-6 pt-0">
-                <form onSubmit={handleUnlock} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
-                     <Input
-                        type="text"
-                        placeholder="Digite seu código de acesso"
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        required
-                        className="flex-grow bg-background/70"
-                    />
-                    <Button type="submit" className="bg-primary hover:bg-primary/90">
-                        <Key className="mr-2 h-4 w-4" />
-                        Desbloquear
-                    </Button>
-                </form>
-                 {error && (
-                    <Alert variant="destructive" className="mt-4 max-w-md mx-auto">
-                        <AlertCircle className="h-4 w-4" />
-                        <AlertTitle>Erro</AlertTitle>
-                        <AlertDescription>{error}</AlertDescription>
-                    </Alert>
+                <div className="max-w-xl mx-auto bg-zinc-900/50 p-4 rounded-lg border border-border/50">
+                    <p className="text-sm text-center mb-4 text-muted-foreground">Já tem um código de acesso?</p>
+                    <form onSubmit={handleUnlock} className="flex flex-col sm:flex-row gap-2">
+                        <Input
+                            type="text"
+                            placeholder="Digite seu código de acesso"
+                            value={inputValue}
+                            onChange={(e) => setInputValue(e.target.value)}
+                            required
+                            className="flex-grow bg-background/70"
+                        />
+                        <Button type="submit" className="bg-primary hover:bg-primary/90">
+                            <Key className="mr-2 h-4 w-4" />
+                            Desbloquear
+                        </Button>
+                    </form>
+                    {error && (
+                        <Alert variant="destructive" className="mt-4">
+                            <AlertCircle className="h-4 w-4" />
+                            <AlertTitle>Erro</AlertTitle>
+                            <AlertDescription>{error}</AlertDescription>
+                        </Alert>
+                    )}
+                </div>
+
+                {unlockCode && (
+                     <div className="max-w-xl mx-auto mt-6 text-center">
+                        <p className="text-sm text-center mb-2 text-muted-foreground">Ou garanta seu acesso agora mesmo:</p>
+                        <Button
+                            size="lg"
+                            className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto animate-pulse-cta"
+                            onClick={() => {
+                                // Futuramente, redirecionar para o checkout
+                                alert('Redirecionando para o checkout...');
+                            }}
+                        >
+                            <ShoppingCart className="mr-2 h-5 w-5" />
+                            QUERO ADQUIRIR AGORA!
+                        </Button>
+                    </div>
                 )}
             </CardContent>
         </Card>
