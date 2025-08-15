@@ -30,6 +30,7 @@ const testimonials = [
     avatar: 'RF',
     stars: 4,
     text: 'O método é denso e exige disciplina. Não é uma fórmula mágica. Nas primeiras semanas achei pesado, mas depois que peguei o ritmo, meus resultados nos simulados melhoraram 70%. Valeu a pena, mas esteja preparado para se dedicar.',
+    image: 'https://i.imgur.com/vwg85CN.png',
   },
   {
     name: 'Juliana S.',
@@ -73,7 +74,7 @@ export function InterestSection() {
                                 <CardContent className="p-6 flex-grow flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
                                         <Avatar>
-                                            <AvatarImage src={`https://placehold.co/100x100.png?text=${testimonial.avatar}`} alt={testimonial.name} data-ai-hint="person student" />
+                                            <AvatarImage src={testimonial.image || `https://placehold.co/100x100.png?text=${testimonial.avatar}`} alt={testimonial.name} data-ai-hint="person student" />
                                             <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                                         </Avatar>
                                         <div>
