@@ -8,7 +8,7 @@ import {
 const faqs = [
   {
     question: 'Isso é só mais um cursinho ou livro chato?',
-    answer: 'Não. É um sistema de ataque. Um guia estratégico, direto ao ponto, em PDF, que você acessa na hora. Sem enrolação, sem conteúdo inútil. É o mapa da mina para a sua aprovação, para ler no celular, tablet ou onde quiser.',
+    answer: 'Não. É um sistema de ataque. Uma área de membros com um guia estratégico, direto ao ponto, que você acessa na hora. Sem enrolação, sem conteúdo inútil. É o mapa da mina para a sua aprovação, para acessar no celular, tablet ou onde quiser.',
   },
   {
     question: 'Eu procrastino muito, vai funcionar pra mim?',

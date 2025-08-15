@@ -3,12 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Check, ArrowRight, Zap, BadgePercent } from "lucide-react";
 
 const includedFeatures = [
+  'Acesso VIP à Área de Membros Estratégica',
   'Metodologia 30-35-35 Validada',
   'Técnicas de Neurociência para Aprendizagem Acelerada',
   'Modelo de Redação +960 Pontos',
   'Planos de Estudo Flexíveis e Adaptáveis',
-  'Guia Prático Anti-Procrastinação',
-  'Estratégias para Controle Emocional e Foco Total',
+  'Guia Prático Anti-Procrastinação e Controle Emocional',
 ]
 
 export function OfferSection() {
@@ -29,7 +29,7 @@ export function OfferSection() {
                         <div className="grid grid-cols-1 md:grid-cols-2">
                              <div className="p-6 sm:p-8">
                                 <CardHeader className="p-0 mb-6">
-                                    <CardTitle className="text-xl sm:text-2xl font-bold">O que você leva no Guia Definitivo:</CardTitle>
+                                    <CardTitle className="text-xl sm:text-2xl font-bold">O que você leva na Área de Membros:</CardTitle>
                                 </CardHeader>
                                 <CardContent className="p-0">
                                     <ul className="space-y-3 sm:space-y-4 text-muted-foreground">
