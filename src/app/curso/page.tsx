@@ -16,7 +16,7 @@ const mainContent: Module = {
   type: 'main',
   title: "Ebook: Passar não é sorte, Aprovação é Método",
   description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
-  iframeContent: '<iframe src="https://drive.google.com/file/d/1y8okZ9QItbveXfSVbA6z-1lvJ8bcsDOn/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+  iframeContent: '<iframe src="https://heyzine.com/flip-book/75831e3e6e.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
   coverImage: 'https://placehold.co/600x400.png',
   coverImageHint: 'book cover'
 };
@@ -96,6 +96,9 @@ export default function CoursePage() {
                         <Skeleton className="h-8 w-3/4 mb-2" />
                         <Skeleton className="h-5 w-1/2" />
                     </CardHeader>
+                    <CardContent className="p-6">
+                       <Skeleton className="aspect-video w-full" />
+                    </CardContent>
                 </Card>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[...Array(5)].map((_, i) => (
