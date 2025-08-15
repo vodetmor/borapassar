@@ -59,7 +59,7 @@ const orderBumps: Module[] = [
     description: "Um guia prático com desafios diários para construir uma disciplina inabalável.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1q3U2ZcD68mwWAQBHfNQijDJac36GVhFO/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'ADEUSPREGUICA',
-    coverImage: 'https://placehold.co/720x1200.png',
+    coverImage: 'https://i.imgur.com/tqIsznO.png',
     coverImageHint: 'motivation guide'
   }
 ];
