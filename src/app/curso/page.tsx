@@ -28,7 +28,7 @@ const orderBumps: Module[] = [
     type: 'order_bump',
     title: "Plano de Estudo Express: Sua Rotina de 30 Dias para o ENEM",
     description: "Desbloqueie o cronograma de 30 dias para uma preparação focada e de alta performance.",
-    iframeContent: '<iframe src="https://drive.google.com/file/d/1r8TclGN2tsVOluUOmOXrJtkOUoTkqZ46/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/0d1da9756f.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'PLANO30',
     coverImage: 'https://i.imgur.com/OF7AWQT.png',
     coverImageHint: 'study plan'
@@ -38,7 +38,7 @@ const orderBumps: Module[] = [
     type: 'order_bump',
     title: "Guia para Redação de Vestibulares", 
     description: "Acesse o guia completo para estruturar redações nota 1000 em qualquer vestibular.",
-    iframeContent: '<iframe src="https://drive.google.com/file/d/1wESZbF9Nydpm6qKraGz8yjcVCAT8b2k5/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/29dc031449.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'REDACAO1000',
     coverImage: 'https://i.imgur.com/DRLVZOB.png',
     coverImageHint: 'writing guide'
@@ -48,7 +48,7 @@ const orderBumps: Module[] = [
     type: 'order_bump',
     title: "Flashcards Essenciais ENEM - 100 Conceitos Chave",
     description: "Memorize os 100 conceitos que mais caem no ENEM com este conjunto de flashcards prontos.",
-    iframeContent: '<iframe src="https://drive.google.com/file/d/1SrGNsR8pnc9loE3CWmaZLLJp0797x3Te/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/697f91c274.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'FLASH100',
     coverImage: 'https://i.imgur.com/5ngfrrn.png',
     coverImageHint: 'flashcards education'
@@ -58,7 +58,7 @@ const orderBumps: Module[] = [
     type: 'order_bump',
     title: "Como Vencer a Procrastinação em 7 Dias",
     description: "Um guia prático com desafios diários para construir uma disciplina inabalável.",
-    iframeContent: '<iframe src="https://drive.google.com/file/d/1q3U2ZcD68mwWAQBHfNQijDJac36GVhFO/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/9c64933456.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'ADEUSPREGUICA',
     coverImage: 'https://i.imgur.com/tqIsznO.png',
     coverImageHint: 'motivation guide'
