@@ -38,6 +38,7 @@ const testimonials = [
     avatar: 'JS',
     stars: 5,
     text: 'Conciliar trabalho e estudo era meu pesadelo. Os planos de estudo adaptáveis e a técnica Pomodoro integrada me deram o foco que faltava. Em 3 meses, meu desempenho dobrou. Aprovada em Medicina!',
+    image: 'https://i.imgur.com/YrKQVJD.png',
   },
   {
     name: 'Lucas T.',
