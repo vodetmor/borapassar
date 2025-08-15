@@ -24,6 +24,7 @@ const testimonials = [
     avatar: 'MA',
     stars: 5,
     text: 'Minha maior barreira era a redação. O guia me deu um modelo tão claro e eficiente que passei de 600 para 960 em dois meses. A sensação de segurança na hora de escrever não tem preço. Surreal.',
+    image: 'https://i.imgur.com/CVyyH1u.png',
   },
   {
     name: 'Roberto F.',
