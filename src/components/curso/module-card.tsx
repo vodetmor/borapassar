@@ -49,9 +49,9 @@ export function ModuleCard({ module }: ModuleCardProps) {
                         <Image
                             src={module.coverImage}
                             alt={`Capa do módulo ${module.title}`}
-                            width={600}
-                            height={400}
-                            className="aspect-video object-cover w-full group-hover:scale-105 transition-transform duration-300"
+                            width={720}
+                            height={1200}
+                            className="w-full group-hover:scale-105 transition-transform duration-300"
                             data-ai-hint={module.coverImageHint}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
