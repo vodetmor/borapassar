@@ -39,7 +39,7 @@ const orderBumps: Module[] = [
     description: "Acesse o guia completo para estruturar redações nota 1000 em qualquer vestibular.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1wESZbF9Nydpm6qKraGz8yjcVCAT8b2k5/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'REDACAO1000',
-    coverImage: 'https://placehold.co/720x1200.png',
+    coverImage: 'https://i.imgur.com/DRLVZOB.png',
     coverImageHint: 'writing guide'
   },
   { 
