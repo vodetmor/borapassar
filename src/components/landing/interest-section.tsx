@@ -75,7 +75,7 @@ export function InterestSection() {
                                 <CardContent className="p-6 flex-grow flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
                                         <Avatar>
-                                            <AvatarImage src={testimonial.image || `https://placehold.co/100x100.png?text=${testimonial.avatar}`} alt={testimonial.name} data-ai-hint="person student" />
+                                            <AvatarImage src={testimonial.image || `https://placehold.co/100x100.png?text=${testimonial.avatar}`} alt={testimonial.name} data-ai-hint="person student" className="object-cover" />
                                             <AvatarFallback>{testimonial.avatar}</AvatarFallback>
                                         </Avatar>
                                         <div>
