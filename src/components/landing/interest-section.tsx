@@ -18,6 +18,7 @@ const testimonials = [
     avatar: 'LM',
     stars: 5,
     text: 'Eu estava completamente estagnado nos 700 pontos em matemática. O método de focar nos 20% de conteúdo que mais caem e a prática ativa simplesmente viraram o jogo. Saí de 400 para 850. o método é incrível.',
+    image: 'https://i.imgur.com/0bC4Hzq.png',
   },
   {
     name: 'Mariana A.',
