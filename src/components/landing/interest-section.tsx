@@ -46,6 +46,7 @@ const testimonials = [
     avatar: 'LT',
     stars: 5,
     text: 'Sempre tive "branco" na hora da prova. A parte de blindagem emocional e as técnicas de respiração do guia salvaram minha prova. Cheguei calmo e confiante. Fez toda a diferença no meu resultado final.',
+    image: 'https://i.imgur.com/bXRWc4p.png',
   },
 ];
 
