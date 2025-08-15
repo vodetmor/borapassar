@@ -55,6 +55,7 @@ export default function LoginPage() {
                     <Input
                         id="username"
                         type="text"
+                        placeholder="Digite seu usuário enviado por e-mail"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
