@@ -17,7 +17,7 @@ const mainContent: Module = {
   title: "Ebook: Passar não é sorte, Aprovação é Método",
   description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
   iframeContent: '<iframe src="https://heyzine.com/flip-book/75831e3e6e.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
-  coverImage: 'https://placehold.co/720x1280.png',
+  coverImage: 'https://i.imgur.com/PfHqNDi.png',
   coverImageHint: 'book cover'
 };
 
