@@ -49,7 +49,7 @@ const orderBumps: Module[] = [
     description: "Memorize os 100 conceitos que mais caem no ENEM com este conjunto de flashcards prontos.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1SrGNsR8pnc9loE3CWmaZLLJp0797x3Te/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'FLASH100',
-    coverImage: 'https://placehold.co/720x1200.png',
+    coverImage: 'https://i.imgur.com/5ngfrrn.png',
     coverImageHint: 'flashcards education'
   },
   {
