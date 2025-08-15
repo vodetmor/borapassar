@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { LogOut, Award } from 'lucide-react';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -17,7 +17,7 @@ const mainContent: Module = {
   title: "Ebook: Passar não é sorte, Aprovação é Método",
   description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
   iframeContent: '<iframe src="https://heyzine.com/flip-book/75831e3e6e.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
-  coverImage: 'https://placehold.co/600x400.png',
+  coverImage: 'https://placehold.co/720x1280.png',
   coverImageHint: 'book cover'
 };
 
@@ -29,7 +29,7 @@ const orderBumps: Module[] = [
     description: "Desbloqueie o cronograma de 30 dias para uma preparação focada e de alta performance.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1r8TclGN2tsVOluUOmOXrJtkOUoTkqZ46/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'PLANO30',
-    coverImage: 'https://placehold.co/600x400.png',
+    coverImage: 'https://placehold.co/720x1280.png',
     coverImageHint: 'study plan'
   },
   { 
@@ -39,7 +39,7 @@ const orderBumps: Module[] = [
     description: "Acesse o guia completo para estruturar redações nota 1000 em qualquer vestibular.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1wESZbF9Nydpm6qKraGz8yjcVCAT8b2k5/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'REDACAO1000',
-    coverImage: 'https://placehold.co/600x400.png',
+    coverImage: 'https://placehold.co/720x1280.png',
     coverImageHint: 'writing guide'
   },
   { 
@@ -49,7 +49,7 @@ const orderBumps: Module[] = [
     description: "Memorize os 100 conceitos que mais caem no ENEM com este conjunto de flashcards prontos.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1SrGNsR8pnc9loE3CWmaZLLJp0797x3Te/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'FLASH100',
-    coverImage: 'https://placehold.co/600x400.png',
+    coverImage: 'https://placehold.co/720x1280.png',
     coverImageHint: 'flashcards education'
   },
   {
@@ -59,7 +59,7 @@ const orderBumps: Module[] = [
     description: "Um guia prático com desafios diários para construir uma disciplina inabalável.",
     iframeContent: '<iframe src="https://drive.google.com/file/d/1q3U2ZcD68mwWAQBHfNQijDJac36GVhFO/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
     unlockCode: 'ADEUSPREGUICA',
-    coverImage: 'https://placehold.co/600x400.png',
+    coverImage: 'https://placehold.co/720x1280.png',
     coverImageHint: 'motivation guide'
   }
 ];
