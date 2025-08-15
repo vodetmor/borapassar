@@ -21,7 +21,7 @@ export default function LoginPage() {
     setError('');
 
     // Credenciais fixas
-    const validUsername = 'alunoVIP';
+    const validUsername = 'futuroUniversitario';
     const validPassword = 'X7p9Q4Z1';
 
     if (username === validUsername && password === validPassword) {
