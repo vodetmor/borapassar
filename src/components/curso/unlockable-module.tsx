@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Lock, Key, Sparkles, AlertCircle } from 'lucide-react';
+import { Lock, Key, Sparkles, AlertCircle, BookOpen } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import confetti from 'canvas-confetti';
 
@@ -14,33 +14,34 @@ interface UnlockableModuleProps {
     title: string;
     description: string;
     iframeContent: string;
-    unlockCode: string;
+    unlockCode?: string;
+    isUnlockedInitial: boolean;
+    onUnlockSuccess: () => void;
 }
 
-export function UnlockableModule({ id, title, description, iframeContent, unlockCode }: UnlockableModuleProps) {
-    const [isUnlocked, setIsUnlocked] = useState(false);
+export function UnlockableModule({ id, title, description, iframeContent, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
+    const [isUnlocked, setIsUnlocked] = useState(isUnlockedInitial);
     const [inputValue, setInputValue] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
-        const unlockedStatus = localStorage.getItem(`module_${id}_unlocked`);
-        if (unlockedStatus === 'true') {
-            setIsUnlocked(true);
-        }
-    }, [id]);
+        // This keeps the state in sync if the prop changes (e.g. from localStorage check on parent)
+        setIsUnlocked(isUnlockedInitial);
+    }, [isUnlockedInitial]);
 
     const handleUnlock = (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
 
-        if (inputValue.trim().toUpperCase() === unlockCode) {
+        if (unlockCode && inputValue.trim().toUpperCase() === unlockCode) {
             localStorage.setItem(`module_${id}_unlocked`, 'true');
             setIsUnlocked(true);
+            onUnlockSuccess(); // Notify parent component
             
             // Fire confetti
             const duration = 2 * 1000;
             const animationEnd = Date.now() + duration;
-            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
 
             function randomInRange(min: number, max: number) {
                 return Math.random() * (max - min) + min;
@@ -66,17 +67,19 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
 
     if (isUnlocked) {
         return (
-            <Card className="border-accent/50 bg-accent/10">
-                 <CardHeader>
+            <Card className="border-0 bg-transparent shadow-none">
+                 <CardHeader className="p-6">
                     <div className="flex items-center gap-4">
-                        <Sparkles className="w-8 h-8 text-accent flex-shrink-0" />
+                        <div className="p-3 bg-primary/10 rounded-full">
+                           <BookOpen className="w-6 h-6 text-primary flex-shrink-0" />
+                        </div>
                         <div>
                             <CardTitle className="text-xl font-bold">{title}</CardTitle>
-                            <CardDescription className="mt-1">Parabéns! Você desbloqueou este conteúdo exclusivo.</CardDescription>
+                            <CardDescription className="mt-1 text-muted-foreground">{isUnlockedInitial ? description : 'Parabéns! Você desbloqueou este conteúdo exclusivo.'}</CardDescription>
                         </div>
                     </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="p-6 pt-0">
                     <div className="aspect-video" dangerouslySetInnerHTML={{ __html: iframeContent }} />
                 </CardContent>
             </Card>
@@ -84,18 +87,20 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
     }
 
     return (
-        <Card className="border-border/50 bg-background/80">
-            <CardHeader>
-                <div className="flex items-center gap-4">
-                    <Lock className="w-8 h-8 text-muted-foreground flex-shrink-0" />
+        <Card className="border-0 bg-transparent shadow-none">
+            <CardHeader className="p-6">
+                 <div className="flex items-center gap-4">
+                    <div className="p-3 bg-muted rounded-full">
+                        <Lock className="w-6 h-6 text-muted-foreground flex-shrink-0" />
+                    </div>
                     <div>
                         <CardTitle className="text-xl font-bold">{title}</CardTitle>
-                        <CardDescription className="mt-1">{description}</CardDescription>
+                        <CardDescription className="mt-1 text-muted-foreground">Este conteúdo é exclusivo para alunos com acesso VIP. Insira seu código para desbloquear.</CardDescription>
                     </div>
                 </div>
             </CardHeader>
-            <CardContent>
-                <form onSubmit={handleUnlock} className="flex flex-col sm:flex-row gap-2">
+            <CardContent className="p-6 pt-0">
+                <form onSubmit={handleUnlock} className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto">
                      <Input
                         type="text"
                         placeholder="Digite seu código de acesso"
@@ -110,7 +115,7 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
                     </Button>
                 </form>
                  {error && (
-                    <Alert variant="destructive" className="mt-4">
+                    <Alert variant="destructive" className="mt-4 max-w-md mx-auto">
                         <AlertCircle className="h-4 w-4" />
                         <AlertTitle>Erro</AlertTitle>
                         <AlertDescription>{error}</AlertDescription>
@@ -120,4 +125,3 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
         </Card>
     );
 }
-

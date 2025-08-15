@@ -1,51 +1,68 @@
+
 "use client";
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, LogOut, Award } from 'lucide-react';
+import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { LogOut, Award } from 'lucide-react';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
-import { UnlockableModule } from '@/components/curso/unlockable-module';
+import { ModuleCard } from '@/components/curso/module-card';
+import type { Module } from '@/components/curso/module-card';
 
-const mainContent = {
+const mainContent: Module = {
+  id: 'ebook',
+  type: 'main',
   title: "Ebook: Passar não é sorte, Aprovação é Método",
   description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
-  iframe: '<iframe src="https://drive.google.com/file/d/1y8okZ9QItbveXfSVbA6z-1lvJ8bcsDOn/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>'
+  iframeContent: '<iframe src="https://drive.google.com/file/d/1y8okZ9QItbveXfSVbA6z-1lvJ8bcsDOn/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+  coverImage: 'https://placehold.co/600x400.png',
+  coverImageHint: 'book cover'
 };
 
-const orderBumps = [
+const orderBumps: Module[] = [
   { 
     id: 'plano30dias',
+    type: 'order_bump',
     title: "Plano de Estudo Express: Sua Rotina de 30 Dias para o ENEM",
     description: "Desbloqueie o cronograma de 30 dias para uma preparação focada e de alta performance.",
-    iframe: '<iframe src="https://drive.google.com/file/d/1r8TclGN2tsVOluUOmOXrJtkOUoTkqZ46/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
-    unlockCode: 'PLANO30'
+    iframeContent: '<iframe src="https://drive.google.com/file/d/1r8TclGN2tsVOluUOmOXrJtkOUoTkqZ46/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'PLANO30',
+    coverImage: 'https://placehold.co/600x400.png',
+    coverImageHint: 'study plan'
   },
   { 
     id: 'guiaredacao',
+    type: 'order_bump',
     title: "Guia para Redação de Vestibulares", 
     description: "Acesse o guia completo para estruturar redações nota 1000 em qualquer vestibular.",
-    iframe: '<iframe src="https://drive.google.com/file/d/1wESZbF9Nydpm6qKraGz8yjcVCAT8b2k5/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
-    unlockCode: 'REDACAO1000'
+    iframeContent: '<iframe src="https://drive.google.com/file/d/1wESZbF9Nydpm6qKraGz8yjcVCAT8b2k5/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'REDACAO1000',
+    coverImage: 'https://placehold.co/600x400.png',
+    coverImageHint: 'writing guide'
   },
   { 
     id: 'flashcards',
+    type: 'order_bump',
     title: "Flashcards Essenciais ENEM - 100 Conceitos Chave",
     description: "Memorize os 100 conceitos que mais caem no ENEM com este conjunto de flashcards prontos.",
-    iframe: '<iframe src="https://drive.google.com/file/d/1SrGNsR8pnc9loE3CWmaZLLJp0797x3Te/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
-    unlockCode: 'FLASH100'
+    iframeContent: '<iframe src="https://drive.google.com/file/d/1SrGNsR8pnc9loE3CWmaZLLJp0797x3Te/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'FLASH100',
+    coverImage: 'https://placehold.co/600x400.png',
+    coverImageHint: 'flashcards education'
   },
   {
     id: 'procrastinacao',
+    type: 'order_bump',
     title: "Como Vencer a Procrastinação em 7 Dias",
     description: "Um guia prático com desafios diários para construir uma disciplina inabalável.",
-    iframe: '<iframe src="https://drive.google.com/file/d/1q3U2ZcD68mwWAQBHfNQijDJac36GVhFO/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
-    unlockCode: 'ADEUSPREGUICA'
+    iframeContent: '<iframe src="https://drive.google.com/file/d/1q3U2ZcD68mwWAQBHfNQijDJac36GVhFO/preview" width="100%" height="480" allow="autoplay" class="rounded-lg"></iframe>',
+    unlockCode: 'ADEUSPREGUICA',
+    coverImage: 'https://placehold.co/600x400.png',
+    coverImageHint: 'motivation guide'
   }
 ];
-
 
 export default function CoursePage() {
   const router = useRouter();
@@ -62,7 +79,6 @@ export default function CoursePage() {
 
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
-    // Also clear unlocked modules on logout
     orderBumps.forEach(bump => localStorage.removeItem(`module_${bump.id}_unlocked`));
     router.push('/login');
   };
@@ -81,14 +97,13 @@ export default function CoursePage() {
                         <Skeleton className="h-5 w-1/2" />
                     </CardHeader>
                 </Card>
-                <div className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[...Array(5)].map((_, i) => (
                          <Card key={i} className="border-border/50 bg-background/80">
-                            <CardContent className="p-4 sm:p-6 flex justify-between items-center">
-                                <div className='w-full'>
-                                    <Skeleton className="h-6 w-1/2 mb-2" />
-                                    <Skeleton className="h-4 w-3/4" />
-                                </div>
+                            <CardContent className="p-4 sm:p-6">
+                               <Skeleton className="aspect-video w-full mb-4" />
+                               <Skeleton className="h-6 w-3/4 mb-2" />
+                               <Skeleton className="h-4 w-1/2" />
                             </CardContent>
                         </Card>
                     ))}
@@ -115,39 +130,25 @@ export default function CoursePage() {
             <Award className="mx-auto h-12 w-12 text-accent mb-4" />
             <CardTitle className="text-xl sm:text-2xl font-bold">Bem-vindo(a) de volta, Futuro(a) Aprovado(a)!</CardTitle>
             <CardDescription className="mt-2 text-base text-muted-foreground max-w-2xl mx-auto">
-              Você está no caminho certo. Continue focado(a), o sucesso é uma consequência do seu esforço diário.
+              Você está no caminho certo. Explore seus materiais e acelere sua aprovação.
             </CardDescription>
           </CardHeader>
         </Card>
 
-        <div className="space-y-8">
-            {/* Main Content */}
-            <Card className="border-border/50 bg-background/80 overflow-hidden">
-                <CardHeader>
-                    <div className="flex items-center gap-4">
-                        <BookOpen className="w-8 h-8 text-primary flex-shrink-0" />
-                        <div>
-                            <CardTitle className="text-xl font-bold">{mainContent.title}</CardTitle>
-                            <CardDescription className="mt-1">{mainContent.description}</CardDescription>
-                        </div>
-                    </div>
-                </CardHeader>
-                <CardContent>
-                    <div className="aspect-video" dangerouslySetInnerHTML={{ __html: mainContent.iframe }} />
-                </CardContent>
-            </Card>
+        <div>
+            <h2 className="text-2xl font-bold mb-2">Seu Material Principal</h2>
+             <p className="text-muted-foreground mb-6">Comece por aqui! Este é o guia que vai nortear toda a sua preparação.</p>
+            <div className="mb-12">
+                 <ModuleCard module={mainContent} />
+            </div>
 
-            {/* Order Bumps */}
-            {orderBumps.map((bump) => (
-                <UnlockableModule 
-                    key={bump.id}
-                    id={bump.id}
-                    title={bump.title}
-                    description={bump.description}
-                    iframeContent={bump.iframe}
-                    unlockCode={bump.unlockCode}
-                />
-            ))}
+            <h2 className="text-2xl font-bold mb-2">Módulos Complementares</h2>
+            <p className="text-muted-foreground mb-6">Desbloqueie estes arsenais para potencializar ainda mais seus resultados.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {orderBumps.map((bump) => (
+                    <ModuleCard key={bump.id} module={bump} />
+                ))}
+            </div>
         </div>
       </main>
       <Footer />
