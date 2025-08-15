@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { UnlockableModule } from '@/components/curso/unlockable-module';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle as CardTitleComponent } from '@/components/ui/card';
 import { CheckCircle, Lock } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
@@ -57,7 +57,7 @@ export function ModuleCard({ module }: ModuleCardProps) {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
                     </CardHeader>
                     <CardContent className="p-4 relative">
-                        <CardTitle className="text-base font-bold line-clamp-2">{module.title}</CardTitle>
+                        <CardTitleComponent className="text-base font-bold line-clamp-2">{module.title}</CardTitleComponent>
                         <CardDescription className="text-xs mt-1 text-muted-foreground line-clamp-2">{module.description}</CardDescription>
                     </CardContent>
                     <CardFooter className="p-4 pt-0">
@@ -82,6 +82,9 @@ export function ModuleCard({ module }: ModuleCardProps) {
                 </Card>
             </DialogTrigger>
             <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
+                <DialogHeader className="sr-only">
+                    <DialogTitle>{module.title}</DialogTitle>
+                </DialogHeader>
                 <UnlockableModule 
                     id={module.id}
                     title={module.title}
