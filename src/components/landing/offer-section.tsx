@@ -73,8 +73,8 @@ export function OfferSection() {
                         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 border border-border/50 rounded-lg p-4">
                              <ShieldCheck className="w-16 h-16 text-primary flex-shrink-0" />
                              <div>
-                                <h3 className="text-lg sm:text-xl font-bold text-center sm:text-left">Sua Compra é 100% Segura</h3>
-                                <p className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">Você tem <span className="font-bold text-primary">7 dias de garantia incondicional</span>. Se não gostar, devolvemos todo o seu dinheiro sem perguntas. O risco é todo nosso.</p>
+                                <h3 className="text-lg sm:text-xl font-bold text-center sm:text-left">Garantia Incondicional de 7 Dias</h3>
+                                <p className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">Teste o método. Se em 7 dias você não sentir que está no caminho certo para a <span className="font-bold text-primary">aprovação</span>, devolvemos 100% do seu dinheiro. O risco é todo nosso.</p>
                              </div>
                         </div>
                     </div>
