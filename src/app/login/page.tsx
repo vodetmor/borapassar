@@ -37,7 +37,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
-        <header className="container mx-auto px-4 flex justify-center sm:justify-start items-center h-16 sm:h-20">
+        <header className="container mx-auto px-4 flex justify-center items-center h-16 sm:h-20">
              <Button 
                 asChild 
                 variant="outline" 

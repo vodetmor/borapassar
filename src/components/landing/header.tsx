@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 export function Header() {
   return (
     <header className={cn("bg-transparent")}>
-      <div className="container mx-auto px-4 flex justify-center sm:justify-end items-center h-16 sm:h-20">
+      <div className="container mx-auto px-4 flex justify-center items-center h-16 sm:h-20">
         <Button 
           asChild 
           variant="outline" 
