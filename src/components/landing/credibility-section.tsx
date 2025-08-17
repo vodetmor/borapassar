@@ -55,7 +55,7 @@ export function CredibilitySection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
                   {mainProofs.map((proof, index) => (
                     <div key={index} className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
                       <Image
