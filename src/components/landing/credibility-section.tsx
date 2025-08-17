@@ -11,6 +11,7 @@ import Autoplay from "embla-carousel-autoplay"
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const mainProofs = [
   { 
@@ -19,12 +20,12 @@ const mainProofs = [
     hint: "news article brain",
   },
   { 
-    src: "https://i.imgur.com/V49rVot.png", 
+    src: "https://i.imgur.com/jy32QXq.png", 
     alt: "Notícia sobre neurociência e aprendizado",
     hint: "news article",
   },
   { 
-    src: "https://i.imgur.com/xJd5oF2.png", 
+    src: "https://i.imgur.com/xiMA308.png", 
     alt: "Estudo sobre a curva do esquecimento de Ebbinghaus",
     hint: "scientific study curve",
   },
@@ -103,6 +104,14 @@ export function CredibilitySection() {
                             ))}
                         </CarouselContent>
                     </Carousel>
+                </div>
+
+                <div className="mt-16 text-center">
+                    <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full">
+                        <a href="#oferta">
+                            QUERO O MÉTODO COMPROVADO
+                        </a>
+                    </Button>
                 </div>
             </div>
         </section>
