@@ -8,22 +8,16 @@ const pillars = [
     icon: Zap,
     title: '30% - Teoria Estratégica',
     description: 'Foco no essencial. Você vai aprender a identificar e absorver os 20% de conteúdo que geram 80% dos acertos. Chega de perder tempo com o que não cai na prova.',
-    image: 'https://placehold.co/600x400.png',
-    imageHint: 'graph efficiency',
   },
   {
     icon: Brain,
     title: '35% - Prática Ativa (Retrieval)',
     description: 'É aqui que a mágica acontece. Forçamos seu cérebro a buscar a informação ativamente com milhares de exercícios e simulados. É a forma mais poderosa de fixação, comprovada pela neurociência.',
-    image: 'https://i.imgur.com/jy32QXq.png',
-    imageHint: 'retention graph',
   },
   {
     icon: Goal,
     title: '35% - Produção e Revisão',
     description: 'Você vai criar e revisar. Escrever redações, construir flashcards, ensinar o que aprendeu. Isso solidifica o conhecimento de uma forma que a leitura passiva jamais conseguirá.',
-    image: 'https://placehold.co/600x400.png',
-    imageHint: 'study notes',
   },
 ];
 
@@ -36,33 +30,23 @@ export function MethodologySection() {
             A Ciência por Trás da <span className="text-primary">Aprovação</span>
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-            Nosso método não é achismo. É a Metodologia 30-35-35, fundamentada em estudos da USP e na neurociência da aprendizagem. Simples, brutal e absurdamente eficaz.
+            Nosso método não é achismo. É a Metodologia 30-35-35, fundamentada na neurociência da aprendizagem. Simples, brutal e absurdamente eficaz.
           </p>
         </div>
         
-        <div className="space-y-20">
-          {pillars.map((pillar, index) => (
-            <div key={pillar.title} className={`grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center ${index === 1 ? 'md:grid-flow-col-dense' : ''}`}>
-              <div className={`space-y-4 ${index === 1 ? 'md:col-start-2' : ''}`}>
-                <div className="flex items-center gap-4">
-                    <div className="p-3 bg-primary/10 rounded-full">
-                        <pillar.icon className="w-7 h-7 text-primary" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {pillars.map((pillar) => (
+            <Card key={pillar.title} className="bg-background/50 border-border/50 text-center p-6">
+                <CardHeader className="p-0 flex flex-col items-center">
+                    <div className="p-4 bg-primary/10 rounded-full mb-4 inline-flex">
+                        <pillar.icon className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold">{pillar.title}</h3>
-                </div>
-                <p className="text-muted-foreground text-base sm:text-lg">{pillar.description}</p>
-              </div>
-              <div className={`flex items-center justify-center ${index === 1 ? 'md:col-start-1' : ''}`}>
-                 <Image
-                    src={pillar.image}
-                    alt={`Imagem ilustrativa para ${pillar.title}`}
-                    width={600}
-                    height={400}
-                    className="rounded-lg shadow-lg border border-border/50 object-cover"
-                    data-ai-hint={pillar.imageHint}
-                />
-              </div>
-            </div>
+                    <CardTitle className="text-xl font-bold">{pillar.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 mt-4">
+                    <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                </CardContent>
+            </Card>
           ))}
         </div>
 

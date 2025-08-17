@@ -6,6 +6,7 @@ import { FaqSection } from '@/components/landing/faq-section';
 import { Footer } from '@/components/landing/footer';
 import { MethodologySection } from '@/components/landing/methodology-section';
 import { OfferSection } from '@/components/landing/offer-section';
+import { CredibilitySection } from '@/components/landing/credibility-section';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <VslSection />
         <ComparisonSection />
         <MethodologySection />
+        <CredibilitySection />
         <DesireSection />
         <InterestSection />
         <OfferSection />
