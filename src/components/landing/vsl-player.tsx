@@ -1,141 +1,75 @@
 
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { VolumeX, Volume2, Play } from 'lucide-react';
-
-// Define the YouTube Player and Event types for TypeScript
-interface YTPlayer {
-  playVideo: () => void;
-  pauseVideo: () => void;
-  seekTo: (seconds: number, allowSeekAhead: boolean) => void;
-  unMute: () => void;
-  isMuted: () => boolean;
-  getPlayerState: () => number;
-  getIframe: () => HTMLIFrameElement;
-  destroy: () => void;
-}
-
-interface YTEvent {
-  target: YTPlayer;
-  data: number;
-}
-
-declare global {
-  interface Window {
-    onYouTubeIframeAPIReady?: () => void;
-    YT?: {
-      Player: new (id: string, options: any) => YTPlayer;
-       PlayerState: {
-        PLAYING: number;
-        PAUSED: number;
-      };
-    };
-  }
-}
+import { useState, useRef, useEffect } from 'react';
+import { VolumeX, Play } from 'lucide-react';
 
 interface VslPlayerProps {
-  videoId: string;
+  videoSrc: string;
 }
 
-export function VslPlayer({ videoId }: VslPlayerProps) {
-  const playerRef = useRef<YTPlayer | null>(null);
+export function VslPlayer({ videoSrc }: VslPlayerProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isPlayerReady, setIsPlayerReady] = useState(false);
   const hasUnmuted = useRef(false);
 
   useEffect(() => {
-    // Function to initialize the player
-    const createPlayer = () => {
-      if (window.YT && window.YT.Player && document.getElementById('yt-player-vsl')) {
-        playerRef.current = new window.YT.Player('yt-player-vsl', {
-          videoId: videoId,
-          playerVars: {
-            autoplay: 1,
-            mute: 1,
-            controls: 0,
-            rel: 0,
-            showinfo: 0,
-            modestbranding: 1,
-            playsinline: 1,
-            loop: 1,
-            playlist: videoId, // Required for loop to work
-          },
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange,
-          },
-        });
-      }
-    };
-
-    // If the YT API is already loaded, create the player
-    if (window.YT && window.YT.Player) {
-      createPlayer();
-    } else {
-      // Otherwise, set up the callback and load the script
-      window.onYouTubeIframeAPIReady = createPlayer;
-      const tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      if (firstScriptTag && firstScriptTag.parentNode) {
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      }
-    }
-
-    return () => {
-        // Cleanup player on component unmount
-        if (playerRef.current) {
-            playerRef.current.destroy();
-        }
-        window.onYouTubeIframeAPIReady = undefined;
-    };
-  }, [videoId]);
-
-  const onPlayerReady = (event: YTEvent) => {
-    setIsPlayerReady(true);
-    event.target.playVideo();
-  };
-  
-  const onPlayerStateChange = (event: YTEvent) => {
-    if (window.YT && window.YT.PlayerState) {
-        if (event.data === window.YT.PlayerState.PLAYING) {
+    if (videoRef.current) {
+        videoRef.current.muted = true;
+        videoRef.current.play().then(() => {
             setIsPlaying(true);
-        } else {
+        }).catch(error => {
+            // Autoplay was prevented.
+            console.error("Autoplay failed:", error);
             setIsPlaying(false);
-        }
+        });
     }
-  };
-
+  }, []);
 
   const handlePlayerClick = () => {
-    if (!playerRef.current || !isPlayerReady) return;
+    if (!videoRef.current) return;
 
     if (!hasUnmuted.current) {
       // First click: unmute and restart video
       hasUnmuted.current = true;
       setIsMuted(false);
-      playerRef.current.unMute();
-      playerRef.current.seekTo(0, true);
-      playerRef.current.playVideo();
+      videoRef.current.muted = false;
+      videoRef.current.currentTime = 0;
+      videoRef.current.play();
+      setIsPlaying(true);
     } else {
       // Subsequent clicks: toggle play/pause
-      const playerState = playerRef.current.getPlayerState();
-      if (playerState === window.YT.PlayerState.PLAYING) {
-        playerRef.current.pauseVideo();
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
       } else {
-        playerRef.current.playVideo();
+        videoRef.current.pause();
+        setIsPlaying(false);
       }
     }
   };
+  
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+
 
   return (
     <div 
         className="w-full h-full bg-muted rounded-lg shadow-2xl shadow-primary/20 border border-border relative cursor-pointer group"
         onClick={handlePlayerClick}
     >
-      <div id="yt-player-vsl" className="w-full h-full rounded-lg pointer-events-none" />
+      <video
+        ref={videoRef}
+        src={videoSrc}
+        loop
+        playsInline
+        className="w-full h-full rounded-lg pointer-events-none object-cover"
+        onPlay={handlePlay}
+        onPause={handlePause}
+        // We add controls but will try to hide them with CSS, though this is not always reliable
+        controls={false}
+      />
       
       {isMuted && isPlaying && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 transition-opacity duration-300 pointer-events-none">

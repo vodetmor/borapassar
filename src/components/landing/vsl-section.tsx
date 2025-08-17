@@ -17,7 +17,7 @@ export function VslSection() {
         </p>
 
         <div className="mt-8 mb-8 aspect-video max-w-4xl mx-auto">
-            <VslPlayer videoId="dQw4w9WgXcQ" />
+            <VslPlayer videoSrc="https://i.imgur.com/fKBWa6S.mp4" />
         </div>
 
         <div className="mt-10">
