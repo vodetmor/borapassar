@@ -15,8 +15,8 @@ const pillars = [
     icon: Brain,
     title: '35% - Prática Ativa (Retrieval)',
     description: 'É aqui que a mágica acontece. Forçamos seu cérebro a buscar a informação ativamente com milhares de exercícios e simulados. É a forma mais poderosa de fixação, comprovada pela neurociência.',
-    image: 'https://placehold.co/600x400.png',
-    imageHint: 'brain scan',
+    image: 'https://i.imgur.com/jy32QXq.png',
+    imageHint: 'retention graph',
   },
   {
     icon: Goal,
@@ -58,7 +58,7 @@ export function MethodologySection() {
                     alt={`Imagem ilustrativa para ${pillar.title}`}
                     width={600}
                     height={400}
-                    className="rounded-lg shadow-lg border border-border/50"
+                    className="rounded-lg shadow-lg border border-border/50 object-cover"
                     data-ai-hint={pillar.imageHint}
                 />
               </div>
