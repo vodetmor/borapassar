@@ -33,7 +33,6 @@ const mainProofs = [
 const logos = [
   { name: "G1", src: "https://i.imgur.com/WPzDXmR.png", hint: "G1 logo", bgColor: 'bg-[#C4170C]' },
   { name: "USP", src: "https://i.imgur.com/4nTFJ5E.png", hint: "USP logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
-  { name: "Unicamp", src: "https://i.imgur.com/g8n3A0u.png", hint: "Unicamp logo", bgColor: 'bg-white' },
   { name: "Harvard", src: "https://i.imgur.com/rUgRCaW.png", hint: "Harvard logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
   { name: "Forbes", src: "https://i.imgur.com/WZOOTO8.png", hint: "Forbes logo", bgColor: 'bg-black' },
   { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo", bgColor: 'bg-black' },
