@@ -7,15 +7,17 @@ import { Footer } from '@/components/landing/footer';
 import { MethodologySection } from '@/components/landing/methodology-section';
 import { OfferSection } from '@/components/landing/offer-section';
 import { CredibilitySection } from '@/components/landing/credibility-section';
+import { Header } from '@/components/landing/header';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Header />
       <main className="flex-grow">
         <VslSection />
-        <ComparisonSection />
         <CredibilitySection />
         <MethodologySection />
+        <ComparisonSection />
         <DesireSection />
         <InterestSection />
         <OfferSection />
