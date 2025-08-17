@@ -1,5 +1,9 @@
+
+"use client";
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { VslPlayer } from './vsl-player';
 
 export function VslSection() {
   return (
@@ -13,16 +17,7 @@ export function VslSection() {
         </p>
 
         <div className="mt-8 mb-8 aspect-video max-w-4xl mx-auto">
-          <div className="w-full h-full bg-muted rounded-lg flex items-center justify-center shadow-2xl shadow-primary/20 border border-border">
-             <iframe
-                className="w-full h-full rounded-lg"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            ></iframe>
-          </div>
+            <VslPlayer videoId="dQw4w9WgXcQ" />
         </div>
 
         <div className="mt-10">
