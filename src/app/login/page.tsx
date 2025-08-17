@@ -37,16 +37,20 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
+        <header className="container mx-auto px-4 flex justify-center sm:justify-start items-center h-16 sm:h-20">
+             <Button 
+                asChild 
+                variant="outline" 
+                className="border-primary/30 hover:bg-primary/10 hover:text-primary transition-all w-full sm:w-auto text-sm h-10 sm:h-10 px-3 sm:px-4"
+             >
+                <Link href="/">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    <span>Voltar para o site</span>
+                </Link>
+            </Button>
+        </header>
         <main className="flex-grow flex items-center justify-center p-4">
              <div className="w-full max-w-md mx-auto">
-                <div className="mb-4">
-                    <Button asChild variant="ghost" className="text-muted-foreground">
-                        <Link href="/">
-                            <ArrowLeft className="mr-2 h-4 w-4" />
-                            Voltar para o site
-                        </Link>
-                    </Button>
-                </div>
                 <Card className="bg-zinc-900/50 border-primary/20 shadow-2xl shadow-primary/10">
                     <CardHeader className="text-center">
                     <CardTitle className="text-2xl sm:text-3xl font-bold text-primary">Área de Membros</CardTitle>
