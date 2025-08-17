@@ -43,7 +43,8 @@ const orderBumps: Module[] = [
     iframeContent: '<iframe src="https://heyzine.com/flip-book/29dc031449.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'REDACAO1000',
     coverImage: 'https://i.imgur.com/DRLVZOB.png',
-    coverImageHint: 'writing guide'
+    coverImageHint: 'writing guide',
+    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy"
   },
   { 
     id: 'flashcards',
@@ -53,7 +54,8 @@ const orderBumps: Module[] = [
     iframeContent: '<iframe src="https://heyzine.com/flip-book/697f91c274.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'FLASH100',
     coverImage: 'https://i.imgur.com/5ngfrrn.png',
-    coverImageHint: 'flashcards education'
+    coverImageHint: 'flashcards education',
+    downloadLink: "https://drive.google.com/uc?export=download&id=1Fslc7mtwucHxMLwuePvyblUxvkl3lFGu"
   },
   {
     id: 'procrastinacao',
@@ -63,7 +65,8 @@ const orderBumps: Module[] = [
     iframeContent: '<iframe src="https://heyzine.com/flip-book/9c64933456.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'ADEUSPREGUICA',
     coverImage: 'https://i.imgur.com/tqIsznO.png',
-    coverImageHint: 'motivation guide'
+    coverImageHint: 'motivation guide',
+    downloadLink: "https://drive.google.com/uc?export=download&id=17qLysjHtFZBvhHKh9FhMvr0mR8T3tRMJ"
   }
 ];
 
