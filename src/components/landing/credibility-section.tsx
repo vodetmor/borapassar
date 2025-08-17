@@ -13,28 +13,28 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const mainProofs = [
   { 
-    src: "https://placehold.co/1280x720.png", 
+    src: "https://i.imgur.com/lC4B7sH.png", 
     alt: "Capa da pesquisa ou notícia 1",
     hint: "research paper",
   },
   { 
-    src: "https://placehold.co/1280x720.png", 
+    src: "https://i.imgur.com/V49rVot.png", 
     alt: "Capa da pesquisa ou notícia 2",
     hint: "news article",
   },
   { 
-    src: "https://placehold.co/1280x720.png", 
+    src: "https://i.imgur.com/xJd5oF2.png", 
     alt: "Capa da pesquisa ou notícia 3",
     hint: "scientific study",
   },
 ];
 
 const logos = [
-  { name: "G1", src: "https://i.imgur.com/39lpm6D.png", hint: "G1 logo" },
+  { name: "G1", src: "https://i.imgur.com/WPzDXmR.png", hint: "G1 logo" },
   { name: "USP", src: "https://i.imgur.com/j5gU245.png", hint: "USP logo" },
   { name: "Unicamp", src: "https://i.imgur.com/g8n3A0u.png", hint: "Unicamp logo" },
-  { name: "Forbes", src: "https://i.imgur.com/kH1V6w2.png", hint: "Forbes logo" },
-  { name: "Nature", src: "https://i.imgur.com/z6mJ31e.png", hint: "Nature logo" },
+  { name: "Forbes", src: "https://i.imgur.com/WZOOTO8.png", hint: "Forbes logo" },
+  { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo" },
   { name: "UFRGS", src: "https://i.imgur.com/Y1j4G3p.png", hint: "UFRGS logo" },
 ];
 
