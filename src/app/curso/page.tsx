@@ -19,7 +19,8 @@ const mainContent: Module = {
   description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
   iframeContent: '<iframe src="https://heyzine.com/flip-book/75831e3e6e.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
   coverImage: 'https://i.imgur.com/PfHqNDi.png',
-  coverImageHint: 'book cover'
+  coverImageHint: 'book cover',
+  downloadLink: "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z"
 };
 
 const orderBumps: Module[] = [
@@ -31,7 +32,8 @@ const orderBumps: Module[] = [
     iframeContent: '<iframe src="https://heyzine.com/flip-book/0d1da9756f.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     unlockCode: 'PLANO30',
     coverImage: 'https://i.imgur.com/OF7AWQT.png',
-    coverImageHint: 'study plan'
+    coverImageHint: 'study plan',
+    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9'
   },
   { 
     id: 'guiaredacao',

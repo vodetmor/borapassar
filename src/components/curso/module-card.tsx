@@ -17,6 +17,7 @@ export interface Module {
     coverImage: string;
     coverImageHint: string;
     unlockCode?: string;
+    downloadLink?: string;
 }
 
 interface ModuleCardProps {
@@ -82,14 +83,15 @@ export function ModuleCard({ module }: ModuleCardProps) {
                 </Card>
             </DialogTrigger>
             <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
-                <DialogHeader className="sr-only">
-                    <DialogTitle>{module.title}</DialogTitle>
+                <DialogHeader>
+                    <DialogTitle className="sr-only">{module.title}</DialogTitle>
                 </DialogHeader>
                 <UnlockableModule 
                     id={module.id}
                     title={module.title}
                     description={module.description}
                     iframeContent={module.iframeContent}
+                    downloadLink={module.downloadLink}
                     unlockCode={module.unlockCode}
                     isUnlockedInitial={isUnlocked}
                     onUnlockSuccess={handleUnlock}

@@ -15,18 +15,16 @@ interface UnlockableModuleProps {
     title: string;
     description: string;
     iframeContent: string;
+    downloadLink?: string;
     unlockCode?: string;
     isUnlockedInitial: boolean;
     onUnlockSuccess: () => void;
 }
 
-export function UnlockableModule({ id, title, description, iframeContent, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
+export function UnlockableModule({ id, title, description, iframeContent, downloadLink, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
     const [isUnlocked, setIsUnlocked] = useState(isUnlockedInitial);
     const [inputValue, setInputValue] = useState('');
     const [error, setError] = useState('');
-
-    // Hardcoded download link for the main ebook
-    const downloadLink = "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z";
 
     useEffect(() => {
         // This keeps the state in sync if the prop changes (e.g. from localStorage check on parent)
@@ -84,8 +82,8 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
                                     <CardDescription className="mt-1 text-muted-foreground">{isUnlockedInitial ? description : 'Parabéns! Você desbloqueou este conteúdo exclusivo.'}</CardDescription>
                                 </div>
                             </div>
-                             {id === 'ebook' && (
-                                <Button asChild className="sm:hidden">
+                             {downloadLink && (
+                                <Button asChild className="sm:hidden self-start">
                                     <Link href={downloadLink} target="_blank" download>
                                         <Download className="mr-2 h-4 w-4" />
                                         Baixar PDF
@@ -93,7 +91,7 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
                                 </Button>
                             )}
                         </div>
-                        {id === 'ebook' && (
+                        {downloadLink && (
                            <div className="hidden sm:flex justify-center">
                              <Button asChild>
                                 <Link href={downloadLink} target="_blank" download>
