@@ -14,9 +14,9 @@ import { cn } from '@/lib/utils';
 
 const mainProofs = [
   { 
-    src: "https://i.imgur.com/lC4B7sH.png", 
-    alt: "Gráfico de estudo comparando Teste Prático com Estudo Convencional",
-    hint: "research paper graph",
+    src: "https://i.imgur.com/Z6Sia3c.png", 
+    alt: "Notícia do G1 sobre como o cérebro aprende",
+    hint: "news article brain",
   },
   { 
     src: "https://i.imgur.com/V49rVot.png", 
