@@ -14,8 +14,8 @@ export default function Home() {
       <main className="flex-grow">
         <VslSection />
         <ComparisonSection />
-        <MethodologySection />
         <CredibilitySection />
+        <MethodologySection />
         <DesireSection />
         <InterestSection />
         <OfferSection />
