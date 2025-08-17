@@ -10,32 +10,33 @@ import {
 import Autoplay from "embla-carousel-autoplay"
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 const mainProofs = [
   { 
     src: "https://i.imgur.com/lC4B7sH.png", 
-    alt: "Capa da pesquisa ou notícia 1",
-    hint: "research paper",
+    alt: "Gráfico de estudo comparando Teste Prático com Estudo Convencional",
+    hint: "research paper graph",
   },
   { 
     src: "https://i.imgur.com/V49rVot.png", 
-    alt: "Capa da pesquisa ou notícia 2",
+    alt: "Notícia sobre neurociência e aprendizado",
     hint: "news article",
   },
   { 
     src: "https://i.imgur.com/xJd5oF2.png", 
-    alt: "Capa da pesquisa ou notícia 3",
-    hint: "scientific study",
+    alt: "Estudo sobre a curva do esquecimento de Ebbinghaus",
+    hint: "scientific study curve",
   },
 ];
 
 const logos = [
-  { name: "G1", src: "https://i.imgur.com/WPzDXmR.png", hint: "G1 logo" },
-  { name: "USP", src: "https://i.imgur.com/j5gU245.png", hint: "USP logo" },
-  { name: "Unicamp", src: "https://i.imgur.com/g8n3A0u.png", hint: "Unicamp logo" },
-  { name: "Forbes", src: "https://i.imgur.com/WZOOTO8.png", hint: "Forbes logo" },
-  { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo" },
-  { name: "UFRGS", src: "https://i.imgur.com/Y1j4G3p.png", hint: "UFRGS logo" },
+  { name: "G1", src: "https://i.imgur.com/WPzDXmR.png", hint: "G1 logo", bgColor: 'bg-[#C4170C]' },
+  { name: "USP", src: "https://i.imgur.com/4nTFJ5E.png", hint: "USP logo", bgColor: 'bg-white' },
+  { name: "Unicamp", src: "https://i.imgur.com/g8n3A0u.png", hint: "Unicamp logo", bgColor: 'bg-white' },
+  { name: "Forbes", src: "https://i.imgur.com/WZOOTO8.png", hint: "Forbes logo", bgColor: 'bg-black' },
+  { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo", bgColor: 'bg-black' },
+  { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white' },
 ];
 
 export function CredibilitySection() {
@@ -86,14 +87,14 @@ export function CredibilitySection() {
                         <CarouselContent className="-ml-8">
                              {logos.map((logo, index) => (
                                 <CarouselItem key={index} className="pl-8 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
-                                    <div className="flex justify-center items-center h-24 p-4 rounded-lg bg-zinc-800/50">
+                                    <div className={cn("flex justify-center items-center h-24 p-4 rounded-lg", logo.bgColor)}>
                                         <Image 
                                             src={logo.src}
                                             alt={`Logo ${logo.name}`}
                                             width={120}
                                             height={50}
                                             data-ai-hint={logo.hint}
-                                            className="object-contain h-full w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                                            className="object-contain h-full w-auto"
                                         />
                                     </div>
                                 </CarouselItem>
