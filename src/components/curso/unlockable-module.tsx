@@ -94,12 +94,14 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
                             )}
                         </div>
                         {id === 'ebook' && (
-                            <Button asChild className="hidden sm:inline-flex self-start">
+                           <div className="hidden sm:flex justify-center">
+                             <Button asChild>
                                 <Link href={downloadLink} target="_blank" download>
                                     <Download className="mr-2 h-4 w-4" />
                                     Baixar PDF
                                 </Link>
                             </Button>
+                           </div>
                         )}
                     </div>
                 </CardHeader>
