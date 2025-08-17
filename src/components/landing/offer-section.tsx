@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Check, ShieldCheck, Zap, BadgePercent } from "lucide-react";
+import Image from "next/image";
 
 const includedFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
@@ -63,14 +64,20 @@ export function OfferSection() {
                                         QUERO MINHA APROVAÇÃO
                                     </a>
                                 </Button>
-                                <div className="mt-6 flex items-center justify-center gap-2 text-muted-foreground">
-                                    <ShieldCheck className="w-5 h-5 text-green-400" />
-                                    <p className="text-xs font-semibold">Garantia de 7 dias. Risco zero.</p>
-                                </div>
-                                <p className="mt-2 text-xs text-muted-foreground">Pagamento único, acesso vitalício.</p>
+                               
+                                <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício.</p>
                             </div>
                         </div>
                     </Card>
+                    <div className="mt-8 flex justify-center">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 border border-border/50 rounded-lg p-4">
+                             <ShieldCheck className="w-16 h-16 text-primary flex-shrink-0" />
+                             <div>
+                                <h3 className="text-lg sm:text-xl font-bold text-center sm:text-left">Sua Compra é 100% Segura</h3>
+                                <p className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">Você tem <span className="font-bold text-primary">7 dias de garantia incondicional</span>. Se não gostar, devolvemos todo o seu dinheiro sem perguntas. O risco é todo nosso.</p>
+                             </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
