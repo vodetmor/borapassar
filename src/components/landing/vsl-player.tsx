@@ -26,6 +26,10 @@ declare global {
     onYouTubeIframeAPIReady?: () => void;
     YT?: {
       Player: new (id: string, options: any) => YTPlayer;
+       PlayerState: {
+        PLAYING: number;
+        PAUSED: number;
+      };
     };
   }
 }
@@ -38,12 +42,13 @@ export function VslPlayer({ videoId }: VslPlayerProps) {
   const playerRef = useRef<YTPlayer | null>(null);
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlayerReady, setIsPlayerReady] = useState(false);
   const hasUnmuted = useRef(false);
 
   useEffect(() => {
     // Function to initialize the player
     const createPlayer = () => {
-      if (window.YT && window.YT.Player) {
+      if (window.YT && window.YT.Player && document.getElementById('yt-player-vsl')) {
         playerRef.current = new window.YT.Player('yt-player-vsl', {
           videoId: videoId,
           playerVars: {
@@ -89,22 +94,23 @@ export function VslPlayer({ videoId }: VslPlayerProps) {
   }, [videoId]);
 
   const onPlayerReady = (event: YTEvent) => {
+    setIsPlayerReady(true);
     event.target.playVideo();
   };
   
   const onPlayerStateChange = (event: YTEvent) => {
-    // YT.PlayerState.PLAYING === 1
-    // YT.PlayerState.PAUSED === 2
-     if (event.data === window.YT.PlayerState.PLAYING) {
-      setIsPlaying(true);
-    } else {
-      setIsPlaying(false);
+    if (window.YT && window.YT.PlayerState) {
+        if (event.data === window.YT.PlayerState.PLAYING) {
+            setIsPlaying(true);
+        } else {
+            setIsPlaying(false);
+        }
     }
   };
 
 
   const handlePlayerClick = () => {
-    if (!playerRef.current) return;
+    if (!playerRef.current || !isPlayerReady) return;
 
     if (!hasUnmuted.current) {
       // First click: unmute and restart video
