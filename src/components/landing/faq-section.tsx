@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: 'A compra é segura ou vou cair em golpe?',
-    answer: 'Totalmente. Utilizamos a principal plataforma de pagamentos da América Latina, a mesma usada por gigantes do mercado. Seu único foco deve ser em seguir o método rumo à aprovação. Deixe a tecnologia de segurança conosco.',
+    answer: 'Totalmente segura. Utilizamos a principal plataforma de pagamentos, a mesma usada por gigantes do mercado. Seu único foco deve ser em seguir o método rumo à aprovação. Deixe a tecnologia de segurança conosco.',
   },
   {
     question: 'E se eu não gostar? Qual a garantia?',
