@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     question: 'A compra é segura ou vou cair em golpe?',
-    answer: '100% segura. Usamos a principal e mais segura plataforma de pagamentos do Brasil. Seus dados estão blindados com criptografia de nível militar. Sua única preocupação deve ser em estudar.',
+    answer: 'Totalmente. Utilizamos a principal plataforma de pagamentos da América Latina, a mesma usada por gigantes do mercado. Seu único foco deve ser em seguir o método rumo à aprovação. Deixe a tecnologia de segurança conosco.',
   },
   {
     question: 'E se eu não gostar? Qual a garantia?',
