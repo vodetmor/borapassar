@@ -13,17 +13,17 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const mainProofs = [
   { 
-    src: "https://placehold.co/800x1000.png", 
+    src: "https://placehold.co/1280x720.png", 
     alt: "Capa da pesquisa ou notícia 1",
     hint: "research paper",
   },
   { 
-    src: "https://placehold.co/800x1000.png", 
+    src: "https://placehold.co/1280x720.png", 
     alt: "Capa da pesquisa ou notícia 2",
     hint: "news article",
   },
   { 
-    src: "https://placehold.co/800x1000.png", 
+    src: "https://placehold.co/1280x720.png", 
     alt: "Capa da pesquisa ou notícia 3",
     hint: "scientific study",
   },
@@ -55,14 +55,14 @@ export function CredibilitySection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 gap-8 max-w-4xl mx-auto">
                   {mainProofs.map((proof, index) => (
                     <div key={index} className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
                       <Image
                         src={proof.src}
                         alt={proof.alt}
-                        width={800}
-                        height={1000}
+                        width={1280}
+                        height={720}
                         className="rounded-md w-full h-auto object-cover"
                         data-ai-hint={proof.hint}
                       />
