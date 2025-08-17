@@ -38,59 +38,63 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground">
         <main className="flex-grow flex items-center justify-center p-4">
-            <Card className="w-full max-w-md bg-zinc-900/50 border-primary/20 shadow-2xl shadow-primary/10">
-                <CardHeader className="text-center">
-                <CardTitle className="text-2xl sm:text-3xl font-bold text-primary">Área de Membros</CardTitle>
-                <CardDescription className="text-muted-foreground pt-2">Sua jornada rumo à aprovação começa aqui.</CardDescription>
-                </CardHeader>
-                <form onSubmit={handleLogin}>
-                <CardContent className="space-y-4">
-                    {error && (
-                    <Alert variant="destructive">
-                        <AlertCircle className="h-4 w-4" />
-                        <AlertTitle>Erro de Acesso</AlertTitle>
-                        <AlertDescription>{error}</AlertDescription>
-                    </Alert>
-                    )}
-                    <div className="space-y-2">
-                    <Label htmlFor="username">Usuário</Label>
-                    <Input
-                        id="username"
-                        type="text"
-                        placeholder="Digite seu usuário enviado por e-mail"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                        className="bg-background/70 border-border"
-                    />
-                    </div>
-                    <div className="space-y-2">
-                    <Label htmlFor="password">Senha</Label>
-                    <Input
-                        id="password"
-                        type="password"
-                        placeholder="••••••••"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        className="bg-background/70 border-border"
-                    />
-                    </div>
-                </CardContent>
-                <CardFooter className="flex-col gap-4">
-                    <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold animate-pulse-cta">
-                        <LogIn className="mr-2 h-5 w-5" />
-                        Entrar
-                    </Button>
-                    <Button asChild variant="ghost" className="w-full text-muted-foreground">
+             <div className="w-full max-w-md mx-auto">
+                <div className="mb-4">
+                    <Button asChild variant="ghost" className="text-muted-foreground">
                         <Link href="/">
                             <ArrowLeft className="mr-2 h-4 w-4" />
                             Voltar para o site
                         </Link>
                     </Button>
-                </CardFooter>
-                </form>
-            </Card>
+                </div>
+                <Card className="bg-zinc-900/50 border-primary/20 shadow-2xl shadow-primary/10">
+                    <CardHeader className="text-center">
+                    <CardTitle className="text-2xl sm:text-3xl font-bold text-primary">Área de Membros</CardTitle>
+                    <CardDescription className="text-muted-foreground pt-2">Sua jornada rumo à aprovação começa aqui.</CardDescription>
+                    </CardHeader>
+                    <form onSubmit={handleLogin}>
+                    <CardContent className="space-y-4">
+                        {error && (
+                        <Alert variant="destructive">
+                            <AlertCircle className="h-4 w-4" />
+                            <AlertTitle>Erro de Acesso</AlertTitle>
+                            <AlertDescription>{error}</AlertDescription>
+                        </Alert>
+                        )}
+                        <div className="space-y-2">
+                        <Label htmlFor="username">Usuário</Label>
+                        <Input
+                            id="username"
+                            type="text"
+                            placeholder="Digite seu usuário enviado por e-mail"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                            className="bg-background/70 border-border"
+                        />
+                        </div>
+                        <div className="space-y-2">
+                        <Label htmlFor="password">Senha</Label>
+                        <Input
+                            id="password"
+                            type="password"
+                            placeholder="••••••••"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                            className="bg-background/70 border-border"
+                        />
+                        </div>
+                    </CardContent>
+                    <CardFooter>
+                        <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold animate-pulse-cta">
+                            <LogIn className="mr-2 h-5 w-5" />
+                            Entrar
+                        </Button>
+                    </CardFooter>
+                    </form>
+                </Card>
+            </div>
         </main>
       <Footer />
     </div>
