@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Zap, Brain, Goal, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -54,7 +55,7 @@ export function MethodologySection() {
             <p className="text-base sm:text-lg text-muted-foreground mb-8">
                 Técnicas como <strong className="text-foreground">Repetição Espaçada</strong>, <strong className="text-foreground">Recordação Ativa</strong> e <strong className="text-foreground">Técnica Pomodoro</strong> são integradas para otimizar cada minuto do seu estudo.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full">
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full animate-pulse-cta">
                 <a href="#oferta">
                     QUERO APLICAR O MÉTODO
                 </a>

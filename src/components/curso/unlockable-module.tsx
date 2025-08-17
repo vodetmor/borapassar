@@ -85,7 +85,7 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
                         </div>
                         {downloadLink && (
                            <div className="flex justify-center">
-                             <Button asChild className="w-full sm:w-auto">
+                             <Button asChild className="w-full sm:w-auto animate-pulse-cta">
                                 <Link href={downloadLink} target="_blank" download>
                                     <Download className="mr-2 h-4 w-4" />
                                     Baixar PDF
@@ -127,7 +127,7 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
                             required
                             className="flex-grow bg-background/70"
                         />
-                        <Button type="submit" className="bg-primary hover:bg-primary/90">
+                        <Button type="submit" className="bg-primary hover:bg-primary/90 animate-pulse-cta">
                             <Key className="mr-2 h-4 w-4" />
                             Desbloquear
                         </Button>

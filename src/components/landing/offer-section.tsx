@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Check, ArrowRight, Zap, BadgePercent } from "lucide-react";
@@ -55,7 +56,7 @@ export function OfferSection() {
                                 <Button
                                     asChild
                                     size="lg"
-                                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7"
+                                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta"
                                 >
                                     <a href="/obrigado">
                                         

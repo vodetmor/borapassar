@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -76,7 +77,7 @@ export default function LoginPage() {
                     </div>
                 </CardContent>
                 <CardFooter>
-                    <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold">
+                    <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold animate-pulse-cta">
                         <LogIn className="mr-2 h-5 w-5" />
                         Entrar
                     </Button>
