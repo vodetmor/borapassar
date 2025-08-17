@@ -38,6 +38,7 @@ const logos = [
   { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo", bgColor: 'bg-black' },
   { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
   { name: "UnB", src: "https://i.imgur.com/Gs7pAdJ.png", hint: "UnB logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
+  { name: "Unicamp", src: "https://i.imgur.com/bh8WgxT.png", hint: "Unicamp logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
 ];
 
 export function CredibilitySection() {
