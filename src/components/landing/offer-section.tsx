@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Check, ArrowRight, Zap, BadgePercent } from "lucide-react";
+import { Check, ShieldCheck, Zap, BadgePercent } from "lucide-react";
 
 const includedFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
@@ -63,7 +63,11 @@ export function OfferSection() {
                                         QUERO MINHA APROVAÇÃO
                                     </a>
                                 </Button>
-                                <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício. Garantia de 7 dias.</p>
+                                <div className="mt-6 flex items-center justify-center gap-2 text-muted-foreground">
+                                    <ShieldCheck className="w-5 h-5 text-green-400" />
+                                    <p className="text-xs font-semibold">Garantia de 7 dias. Risco zero.</p>
+                                </div>
+                                <p className="mt-2 text-xs text-muted-foreground">Pagamento único, acesso vitalício.</p>
                             </div>
                         </div>
                     </Card>

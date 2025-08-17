@@ -20,7 +20,7 @@ const mainProofs = [
     hint: "news article brain",
   },
   { 
-    src: "https://i.imgur.com/V49rVot.png", 
+    src: "https://i.imgur.com/jy32QXq.png", 
     alt: "Notícia sobre neurociência e aprendizado",
     hint: "news article",
   },
