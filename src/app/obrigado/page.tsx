@@ -56,7 +56,7 @@ export default function ObrigadoPage() {
             <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-8 py-7">
               <Link href="/login">
                 <Rocket className="mr-2 h-5 w-5" />
-                ACESSAR MINHA ÁREA DE MEMBROS
+                ACESSAR ÁREA DE MEMBROS
               </Link>
             </Button>
           </CardContent>
