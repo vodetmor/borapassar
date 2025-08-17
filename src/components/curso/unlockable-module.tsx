@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Lock, Key, Sparkles, AlertCircle, BookOpen, ShoppingCart } from 'lucide-react';
+import { Lock, Key, Sparkles, AlertCircle, BookOpen, ShoppingCart, Download } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import confetti from 'canvas-confetti';
+import Link from 'next/link';
 
 interface UnlockableModuleProps {
     id: string;
@@ -23,6 +24,9 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
     const [isUnlocked, setIsUnlocked] = useState(isUnlockedInitial);
     const [inputValue, setInputValue] = useState('');
     const [error, setError] = useState('');
+
+    // Hardcoded download link for the main ebook
+    const downloadLink = "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z";
 
     useEffect(() => {
         // This keeps the state in sync if the prop changes (e.g. from localStorage check on parent)
@@ -69,14 +73,24 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
         return (
             <Card className="border-0 bg-transparent shadow-none">
                  <CardHeader className="p-6">
-                    <div className="flex items-center gap-4">
-                        <div className="p-3 bg-primary/10 rounded-full">
-                           <BookOpen className="w-6 h-6 text-primary flex-shrink-0" />
+                    <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
+                        <div className="flex items-start gap-4">
+                            <div className="p-3 bg-primary/10 rounded-full mt-1">
+                               <BookOpen className="w-6 h-6 text-primary flex-shrink-0" />
+                            </div>
+                            <div>
+                                <CardTitle className="text-xl font-bold">{title}</CardTitle>
+                                <CardDescription className="mt-1 text-muted-foreground">{isUnlockedInitial ? description : 'Parabéns! Você desbloqueou este conteúdo exclusivo.'}</CardDescription>
+                            </div>
                         </div>
-                        <div>
-                            <CardTitle className="text-xl font-bold">{title}</CardTitle>
-                            <CardDescription className="mt-1 text-muted-foreground">{isUnlockedInitial ? description : 'Parabéns! Você desbloqueou este conteúdo exclusivo.'}</CardDescription>
-                        </div>
+                        {id === 'ebook' && (
+                             <Button asChild>
+                                <Link href={downloadLink} target="_blank" download>
+                                    <Download className="mr-2 h-4 w-4" />
+                                    Baixar PDF
+                                </Link>
+                            </Button>
+                        )}
                     </div>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
@@ -145,3 +159,5 @@ export function UnlockableModule({ id, title, description, iframeContent, unlock
         </Card>
     );
 }
+
+    
