@@ -9,6 +9,25 @@ import {
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
+
+const mainProofs = [
+  { 
+    src: "https://placehold.co/800x1000.png", 
+    alt: "Capa da pesquisa ou notícia 1",
+    hint: "research paper",
+  },
+  { 
+    src: "https://placehold.co/800x1000.png", 
+    alt: "Capa da pesquisa ou notícia 2",
+    hint: "news article",
+  },
+  { 
+    src: "https://placehold.co/800x1000.png", 
+    alt: "Capa da pesquisa ou notícia 3",
+    hint: "scientific study",
+  },
+];
 
 const logos = [
   { name: "G1", src: "https://i.imgur.com/39lpm6D.png", hint: "G1 logo" },
@@ -32,9 +51,29 @@ export function CredibilitySection() {
                         Aprovado pela Ciência, Validado pela Mídia
                     </h2>
                     <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-                        Nosso método não foi inventado. Ele é baseado em pesquisas de neurocientistas e recomendado por especialistas nas maiores universidades e portais de notícias.
+                        Nosso método não foi inventado. Ele é baseado em pesquisas de neurocientistas e recomendado por especialistas. Veja as provas.
                     </p>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+                  {mainProofs.map((proof, index) => (
+                    <div key={index} className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
+                      <Image
+                        src={proof.src}
+                        alt={proof.alt}
+                        width={800}
+                        height={1000}
+                        className="rounded-md w-full h-auto object-cover"
+                        data-ai-hint={proof.hint}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center mt-16 mb-12">
+                    <p className="text-lg text-muted-foreground">E recomendado por especialistas nas maiores universidades e portais de notícias:</p>
+                </div>
+                
                 <div className="w-full">
                      <Carousel
                         plugins={[plugin.current]}
