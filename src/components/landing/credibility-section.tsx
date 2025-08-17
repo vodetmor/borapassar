@@ -32,11 +32,11 @@ const mainProofs = [
 
 const logos = [
   { name: "G1", src: "https://i.imgur.com/WPzDXmR.png", hint: "G1 logo", bgColor: 'bg-[#C4170C]' },
-  { name: "USP", src: "https://i.imgur.com/4nTFJ5E.png", hint: "USP logo", bgColor: 'bg-white' },
+  { name: "USP", src: "https://i.imgur.com/4nTFJ5E.png", hint: "USP logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
   { name: "Unicamp", src: "https://i.imgur.com/g8n3A0u.png", hint: "Unicamp logo", bgColor: 'bg-white' },
   { name: "Forbes", src: "https://i.imgur.com/WZOOTO8.png", hint: "Forbes logo", bgColor: 'bg-black' },
   { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo", bgColor: 'bg-black' },
-  { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white' },
+  { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
 ];
 
 export function CredibilitySection() {
@@ -91,10 +91,10 @@ export function CredibilitySection() {
                                         <Image 
                                             src={logo.src}
                                             alt={`Logo ${logo.name}`}
-                                            width={120}
-                                            height={50}
+                                            width={150}
+                                            height={60}
                                             data-ai-hint={logo.hint}
-                                            className="object-contain h-full w-auto"
+                                            className={cn("object-contain h-full w-auto", (logo as any).customClass)}
                                         />
                                     </div>
                                 </CarouselItem>
