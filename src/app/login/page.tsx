@@ -8,8 +8,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { AlertCircle, LogIn } from 'lucide-react';
+import { AlertCircle, LogIn, ArrowLeft } from 'lucide-react';
 import { Footer } from '@/components/landing/footer';
+import Link from 'next/link';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
@@ -76,10 +77,16 @@ export default function LoginPage() {
                     />
                     </div>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex-col gap-4">
                     <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-lg font-bold animate-pulse-cta">
                         <LogIn className="mr-2 h-5 w-5" />
                         Entrar
+                    </Button>
+                    <Button asChild variant="ghost" className="w-full text-muted-foreground">
+                        <Link href="/">
+                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            Voltar para o site
+                        </Link>
                     </Button>
                 </CardFooter>
                 </form>
