@@ -20,7 +20,7 @@ const mainProofs = [
     hint: "news article brain",
   },
   { 
-    src: "https://i.imgur.com/jy32QXq.png", 
+    src: "https://i.imgur.com/V49rVot.png", 
     alt: "Notícia sobre neurociência e aprendizado",
     hint: "news article",
   },
@@ -39,7 +39,6 @@ const logos = [
   { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo", bgColor: 'bg-black' },
   { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
   { name: "UnB", src: "https://i.imgur.com/Gs7pAdJ.png", hint: "UnB logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
-  { name: "Unicamp", src: "https://i.imgur.com/bh8WgxT.png", hint: "Unicamp logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
 ];
 
 export function CredibilitySection() {
@@ -52,7 +51,7 @@ export function CredibilitySection() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-                        Aprovado pela Ciência, Validado pela Mídia
+                        Aprovado pela Ciência, Validado pela <span className="text-primary">Mídia</span>
                     </h2>
                     <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
                         Nosso método não foi inventado. Ele é baseado em pesquisas de neurocientistas e recomendado por especialistas. Veja as provas.
