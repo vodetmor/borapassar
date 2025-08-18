@@ -18,6 +18,7 @@ export interface Module {
     coverImageHint: string;
     unlockCode?: string;
     downloadLink?: string;
+    checkoutLink?: string;
 }
 
 interface ModuleCardProps {
@@ -92,6 +93,7 @@ export function ModuleCard({ module }: ModuleCardProps) {
                     description={module.description}
                     iframeContent={module.iframeContent}
                     downloadLink={module.downloadLink}
+                    checkoutLink={module.checkoutLink}
                     unlockCode={module.unlockCode}
                     isUnlockedInitial={isUnlocked}
                     onUnlockSuccess={handleUnlock}

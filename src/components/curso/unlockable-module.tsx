@@ -16,12 +16,13 @@ interface UnlockableModuleProps {
     description: string;
     iframeContent: string;
     downloadLink?: string;
+    checkoutLink?: string;
     unlockCode?: string;
     isUnlockedInitial: boolean;
     onUnlockSuccess: () => void;
 }
 
-export function UnlockableModule({ id, title, description, iframeContent, downloadLink, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
+export function UnlockableModule({ id, title, description, iframeContent, downloadLink, checkoutLink, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
     const [isUnlocked, setIsUnlocked] = useState(isUnlockedInitial);
     const [inputValue, setInputValue] = useState('');
     const [error, setError] = useState('');
@@ -141,19 +142,18 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
                     )}
                 </div>
 
-                {unlockCode && (
+                {checkoutLink && (
                      <div className="max-w-xl mx-auto mt-6 text-center">
                         <p className="text-sm text-center mb-2 text-muted-foreground">Ou garanta seu acesso agora mesmo:</p>
                         <Button
+                            asChild
                             size="lg"
                             className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto animate-pulse-cta"
-                            onClick={() => {
-                                // Futuramente, redirecionar para o checkout
-                                alert('Redirecionando para o checkout...');
-                            }}
                         >
-                            <ShoppingCart className="mr-2 h-5 w-5" />
-                            QUERO ADQUIRIR AGORA!
+                            <Link href={checkoutLink} target="_blank">
+                                <ShoppingCart className="mr-2 h-5 w-5" />
+                                QUERO ADQUIRIR AGORA!
+                            </Link>
                         </Button>
                     </div>
                 )}

@@ -33,7 +33,8 @@ const orderBumps: Module[] = [
     unlockCode: 'PLANO30',
     coverImage: 'https://i.imgur.com/OF7AWQT.png',
     coverImageHint: 'study plan',
-    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9'
+    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9',
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/Wvgq1WzSlavU00YXGM4D'
   },
   { 
     id: 'guiaredacao',
@@ -44,7 +45,8 @@ const orderBumps: Module[] = [
     unlockCode: 'REDACAO1000',
     coverImage: 'https://i.imgur.com/DRLVZOB.png',
     coverImageHint: 'writing guide',
-    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy"
+    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy",
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/XAnrZKK7YTLasLGhIJEk'
   },
   { 
     id: 'flashcards',
@@ -55,7 +57,8 @@ const orderBumps: Module[] = [
     unlockCode: 'FLASH100',
     coverImage: 'https://i.imgur.com/5ngfrrn.png',
     coverImageHint: 'flashcards education',
-    downloadLink: "https://drive.google.com/uc?export=download&id=1Fslc7mtwucHxMLwuePvyblUxvkl3lFGu"
+    downloadLink: "https://drive.google.com/uc?export=download&id=1Fslc7mtwucHxMLwuePvyblUxvkl3lFGu",
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/utkXMnLyl71TRxkJ1JeM'
   },
   {
     id: 'procrastinacao',
@@ -66,7 +69,8 @@ const orderBumps: Module[] = [
     unlockCode: 'ADEUSPREGUICA',
     coverImage: 'https://i.imgur.com/tqIsznO.png',
     coverImageHint: 'motivation guide',
-    downloadLink: "https://drive.google.com/uc?export=download&id=17qLysjHtFZBvhHKh9FhMvr0mR8T3tRMJ"
+    downloadLink: "https://drive.google.com/uc?export=download&id=17qLysjHtFZBvhHKh9FhMvr0mR8T3tRMJ",
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/J8rriInSgPPY2ZJU7A95'
   }
 ];
 
