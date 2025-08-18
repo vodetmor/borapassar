@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import { WhatsAppButton } from '@/components/landing/whatsapp-button';
 
 export const metadata: Metadata = {
   title: 'Guia Definitivo',
@@ -21,6 +22,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         {children}
+        <WhatsAppButton />
         <Toaster/>
       </body>
     </html>
