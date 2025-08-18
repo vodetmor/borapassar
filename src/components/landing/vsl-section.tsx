@@ -10,7 +10,7 @@ export function VslSection() {
     <section id="vsl" className="pt-16 pb-12 sm:pt-24 sm:pb-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-          Aprovação <span className="text-red-500">Não é Sorte</span>, é <span className="text-primary">Método</span>
+          O Método Secreto que Tira Alunos da <span className="text-red-500">Procrastinação</span> e os Coloca no Topo da Lista de <span className="text-primary">Aprovados</span>
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
           Se você está cansado de se sentir um fracasso nos estudos, este vídeo de 1 minuto vai te mostrar a chave para destravar seu potencial. Assista AGORA.
