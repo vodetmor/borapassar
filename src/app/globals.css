@@ -58,6 +58,15 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .selectable-text {
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10+ */
+    user-select: text; /* Standard syntax */
+  }
+
+  .non-selectable {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ */
     user-select: none; /* Standard syntax */

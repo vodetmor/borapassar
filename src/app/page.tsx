@@ -11,7 +11,7 @@ import { Header } from '@/components/landing/header';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
       <Header />
       <main className="flex-grow">
         <VslSection />

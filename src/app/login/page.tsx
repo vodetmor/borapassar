@@ -36,7 +36,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
         <header className="container mx-auto px-4 flex justify-center items-center h-16 sm:h-20">
              <Button 
                 asChild 

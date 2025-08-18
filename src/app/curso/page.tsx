@@ -124,7 +124,7 @@ export default function CoursePage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
       <main className="flex-grow container mx-auto px-4 py-8 sm:py-16">
         <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4 mb-8">
             <h1 className="text-2xl sm:text-4xl font-bold text-primary">Área do Aluno Estratégico</h1>

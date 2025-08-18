@@ -32,7 +32,7 @@ export default function EntregaFlashcardsPage() {
     }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground">
+    <div className="flex flex-col min-h-screen bg-background text-foreground selectable-text">
       <main className="flex-grow flex items-center justify-center p-4">
         <Card className="w-full max-w-2xl bg-zinc-900/50 border-primary/20 shadow-2xl shadow-primary/10 text-center animate-in fade-in-50 zoom-in-95 duration-500">
           <CardHeader className="p-6 sm:p-8">
