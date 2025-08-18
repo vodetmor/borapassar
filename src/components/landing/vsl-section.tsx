@@ -9,7 +9,7 @@ export function VslSection() {
     <section id="vsl" className="pt-16 pb-12 sm:pt-24 sm:pb-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-          <span className="text-primary">O Método Secreto</span> Que Quem Passa No ENEM <span className="text-red-500">Não Quer</span> Que Você Descubra
+          <span className="text-primary">Método Secreto</span> que Quem Passa no <span className="text-red-500">ENEM</span> Não Quer que Você Descubra
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
           O sistema de ensino quer que você continue pagando cursinho. Assista a este vídeo e descubra como burlar esse jogo.
