@@ -1,3 +1,4 @@
+
 "use client"
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
@@ -17,35 +18,35 @@ const testimonials = [
     name: 'Letícia M.',
     avatar: 'LM',
     stars: 5,
-    text: 'Eu estava completamente estagnado nos 700 pontos em matemática. O método de focar nos 20% de conteúdo que mais caem e a prática ativa simplesmente viraram o jogo. Saí de 400 para 850. o método é incrível.',
+    text: 'Eu era um fracasso em matemática, não passava de 400 pontos. Com a estratégia dos 20%, saltei para 850. Parece que descobri um cheat code para o ENEM.',
     image: 'https://i.imgur.com/0bC4Hzq.png',
   },
   {
     name: 'Mariana A.',
     avatar: 'MA',
     stars: 5,
-    text: 'Minha maior barreira era a redação. O guia me deu um modelo tão claro e eficiente que passei de 600 para 960 em dois meses. A sensação de segurança na hora de escrever não tem preço. Surreal.',
+    text: 'Minha redação era lixo. Peguei o modelo do guia, apliquei e tirei 960. Dois meses. Só isso. Sem inspiração, só método.',
     image: 'https://i.imgur.com/CVyyH1u.png',
   },
   {
     name: 'Roberto F.',
     avatar: 'RF',
-    stars: 4,
-    text: 'O método é denso e exige disciplina. Não é uma fórmula mágica. Nas primeiras semanas achei pesado, mas depois que peguei o ritmo, meus resultados nos simulados melhoraram 70%. Valeu a pena, mas esteja preparado para se dedicar.',
+    stars: 5,
+    text: 'Ignore quem diz que é "fácil". Não é. É um treinamento de choque. Mas o resultado é indiscutível: meu desempenho nos simulados melhorou 70%. Ou você se dedica, ou continua perdendo.',
     image: 'https://i.imgur.com/vwg85CN.png',
   },
   {
     name: 'Juliana S.',
     avatar: 'JS',
     stars: 5,
-    text: 'Conciliar trabalho e estudo era meu pesadelo. Os planos de estudo adaptáveis e a técnica Pomodoro integrada me deram o foco que faltava. Em 3 meses, meu desempenho dobrou. Aprovada em Medicina!',
+    text: 'Trabalho o dia todo. Achei que não tinha chance. Os planos de execução me fizeram render em 2 horas o que eu não rendia em 6. Passei em Medicina.',
     image: 'https://i.imgur.com/YrKQVJD.png',
   },
   {
     name: 'Lucas T.',
     avatar: 'LT',
     stars: 5,
-    text: 'Sempre tive "branco" na hora da prova. A parte de blindagem emocional e as técnicas de respiração do guia salvaram minha prova. Cheguei calmo e confiante. Fez toda a diferença no meu resultado final.',
+    text: 'Eu travava na hora da prova. O "branco" era meu maior inimigo. O módulo de blindagem emocional me salvou. Cheguei na prova frio, calculista e destruí.',
     image: 'https://i.imgur.com/bXRWc4p.png',
   },
 ];
