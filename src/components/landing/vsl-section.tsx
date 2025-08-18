@@ -12,7 +12,7 @@ export function VslSection() {
           Método Secreto que Quem Passa no ENEM Não Quer que Você Descubra
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
-          O sistema de ensino quer que você continue pagando cursinho. Assista a este vídeo e descubra como burlar esse jogo.
+          Existe um atalho para a aprovação que a maioria esconde a sete chaves. Assista ao vídeo e veja como usar esse segredo a seu favor.
         </p>
 
         <div className="mt-8 mb-8 aspect-video max-w-4xl mx-auto">
