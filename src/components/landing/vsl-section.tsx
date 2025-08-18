@@ -2,7 +2,6 @@
 "use client";
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
 import { VslPlayer } from './vsl-player';
 
 export function VslSection() {
@@ -10,10 +9,10 @@ export function VslSection() {
     <section id="vsl" className="pt-16 pb-12 sm:pt-24 sm:pb-16 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
-          O Método Secreto que <span className="text-primary">TE TIRA</span> da Procrastinação e <span className="text-primary">TE PÕE</span> na Lista de Aprovados
+          O Método Secreto que <span className="text-red-500">TE ARRANCA</span> da Procrastinação e <span className="text-primary">TE JOGA</span> na Lista de Aprovados
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
-          Cansado de se sentir um fracasso nos estudos? Este vídeo de 1 minuto te mostra o atalho. Assista e veja como virar o jogo.
+          Cansado de se sentir um fracasso? Assista a este vídeo e descubra o atalho que os nerds não querem que você saiba.
         </p>
 
         <div className="mt-8 mb-8 aspect-video max-w-4xl mx-auto">
