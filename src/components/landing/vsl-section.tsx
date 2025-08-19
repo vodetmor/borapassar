@@ -25,7 +25,7 @@ export function VslSection() {
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-primary/20 px-8 py-4 sm:px-10 sm:py-6 animate-pulse-cta"
           >
-            <a href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
+            <a href="#oferta">
               QUERO O MÉTODO SECRETO
             </a>
           </Button>
