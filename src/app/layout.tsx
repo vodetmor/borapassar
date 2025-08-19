@@ -42,11 +42,11 @@ export default function RootLayout({
             src={`https://www.facebook.com/tr?id=2208909466198043&ev=PageView&noscript=1`}
           />
       </noscript>
-        <React.Suspense fallback={null}>
-          <MetaPixel />
-        </React.Suspense>
       </head>
       <body className="font-body antialiased">
+        <React.Suspense fallback={null}>
+            <MetaPixel />
+        </React.Suspense>
         {children}
         <WhatsAppButton />
         <Toaster/>

@@ -1,20 +1,19 @@
-
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
-export const MetaPixel = () => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+export function MetaPixel() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   useEffect(() => {
-    // The 'init' and first 'PageView' are fired in layout.tsx.
-    // This useEffect is responsible for tracking subsequent page views in the SPA.
+    // This effect is responsible for tracking subsequent page views in the SPA.
+    // The initial 'PageView' is fired in the script in layout.tsx.
     if (typeof window !== 'undefined' && (window as any).fbq) {
       (window as any).fbq('track', 'PageView');
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams])
 
-  return null;
-};
+  return null
+}
