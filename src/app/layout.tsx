@@ -44,9 +44,7 @@ export default function RootLayout({
       </noscript>
       </head>
       <body className="font-body antialiased">
-        <React.Suspense fallback={null}>
-            <MetaPixel />
-        </React.Suspense>
+        <MetaPixel />
         {children}
         <WhatsAppButton />
         <Toaster/>
