@@ -37,7 +37,6 @@ export default function RootLayout({
               s.parentNode.insertBefore(t,s)}(window, document,'script',
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '2208909466198043');
-              fbq('track', 'PageView');
             `,
           }}
         />
@@ -51,10 +50,10 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="font-body antialiased">
-        <MetaPixelEvents />
         {children}
         <WhatsAppButton />
         <Toaster/>
+        <MetaPixelEvents />
       </body>
     </html>
   );

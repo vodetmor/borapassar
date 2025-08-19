@@ -4,7 +4,6 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
-// Define window.fbq for TypeScript
 declare global {
   interface Window {
     fbq: (...args: any[]) => void;
@@ -17,7 +16,7 @@ export function MetaPixelEvents() {
 
   useEffect(() => {
     // This hook is used to track page views on client-side navigation.
-    // The initial PageView is fired by the script in layout.tsx.
+    // The base script in layout.tsx already handles the initial PageView.
     // This is only for subsequent route changes.
     if (typeof window.fbq === 'function') {
       window.fbq('track', 'PageView');
