@@ -15,12 +15,14 @@ export function MetaPixelEvents() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // This hook is used to track page views on client-side navigation.
-    // The base script in layout.tsx already handles the initial PageView.
-    // This is only for subsequent route changes.
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'PageView');
+    // The initial PageView is fired by the script in layout.tsx
+    // This useEffect is to track subsequent client-side navigations
+    if (typeof window.fbq !== 'function') {
+      return;
     }
+    // We trigger a page view event every time the path changes.
+    window.fbq('track', 'PageView');
+
   }, [pathname, searchParams]);
 
   // This component doesn't render anything to the DOM
