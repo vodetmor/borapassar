@@ -16,10 +16,16 @@ export function MetaPixelEvents() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // The `fbq` function might not be available immediately, so we check for its existence.
-    // The initial PageView is fired by the script in `layout.tsx`, so this hook handles subsequent navigations.
+    // The `fbq` function might not be available immediately on the first load, 
+    // as it's initialized by the script in layout.tsx.
+    // The initial PageView is fired there. This effect handles subsequent navigations.
     if (typeof window.fbq === 'function') {
-      window.fbq('track', 'PageView');
+      // We wrap this in a try-catch block to prevent any errors from crashing the app.
+      try {
+        window.fbq('track', 'PageView');
+      } catch (error) {
+        console.error('Failed to track PageView with Meta Pixel:', error);
+      }
     }
   }, [pathname, searchParams]); // The effect runs every time the path or search parameters change.
 

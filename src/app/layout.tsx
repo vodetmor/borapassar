@@ -3,10 +3,9 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { WhatsAppButton } from '@/components/landing/whatsapp-button';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Script from 'next/script';
 import { MetaPixelEvents } from '@/components/meta-pixel';
-import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Guia Definitivo',
@@ -24,7 +23,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
-        <script
+        <Script
+          id="meta-pixel"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               !function(f,b,e,v,n,t,s)
