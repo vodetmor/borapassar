@@ -1,53 +1,28 @@
 "use client";
 
 import { usePathname, useSearchParams } from "next/navigation";
-import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-export function MetaPixel() {
+// Define window.fbq for TypeScript
+declare global {
+  interface Window {
+    fbq: (...args: any[]) => void;
+  }
+}
+
+export function MetaPixelEvents() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const [pixelLoaded, setPixelLoaded] = useState(false);
 
   useEffect(() => {
-    if (!pixelLoaded) return;
-
-    const url = pathname + searchParams.toString();
-    // Subsequent page views
-    if (window.fbq) {
-        window.fbq('track', 'PageView');
+    // This hook is used to track page views on client-side navigation.
+    // The initial PageView is fired by the script in layout.tsx.
+    // This is only for subsequent route changes.
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', 'PageView');
     }
-  }, [pathname, searchParams, pixelLoaded]);
+  }, [pathname, searchParams]);
 
-  return (
-    <>
-      <Script
-        id="fb-pixel"
-        strategy="afterInteractive"
-        onLoad={() => setPixelLoaded(true)}
-        dangerouslySetInnerHTML={{
-          __html: `
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2208909466198043');
-            fbq('track', 'PageView');
-          `,
-        }}
-      />
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src="https://www.facebook.com/tr?id=2208909466198043&ev=PageView&noscript=1"
-        />
-      </noscript>
-    </>
-  );
+  // This component doesn't render anything to the DOM
+  return null;
 }

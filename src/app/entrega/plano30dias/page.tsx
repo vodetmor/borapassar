@@ -13,7 +13,7 @@ import { sendServerEvent } from '@/services/meta-api';
 export default function EntregaPlano30DiasPage() {
 
     useEffect(() => {
-        // Fire conversion event
+        // Fire conversion event on the server
         sendServerEvent('Purchase', {
             value: 9.90, // Example value for this specific product
             currency: 'BRL',

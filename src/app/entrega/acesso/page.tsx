@@ -13,7 +13,7 @@ import { sendServerEvent } from '@/services/meta-api';
 export default function EntregaAcessoPage() {
 
     useEffect(() => {
-        // Fire conversion event
+        // Fire conversion event on the server
         sendServerEvent('Purchase', {
             value: 17.90,
             currency: 'BRL',
