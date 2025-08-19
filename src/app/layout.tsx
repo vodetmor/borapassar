@@ -51,12 +51,12 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="font-body antialiased">
-        {children}
-        <WhatsAppButton />
-        <Toaster/>
         <React.Suspense fallback={null}>
           <MetaPixelEvents />
         </React.Suspense>
+        {children}
+        <WhatsAppButton />
+        <Toaster/>
       </body>
     </html>
   );

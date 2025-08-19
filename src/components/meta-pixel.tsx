@@ -15,7 +15,7 @@ export function MetaPixelEvents() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // The first page view is tracked in layout.tsx
+    // The first page view is tracked in layout.tsx's script
     // This hook is for tracking subsequent client-side navigations
     if (typeof window.fbq !== 'function') {
       return;
