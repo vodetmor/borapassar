@@ -1,8 +1,12 @@
 
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Check, ShieldCheck, Zap, BadgePercent } from "lucide-react";
 import Image from "next/image";
+import { sendServerEvent } from "@/services/meta-api";
+import Link from "next/link";
 
 const includedFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
@@ -14,6 +18,14 @@ const includedFeatures = [
 ]
 
 export function OfferSection() {
+    
+    const handleInitiateCheckout = () => {
+        sendServerEvent('InitiateCheckout', {
+            value: 17.90,
+            currency: 'BRL',
+        }).catch(console.error);
+    }
+
     return (
         <section id="oferta" className="py-16 sm:py-24 bg-secondary">
             <div className="container mx-auto px-4">
@@ -57,12 +69,13 @@ export function OfferSection() {
                                 <Button
                                     asChild
                                     size="lg"
+                                    onClick={handleInitiateCheckout}
                                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta"
                                 >
-                                    <a href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
+                                    <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
                                         
                                         QUERO MINHA APROVAÇÃO
-                                    </a>
+                                    </Link>
                                 </Button>
                                
                                 <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício.</p>

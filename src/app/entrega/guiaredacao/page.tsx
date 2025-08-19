@@ -8,10 +8,17 @@ import { Key, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
+import { sendServerEvent } from '@/services/meta-api';
 
 export default function EntregaGuiaRedacaoPage() {
 
     useEffect(() => {
+        // Fire conversion event
+        sendServerEvent('Purchase', {
+            value: 9.90, // Example value for this specific product
+            currency: 'BRL',
+        }).catch(console.error);
+
         const duration = 3 * 1000;
         const animationEnd = Date.now() + duration;
         const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
