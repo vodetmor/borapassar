@@ -8,22 +8,10 @@ import { CheckCircle, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { sendServerEvent } from '@/services/meta-api';
 
 export default function ObrigadoPage() {
 
     useEffect(() => {
-        // Track client-side event
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'Purchase', { currency: "BRL", value: 17.90 });
-        }
-        
-        // Track server-side event
-        sendServerEvent('Purchase', {
-            value: 17.90,
-            currency: 'BRL',
-        }).catch(console.error);
-
         // Fire confetti on mount
         const duration = 3 * 1000;
         const animationEnd = Date.now() + duration;
