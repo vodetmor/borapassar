@@ -3,26 +3,30 @@
 
 import { usePathname, useSearchParams } from 'next/navigation'
 import Script from 'next/script'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID || '2208909466198043';
 
 export const MetaPixel = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    if (!isLoaded) return;
+    
     // This hook is used to send a PageView event every time the route changes.
     if (typeof window !== 'undefined' && (window as any).fbq) {
         (window as any).fbq('track', 'PageView');
     }
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, isLoaded]);
 
   return (
     <>
       <Script
         id="meta-pixel-script"
         strategy="afterInteractive"
+        onLoad={() => setIsLoaded(true)}
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)
