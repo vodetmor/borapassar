@@ -20,6 +20,12 @@ const includedFeatures = [
 export function OfferSection() {
     
     const handleInitiateCheckout = () => {
+        // Track client-side event with Facebook Pixel
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'InitiateCheckout');
+        }
+
+        // Track server-side event with Conversions API
         sendServerEvent('InitiateCheckout', {
             value: 17.90,
             currency: 'BRL',

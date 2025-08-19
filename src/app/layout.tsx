@@ -54,7 +54,9 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <Toaster/>
-        <MetaPixelEvents />
+        <React.Suspense fallback={null}>
+          <MetaPixelEvents />
+        </React.Suspense>
       </body>
     </html>
   );

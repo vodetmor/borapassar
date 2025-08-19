@@ -13,6 +13,11 @@ import { sendServerEvent } from '@/services/meta-api';
 export default function EntregaPlano30DiasPage() {
 
     useEffect(() => {
+        // Track client-side event
+        if (typeof window.fbq === 'function') {
+          window.fbq('track', 'Purchase', { currency: "BRL", value: 9.90 });
+        }
+        
         // Fire conversion event on the server
         sendServerEvent('Purchase', {
             value: 9.90, // Example value for this specific product
