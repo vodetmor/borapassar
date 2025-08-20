@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Check, ShieldCheck, Zap, BadgePercent } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { sendServerEvent } from "@/services/meta-api";
 
 const includedFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
@@ -23,8 +22,6 @@ export function OfferSection() {
         if (typeof window.fbq === 'function') {
             window.fbq('track', 'InitiateCheckout');
         }
-        // Também podemos enviar um evento de servidor aqui se desejado, 
-        // mas para InitiateCheckout o evento do cliente costuma ser suficiente.
     };
 
     return (

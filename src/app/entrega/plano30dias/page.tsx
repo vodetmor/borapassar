@@ -8,29 +8,10 @@ import { Key, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { sendServerEvent } from '@/services/meta-api';
 
 export default function EntregaPlano30DiasPage() {
 
     useEffect(() => {
-        const eventId = `purchase_plano30dias_${Date.now()}`;
-
-        // Client-side event
-        if (typeof window.fbq === 'function') {
-            window.fbq('track', 'Purchase', { value: 9.90, currency: 'BRL' }, { eventID: eventId });
-        }
-        
-        // Server-side event
-        sendServerEvent({
-            eventName: 'Purchase',
-            eventId: eventId,
-            value: 9.90,
-            currency: 'BRL',
-            contentName: 'Plano de Estudo Express: Sua Rotina de 30 Dias para o ENEM',
-            contentId: 'plano30dias'
-        }).catch(console.error);
-
-
         const duration = 3 * 1000;
         const animationEnd = Date.now() + duration;
         const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
