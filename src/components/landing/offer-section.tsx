@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Check, ShieldCheck, Zap, BadgePercent } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { sendServerEvent } from "@/services/meta-api";
 
 const includedFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
@@ -17,6 +18,14 @@ const includedFeatures = [
 ]
 
 export function OfferSection() {
+
+    const handleInitiateCheckout = () => {
+        if (typeof window.fbq === 'function') {
+            window.fbq('track', 'InitiateCheckout');
+        }
+        // Também podemos enviar um evento de servidor aqui se desejado, 
+        // mas para InitiateCheckout o evento do cliente costuma ser suficiente.
+    };
 
     return (
         <section id="oferta" className="py-16 sm:py-24 bg-secondary">
@@ -62,6 +71,7 @@ export function OfferSection() {
                                     asChild
                                     size="lg"
                                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta"
+                                    onClick={handleInitiateCheckout}
                                 >
                                     <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
                                         

@@ -8,10 +8,29 @@ import { Key, Rocket } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
 import confetti from 'canvas-confetti';
+import { sendServerEvent } from '@/services/meta-api';
 
 export default function EntregaProcrastinacaoPage() {
 
     useEffect(() => {
+        const eventId = `purchase_procrastinacao_${Date.now()}`;
+
+        // Client-side event
+        if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Purchase', { value: 9.90, currency: 'BRL' }, { eventID: eventId });
+        }
+        
+        // Server-side event
+        sendServerEvent({
+            eventName: 'Purchase',
+            eventId: eventId,
+            value: 9.90,
+            currency: 'BRL',
+            contentName: 'Como Vencer a Procrastinação em 7 Dias',
+            contentId: 'procrastinacao'
+        }).catch(console.error);
+
+
         const duration = 3 * 1000;
         const animationEnd = Date.now() + duration;
         const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
