@@ -14,11 +14,19 @@ import { Header } from '@/components/landing/header';
 import Script from 'next/script';
 import { useEffect } from 'react';
 
+declare global {
+    interface Window {
+        fbq?: (...args: any[]) => void;
+        _fbq_loaded?: boolean;
+    }
+}
+
 export default function Home() {
   
   useEffect(() => {
-    if (window.fbq) {
+    if (window.fbq && !window._fbq_loaded) {
       window.fbq('track', 'PageView');
+      window._fbq_loaded = true;
     }
   }, []);
 
@@ -37,9 +45,6 @@ export default function Home() {
           fbq('init', '2208909466198043');
         `}
       </Script>
-      <noscript>
-        <img height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=2208909466198043&ev=PageView&noscript=1" />
-      </noscript>
       <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
         <Header />
         <main className="flex-grow">
