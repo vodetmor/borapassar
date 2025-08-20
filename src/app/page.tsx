@@ -1,3 +1,6 @@
+
+"use client";
+
 import { VslSection } from '@/components/landing/vsl-section';
 import { InterestSection } from '@/components/landing/interest-section';
 import { ComparisonSection } from '@/components/landing/comparison-section';
@@ -9,11 +12,19 @@ import { OfferSection } from '@/components/landing/offer-section';
 import { CredibilitySection } from '@/components/landing/credibility-section';
 import { Header } from '@/components/landing/header';
 import Script from 'next/script';
+import { useEffect } from 'react';
 
 export default function Home() {
+  
+  useEffect(() => {
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, []);
+
   return (
     <>
-      <Script id="meta-pixel" strategy="afterInteractive">
+      <Script id="meta-pixel-init" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,7 +35,6 @@ export default function Home() {
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '2208909466198043');
-          fbq('track', 'PageView');
         `}
       </Script>
       <noscript>
