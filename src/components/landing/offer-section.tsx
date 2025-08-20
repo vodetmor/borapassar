@@ -18,12 +18,6 @@ const includedFeatures = [
 
 export function OfferSection() {
 
-    const handleInitiateCheckout = () => {
-        if (typeof window.fbq === 'function') {
-            window.fbq('track', 'InitiateCheckout');
-        }
-    };
-
     return (
         <section id="oferta" className="py-16 sm:py-24 bg-secondary">
             <div className="container mx-auto px-4">
@@ -68,7 +62,6 @@ export function OfferSection() {
                                     asChild
                                     size="lg"
                                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta"
-                                    onClick={handleInitiateCheckout}
                                 >
                                     <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
                                         

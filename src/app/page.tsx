@@ -8,22 +8,42 @@ import { MethodologySection } from '@/components/landing/methodology-section';
 import { OfferSection } from '@/components/landing/offer-section';
 import { CredibilitySection } from '@/components/landing/credibility-section';
 import { Header } from '@/components/landing/header';
+import Script from 'next/script';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
-      <Header />
-      <main className="flex-grow">
-        <VslSection />
-        <CredibilitySection />
-        <MethodologySection />
-        <ComparisonSection />
-        <DesireSection />
-        <InterestSection />
-        <OfferSection />
-        <FaqSection />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Script id="meta-pixel" strategy="afterInteractive">
+        {`
+          !function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '2208909466198043');
+          fbq('track', 'PageView');
+        `}
+      </Script>
+      <noscript>
+        <img height="1" width="1" style={{display: 'none'}} src="https://www.facebook.com/tr?id=2208909466198043&ev=PageView&noscript=1" />
+      </noscript>
+      <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
+        <Header />
+        <main className="flex-grow">
+          <VslSection />
+          <CredibilitySection />
+          <MethodologySection />
+          <ComparisonSection />
+          <DesireSection />
+          <InterestSection />
+          <OfferSection />
+          <FaqSection />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }
