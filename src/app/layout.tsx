@@ -36,6 +36,14 @@ export default function RootLayout({
           fbq('init', '2208909466198043');
         `}
       </Script>
+      <Script
+          id="utmify-script"
+          src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+          data-utmify-prevent-xcod-sck
+          data-utmify-prevent-subids
+          async
+          defer
+        ></Script>
       </head>
       <body className="font-body antialiased">
         {children}
