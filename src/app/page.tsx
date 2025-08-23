@@ -10,6 +10,7 @@ import { OfferSection } from '@/components/landing/offer-section';
 import { CredibilitySection } from '@/components/landing/credibility-section';
 import { Header } from '@/components/landing/header';
 import { MindMapsPreviewSection } from '@/components/landing/mindmaps-preview-section';
+import { SubjectDetailsSection } from '@/components/landing/subject-details-section';
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
         <ComparisonSection />
         <DesireSection />
         <MindMapsPreviewSection />
+        <SubjectDetailsSection />
         <InterestSection />
         <OfferSection />
         <FaqSection />
