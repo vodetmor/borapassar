@@ -26,6 +26,7 @@ export function ComparisonSection() {
               <p>❌ Lê, relê, grifa... e esquece tudo na semana seguinte.</p>
               <p>❌ Tira 500 em matemática e acha que é "de humanas".</p>
               <p>❌ Zera a redação por não saber argumentar.</p>
+              <p>❌ Perde horas caçando resumos genéricos na internet.</p>
               <p>❌ Chega na prova exausto, ansioso e sem confiança.</p>
               <p className="text-sm sm:text-lg font-bold text-center text-red-400 pt-4">Resultado: Mais um ano de cursinho em vão.</p>
             </CardContent>
@@ -42,6 +43,7 @@ export function ComparisonSection() {
               <p>✅ Aplica Active Recall e fixa o conteúdo para sempre.</p>
               <p>✅ Salta para +800 em matemática usando a lógica certa.</p>
               <p>✅ Tira +960 na redação com um modelo validado.</p>
+              <p>✅ Absorve um ano de matéria em horas com Mapas Mentais.</p>
               <p>✅ Chega na prova calmo, no controle e pronto para destruir.</p>
                <p className="text-sm sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado na Universidade dos Sonhos.</p>
             </CardContent>
