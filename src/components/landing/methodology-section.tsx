@@ -18,7 +18,7 @@ const pillars = [
   {
     icon: Goal,
     title: '35% - Produção e Revisão',
-    description: 'Você vai criar e revisar. Escrever redações, construir flashcards, ensinar o que aprendeu. Isso solidifica o conhecimento de uma forma que a leitura passiva jamais conseguirá.',
+    description: 'Você vai criar e revisar. Escrever redações, construir flashcards e usar nossos +400 mapas mentais para solidificar o conhecimento de uma forma que a leitura passiva jamais conseguirá.',
   },
 ];
 
