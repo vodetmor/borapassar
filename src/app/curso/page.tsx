@@ -22,46 +22,40 @@ const mainContent: Module[] = [
     coverImage: 'https://i.imgur.com/PfHqNDi.png',
     coverImageHint: 'book cover',
     downloadLink: "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z"
-  }
-];
-
-const orderBumps: Module[] = [
+  },
   {
     id: 'mapasmentais',
-    type: 'order_bump',
+    type: 'main',
     title: "+400 Resumos em Mapas Mentais",
     description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
     iframeContent: '',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection',
-    downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing',
-    unlockCode: 'MAPAS400',
-    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/m4P4sM3nt4is'
+    downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing'
   },
   { 
     id: 'plano30dias',
-    type: 'order_bump',
+    type: 'main',
     title: "Plano de Estudo Express: Sua Rotina de 30 Dias para o ENEM",
-    description: "Desbloqueie o cronograma de 30 dias para uma preparação focada e de alta performance.",
+    description: "Seu cronograma de 30 dias para uma preparação focada e de alta performance.",
     iframeContent: '<iframe src="https://heyzine.com/flip-book/0d1da9756f.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
-    unlockCode: 'PLANO30',
     coverImage: 'https://i.imgur.com/OF7AWQT.png',
     coverImageHint: 'study plan',
-    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9',
-    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/Wvgq1WzSlavU00YXGM4D'
+    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9'
   },
   { 
     id: 'guiaredacao',
-    type: 'order_bump',
+    type: 'main',
     title: "Guia para Redação de Vestibulares", 
-    description: "Acesse o guia completo para estruturar redações nota 1000 em qualquer vestibular.",
+    description: "O guia completo para estruturar redações nota 1000 em qualquer vestibular.",
     iframeContent: '<iframe src="https://heyzine.com/flip-book/29dc031449.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
-    unlockCode: 'REDACAO1000',
     coverImage: 'https://i.imgur.com/DRLVZOB.png',
     coverImageHint: 'writing guide',
-    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy",
-    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/XAnrZKK7YTLasLGhIJEk'
+    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy"
   },
+];
+
+const orderBumps: Module[] = [
   { 
     id: 'flashcards',
     type: 'order_bump',
@@ -165,7 +159,7 @@ export default function CoursePage() {
         <div>
             <h2 className="text-2xl font-bold mb-2">Seu Material Principal</h2>
              <p className="text-muted-foreground mb-6">Comece por aqui! Este é o guia que vai nortear toda a sua preparação.</p>
-            <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {mainContent.map((module) => (
                     <ModuleCard key={module.id} module={module} />
                 ))}

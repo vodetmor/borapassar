@@ -16,10 +16,9 @@ const planoCompletoFeatures = [
 ];
 
 const bonusFeatures = [
-    { name: 'BÔNUS #1: Plano de Estudo Express 30 Dias', value: 'R$27' },
-    { name: 'BÔNUS #2: Guia para Redação de Vestibulares', value: 'R$27' },
-    { name: 'BÔNUS #3: Flashcards Essenciais ENEM', value: 'R$17' },
-    { name: 'BÔNUS #4: Guia "Vencendo a Procrastinação"', value: 'R$17' },
+    { name: 'BÔNUS #1: +400 Mapas Mentais do ENEM', value: 'R$67' },
+    { name: 'BÔNUS #2: Plano de Estudo Express 30 Dias', value: 'R$27' },
+    { name: 'BÔNUS #3: Guia para Redação de Vestibulares', value: 'R$27' },
 ]
 
 export function OfferSection() {
@@ -62,12 +61,8 @@ export function OfferSection() {
                                             </li>
                                         ))}
                                     </ul>
-                                     <p className="text-sm text-muted-foreground mb-4">E você ainda leva <span className="font-bold text-primary">GRÁTIS</span> 5 bônus exclusivos:</p>
+                                     <p className="text-sm text-muted-foreground mb-4">E você ainda leva <span className="font-bold text-primary">GRÁTIS</span> 3 bônus exclusivos:</p>
                                      <ul className="space-y-3 text-muted-foreground">
-                                        <li className="flex items-start gap-3">
-                                            <Map className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                                            <span className="text-sm sm:text-base text-foreground">BÔNUS PREMIUM: +400 Mapas Mentais do ENEM <span className="line-through text-muted-foreground/80">(R$67)</span></span>
-                                        </li>
                                         {bonusFeatures.map((bonus) => (
                                             <li key={bonus.name} className="flex items-start gap-3">
                                                 <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -111,10 +106,6 @@ export function OfferSection() {
                                 </ul>
                                 <p className="text-sm text-muted-foreground mb-4">O que você <span className="font-bold text-red-400">NÃO</span> leva neste plano:</p>
                                  <ul className="space-y-3 text-muted-foreground">
-                                     <li className="flex items-start gap-3">
-                                        <X className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
-                                        <span className="text-sm sm:text-base text-muted-foreground/80">BÔNUS PREMIUM: +400 Mapas Mentais do ENEM</span>
-                                    </li>
                                     {bonusFeatures.map((bonus) => (
                                         <li key={bonus.name} className="flex items-start gap-3">
                                             <X className="h-5 w-5 text-red-400 flex-shrink-0 mt-0.5" />
