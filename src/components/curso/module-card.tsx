@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 
 export interface Module {
     id: string;
-    type: 'main' | 'order_bump';
+    type: 'main' | 'order_bump' | 'premium';
     title: string;
     description: string;
     iframeContent: string;
@@ -31,7 +31,7 @@ export function ModuleCard({ module }: ModuleCardProps) {
     
     useEffect(() => {
         setIsClient(true);
-        if (module.type === 'order_bump') {
+        if (module.type === 'order_bump' || module.type === 'premium') {
             const unlockedStatus = localStorage.getItem(`module_${module.id}_unlocked`);
             if (unlockedStatus === 'true') {
                 setIsUnlocked(true);

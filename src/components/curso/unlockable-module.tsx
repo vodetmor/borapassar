@@ -22,47 +22,56 @@ interface UnlockableModuleProps {
     onUnlockSuccess: () => void;
 }
 
+const PREMIUM_CODE = 'ALUNOESTRATEGICO';
+const PREMIUM_MODULE_IDS = ['mapasmentais', 'plano30dias', 'guiaredacao'];
+
 export function UnlockableModule({ id, title, description, iframeContent, downloadLink, checkoutLink, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
     const [isUnlocked, setIsUnlocked] = useState(isUnlockedInitial);
     const [inputValue, setInputValue] = useState('');
     const [error, setError] = useState('');
 
     useEffect(() => {
-        // This keeps the state in sync if the prop changes (e.g. from localStorage check on parent)
         setIsUnlocked(isUnlockedInitial);
     }, [isUnlockedInitial]);
+
+    const triggerConfetti = () => {
+        const duration = 2 * 1000;
+        const animationEnd = Date.now() + duration;
+        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+        function randomInRange(min: number, max: number) {
+            return Math.random() * (max - min) + min;
+        }
+        const interval = setInterval(function() {
+            const timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) return clearInterval(interval);
+            const particleCount = 50 * (timeLeft / duration);
+            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+            confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+        }, 250);
+    };
 
     const handleUnlock = (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
+        
+        const code = inputValue.trim().toUpperCase();
 
-        if (unlockCode && inputValue.trim().toUpperCase() === unlockCode) {
+        if (code === PREMIUM_CODE) {
+            // Unlock all premium modules
+            PREMIUM_MODULE_IDS.forEach(moduleId => {
+                localStorage.setItem(`module_${moduleId}_unlocked`, 'true');
+            });
+            setIsUnlocked(true);
+            onUnlockSuccess(); // This only updates the current card, a page reload would be needed to update others. A simple solution is to force a reload.
+            triggerConfetti();
+            setTimeout(() => window.location.reload(), 500); // Reload to reflect changes on all cards
+
+        } else if (unlockCode && code === unlockCode) {
+            // Unlock a single module (e.g., order bumps)
             localStorage.setItem(`module_${id}_unlocked`, 'true');
             setIsUnlocked(true);
-            onUnlockSuccess(); // Notify parent component
-            
-            // Fire confetti
-            const duration = 2 * 1000;
-            const animationEnd = Date.now() + duration;
-            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
-
-            function randomInRange(min: number, max: number) {
-                return Math.random() * (max - min) + min;
-            }
-
-            const interval = setInterval(function() {
-                const timeLeft = animationEnd - Date.now();
-
-                if (timeLeft <= 0) {
-                    return clearInterval(interval);
-                }
-
-                const particleCount = 50 * (timeLeft / duration);
-                // since particles fall down, start a bit higher than random
-                confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-                confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-            }, 250);
-
+            onUnlockSuccess();
+            triggerConfetti();
         } else {
             setError('Código de acesso inválido. Verifique e tente novamente.');
         }

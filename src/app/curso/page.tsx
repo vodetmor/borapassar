@@ -23,37 +23,47 @@ const mainContent: Module[] = [
     coverImageHint: 'book cover',
     downloadLink: "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z"
   },
+];
+
+const premiumModules: Module[] = [
   {
     id: 'mapasmentais',
-    type: 'main',
+    type: 'premium',
     title: "+400 Resumos em Mapas Mentais",
     description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
     iframeContent: '',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection',
-    downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing'
+    downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing',
+    unlockCode: 'ALUNOESTRATEGICO',
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
   },
   { 
     id: 'plano30dias',
-    type: 'main',
+    type: 'premium',
     title: "Plano de Estudo Express: Sua Rotina de 30 Dias para o ENEM",
     description: "Seu cronograma de 30 dias para uma preparação focada e de alta performance.",
     iframeContent: '<iframe src="https://heyzine.com/flip-book/0d1da9756f.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     coverImage: 'https://i.imgur.com/OF7AWQT.png',
     coverImageHint: 'study plan',
-    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9'
+    downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9',
+    unlockCode: 'ALUNOESTRATEGICO',
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
   },
   { 
     id: 'guiaredacao',
-    type: 'main',
+    type: 'premium',
     title: "Guia para Redação de Vestibulares", 
     description: "O guia completo para estruturar redações nota 1000 em qualquer vestibular.",
     iframeContent: '<iframe src="https://heyzine.com/flip-book/29dc031449.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     coverImage: 'https://i.imgur.com/DRLVZOB.png',
     coverImageHint: 'writing guide',
-    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy"
+    downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy",
+    unlockCode: 'ALUNOESTRATEGICO',
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
   },
 ];
+
 
 const orderBumps: Module[] = [
   { 
@@ -96,8 +106,7 @@ export default function CoursePage() {
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    orderBumps.forEach(bump => localStorage.removeItem(`module_${bump.id}_unlocked`));
+    localStorage.clear(); // Limpa tudo para garantir
     router.push('/login');
   };
 
@@ -164,9 +173,18 @@ export default function CoursePage() {
                     <ModuleCard key={module.id} module={module} />
                 ))}
             </div>
+            
+            <h2 className="text-2xl font-bold mb-2">Módulos Premium</h2>
+            <p className="text-muted-foreground mb-6">Desbloqueie os bônus do Plano Estrategista Completo com seu código de acesso.</p>
+             <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {premiumModules.map((module) => (
+                    <ModuleCard key={module.id} module={module} />
+                ))}
+            </div>
+
 
             <h2 className="text-2xl font-bold mb-2">Módulos Complementares</h2>
-            <p className="text-muted-foreground mb-6">Desbloqueie estes arsenais para potencializar ainda mais seus resultados.</p>
+            <p className="text-muted-foreground mb-6">Comprou um material extra? Desbloqueie seu arsenal para potencializar ainda mais seus resultados.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {orderBumps.map((bump) => (
                     <ModuleCard key={bump.id} module={bump} />
