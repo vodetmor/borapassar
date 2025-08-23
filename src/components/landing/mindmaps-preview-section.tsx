@@ -1,7 +1,7 @@
 
 "use client"
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
@@ -20,7 +20,6 @@ const mindMaps = [
   { src: 'https://studyet.com.br/wp-content/uploads/2024/03/8-731x1024.jpg', alt: 'Mapa Mental de Ecologia', hint: 'mind map ecology' },
   { src: 'https://studyet.com.br/wp-content/uploads/2024/03/7-731x1024.jpg', alt: 'Mapa Mental de Química Orgânica', hint: 'mind map chemistry' },
   { src: 'https://studyet.com.br/wp-content/uploads/2024/03/2-731x1024.jpg', alt: 'Mapa Mental de História do Brasil', hint: 'mind map history' },
-  { src: 'https://studyet.com.br/wp-content/uploads/2/024/03/3-731x1024.jpg', alt: 'Mapa Mental de Geografia', hint: 'mind map geography' },
   { src: 'https://studyet.com.br/wp-content/uploads/2024/03/1-731x1024.jpg', alt: 'Mapa Mental de Filosofia', hint: 'mind map philosophy' },
   { src: 'https://studyet.com.br/wp-content/uploads/2024/03/4-732x1024.jpg', alt: 'Mapa Mental de Física', hint: 'mind map physics' },
   { src: 'https://studyet.com.br/wp-content/uploads/2024/03/5-731x1024.jpg', alt: 'Mapa Mental de Literatura', hint: 'mind map literature' },
