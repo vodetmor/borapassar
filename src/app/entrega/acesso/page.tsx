@@ -71,8 +71,8 @@ export default function EntregaAcessoPage() {
                  <div>
                     <p className="font-bold text-lg text-muted-foreground">Senha:</p>
                     <div className="flex items-center gap-2">
-                         <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md flex-grow">#Aprovado2024!</p>
-                         <Button variant="outline" size="icon" onClick={() => handleCopy('#Aprovado2024!', 'password')}>
+                         <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md flex-grow">#Aprovado2025!#</p>
+                         <Button variant="outline" size="icon" onClick={() => handleCopy('#Aprovado2025!#', 'password')}>
                             {copiedField === 'password' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                         </Button>
                     </div>
