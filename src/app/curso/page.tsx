@@ -28,7 +28,7 @@ const mainContent: Module[] = [
     type: 'main',
     title: "+400 Resumos em Mapas Mentais",
     description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
-    iframeContent: '<iframe src="https://trove.so/embed/s/mUaS8lJk1rS" style="width:100%;height:480px;border-radius:8px;border:none" allowfullscreen></iframe>',
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/e439561081.html" style="border:0px;width:100%;height:480px" allowFullScreen="true"></iframe>',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection'
   }
