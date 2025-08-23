@@ -29,7 +29,7 @@ export function MindMapsPreviewSection() {
                                     src={preview.src}
                                     alt={preview.alt}
                                     width={800}
-                                    height={800}
+                                    height={1200}
                                     className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                                     data-ai-hint={preview.hint}
                                 />
