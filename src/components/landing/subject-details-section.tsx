@@ -23,7 +23,7 @@ import {
   Percent,
   Scale,
 } from "lucide-react";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button } from "../ui/button";
 
 const subjects = [
@@ -119,11 +119,27 @@ const subjects = [
 
 export function SubjectDetailsSection() {
   const tabsListRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState(subjects[0].value);
 
-  const scroll = (scrollOffset: number) => {
+  const handleArrowClick = (direction: 'left' | 'right') => {
+    const scrollAmount = direction === 'left' ? -200 : 200;
     if (tabsListRef.current) {
-      tabsListRef.current.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+      tabsListRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
+
+    const currentIndex = subjects.findIndex(
+      (subject) => subject.value === activeTab
+    );
+    let nextIndex;
+
+    if (direction === 'left') {
+      nextIndex = currentIndex === 0 ? subjects.length - 1 : currentIndex - 1;
+    } else {
+      nextIndex = currentIndex === subjects.length - 1 ? 0 : currentIndex + 1;
+    }
+    
+    const nextTabValue = subjects[nextIndex].value;
+    setActiveTab(nextTabValue);
   };
 
   return (
@@ -140,13 +156,13 @@ export function SubjectDetailsSection() {
           </p>
         </div>
 
-        <Tabs defaultValue="biologia" className="w-full">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="relative flex items-center">
                  <Button
                     variant="outline"
                     size="icon"
                     className="h-full absolute left-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-l"
-                    onClick={() => scroll(-200)}
+                    onClick={() => handleArrowClick('left')}
                 >
                     <ChevronLeft className="w-5 h-5" />
                 </Button>
@@ -168,7 +184,7 @@ export function SubjectDetailsSection() {
                     variant="outline"
                     size="icon"
                     className="h-full absolute right-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-r"
-                    onClick={() => scroll(200)}
+                    onClick={() => handleArrowClick('right')}
                 >
                     <ChevronRight className="w-5 h-5" />
                 </Button>
