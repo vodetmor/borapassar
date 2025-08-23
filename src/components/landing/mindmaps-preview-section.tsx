@@ -44,12 +44,25 @@ export function MindMapsPreviewSection() {
                         grabCursor={true}
                         centeredSlides={true}
                         loop={true}
-                        slidesPerView={3}
                         coverflowEffect={{
                             rotate: 0,
                             stretch: 0,
                             depth: 100,
                             modifier: 2.5,
+                        }}
+                        breakpoints={{
+                            320: {
+                                slidesPerView: 1.2,
+                                spaceBetween: 10,
+                            },
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 20,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
                         }}
                         pagination={{ el: '.swiper-pagination', clickable: true }}
                         navigation={{
