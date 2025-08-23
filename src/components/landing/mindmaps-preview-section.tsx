@@ -1,4 +1,3 @@
-
 "use client"
 
 import React from 'react';
@@ -82,13 +81,13 @@ export function MindMapsPreviewSection() {
                                 <Dialog>
                                     <DialogTrigger asChild>
                                         <Card className="overflow-hidden cursor-pointer group border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20 h-full bg-zinc-900/50">
-                                            <CardContent className="p-2 h-full">
+                                            <CardContent className="p-0">
                                                 <Image
                                                     src={map.src}
                                                     alt={map.alt}
                                                     width={800}
                                                     height={1200}
-                                                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                                     data-ai-hint={map.hint}
                                                 />
                                             </CardContent>
