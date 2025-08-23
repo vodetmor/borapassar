@@ -35,7 +35,7 @@ export function MindMapsPreviewSection() {
                         <span className="text-primary">BÔNUS PREMIUM:</span> O Arsenal Visual com +400 Mapas Mentais
                     </h2>
                     <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-                        Absorva o conteúdo de um ano inteiro em poucas horas. Nossos mapas mentais transformam tópicos complexos em resumos visuais fáceis de memorizar.
+                        Esse arsenal, que era vendido separadamente por <span className="line-through">R$67</span>, agora é seu <span className="font-bold text-primary">DE GRAÇA</span> ao garantir seu acesso ao plano principal. Absorva o conteúdo de um ano inteiro em poucas horas.
                     </p>
                 </div>
                 <div className="relative flex justify-center items-center">
