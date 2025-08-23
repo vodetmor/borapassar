@@ -66,7 +66,7 @@ export function OfferSection() {
                                      <ul className="space-y-3 text-muted-foreground">
                                         <li className="flex items-start gap-3">
                                             <Map className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                                            <span className="text-sm sm:text-base text-foreground">BÔNUS PREMIUM: +400 Mapas Mentais do ENEM <span className="line-through text-muted-foreground/80">(R$47)</span></span>
+                                            <span className="text-sm sm:text-base text-foreground">BÔNUS PREMIUM: +400 Mapas Mentais do ENEM <span className="line-through text-muted-foreground/80">(R$67)</span></span>
                                         </li>
                                         {bonusFeatures.map((bonus) => (
                                             <li key={bonus.name} className="flex items-start gap-3">
