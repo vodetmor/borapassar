@@ -37,7 +37,7 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
     const triggerConfetti = () => {
         const duration = 2 * 1000;
         const animationEnd = Date.now() + duration;
-        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1001 }; // zIndex higher than dialog
         function randomInRange(min: number, max: number) {
             return Math.random() * (max - min) + min;
         }
@@ -57,14 +57,16 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
         const code = inputValue.trim().toUpperCase();
 
         if (code === PREMIUM_CODE) {
-            // Unlock all premium modules
+            // Unlock all premium modules at once
+            localStorage.setItem('module_premium_unlocked', 'true');
             PREMIUM_MODULE_IDS.forEach(moduleId => {
                 localStorage.setItem(`module_${moduleId}_unlocked`, 'true');
             });
             setIsUnlocked(true);
-            onUnlockSuccess(); // This only updates the current card, a page reload would be needed to update others. A simple solution is to force a reload.
             triggerConfetti();
-            setTimeout(() => window.location.reload(), 500); // Reload to reflect changes on all cards
+            onUnlockSuccess();
+            // Reload to reflect changes on all cards and show the modules
+            setTimeout(() => window.location.reload(), 500); 
 
         } else if (unlockCode && code === unlockCode) {
             // Unlock a single module (e.g., order bumps)
@@ -188,3 +190,5 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
         </Card>
     );
 }
+
+    

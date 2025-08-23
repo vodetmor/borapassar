@@ -5,12 +5,14 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { LogOut, Award } from 'lucide-react';
+import { LogOut, Award, Star, Key } from 'lucide-react';
 import { Footer } from '@/components/landing/footer';
 import { Skeleton } from '@/components/ui/skeleton';
 import { ModuleCard } from '@/components/curso/module-card';
 import type { Module } from '@/components/curso/module-card';
 import { CardContent } from '@/components/ui/card';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { UnlockableModule } from '@/components/curso/unlockable-module';
 
 const mainContent: Module[] = [
   {
@@ -95,11 +97,15 @@ const orderBumps: Module[] = [
 export default function CoursePage() {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [arePremiumModulesUnlocked, setArePremiumModulesUnlocked] = useState(false);
 
   useEffect(() => {
     const authStatus = localStorage.getItem('isAuthenticated');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
+      // Check if premium modules are unlocked
+      const premiumUnlocked = localStorage.getItem('module_premium_unlocked') === 'true';
+      setArePremiumModulesUnlocked(premiumUnlocked);
     } else {
       router.replace('/login');
     }
@@ -108,6 +114,12 @@ export default function CoursePage() {
   const handleLogout = () => {
     localStorage.clear(); // Limpa tudo para garantir
     router.push('/login');
+  };
+
+  const handlePremiumUnlock = () => {
+      setArePremiumModulesUnlocked(true);
+      // This will cause a page reload via the UnlockableModule component,
+      // which will then read the new state from localStorage.
   };
 
   if (isAuthenticated === null) {
@@ -176,11 +188,42 @@ export default function CoursePage() {
             
             <h2 className="text-2xl font-bold mb-2">Módulos Premium</h2>
             <p className="text-muted-foreground mb-6">Desbloqueie os bônus do Plano Estrategista Completo com seu código de acesso.</p>
-             <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {premiumModules.map((module) => (
-                    <ModuleCard key={module.id} module={module} />
-                ))}
-            </div>
+             
+            {arePremiumModulesUnlocked ? (
+                 <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {premiumModules.map((module) => (
+                        <ModuleCard key={module.id} module={module} />
+                    ))}
+                </div>
+            ) : (
+                <Dialog>
+                    <DialogTrigger asChild>
+                        <Card className="mb-12 border-primary/50 border-2 bg-primary/10 text-center p-8 cursor-pointer hover:bg-primary/20 transition-all transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
+                            <Star className="mx-auto h-12 w-12 text-yellow-400 mb-4" />
+                            <CardTitle className="text-2xl sm:text-3xl font-bold">Você é um Aluno Estratégico?</CardTitle>
+                            <CardDescription className="mt-2 text-base text-primary-foreground/80 max-w-2xl mx-auto">
+                                Clique aqui e insira seu código de acesso para liberar todos os bônus do plano premium.
+                            </CardDescription>
+                            <Button className="mt-6 animate-pulse-cta" size="lg">
+                                <Key className="mr-2 h-5 w-5" />
+                                Liberar Acesso Premium
+                            </Button>
+                        </Card>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
+                         <UnlockableModule 
+                            id="premium"
+                            title="Acesso Premium"
+                            description="Insira seu código para desbloquear todos os módulos premium."
+                            iframeContent=""
+                            unlockCode="ALUNOESTRATEGICO"
+                            isUnlockedInitial={false}
+                            onUnlockSuccess={handlePremiumUnlock}
+                            checkoutLink="https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7"
+                        />
+                    </DialogContent>
+                </Dialog>
+            )}
 
 
             <h2 className="text-2xl font-bold mb-2">Módulos Complementares</h2>
@@ -196,3 +239,5 @@ export default function CoursePage() {
     </div>
   );
 }
+
+    
