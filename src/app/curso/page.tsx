@@ -28,10 +28,9 @@ const mainContent: Module[] = [
     type: 'main',
     title: "+400 Resumos em Mapas Mentais",
     description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
-    iframeContent: '<iframe src="https://heyzine.com/flip-book/ac841a1a51.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
+    iframeContent: '<iframe src="https://drive.google.com/embeddedfolderview?id=1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o#grid" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
-    coverImageHint: 'mind maps collection',
-    downloadLink: "https://drive.google.com/uc?export=download&id=14VpYIu-I1P2-Fk-V0mQo0oR3eW1xG5vE"
+    coverImageHint: 'mind maps collection'
   }
 ];
 
