@@ -39,55 +39,57 @@ export function OfferSection() {
                 <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     
                     {/* Plano Completo */}
-                    <Card className="border-primary/80 border-2 shadow-2xl shadow-primary/20 bg-background overflow-hidden relative flex flex-col">
-                        <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                            <div className="bg-primary text-primary-foreground text-sm font-bold px-6 py-2 rounded-full uppercase flex items-center gap-2">
+                    <div className="relative">
+                        <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full flex justify-center z-10">
+                            <div className="bg-primary text-primary-foreground text-sm font-bold px-6 py-2 rounded-full uppercase flex items-center gap-2 shadow-lg">
                                 <Star className="w-4 h-4" />
                                 Mais Vendido
                             </div>
                         </div>
-                        <div className="p-6 sm:p-8 flex-grow">
-                            <CardHeader className="p-0 mb-6 text-center">
-                                <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Estrategista Completo</CardTitle>
-                                <CardDescription>O arsenal completo para a aprovação em tempo recorde.</CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-0">
-                                <p className="text-sm text-muted-foreground mb-4">Acesso ao método principal:</p>
-                                <ul className="space-y-3 text-muted-foreground mb-6">
-                                    {planoCompletoFeatures.map((feature) => (
-                                        <li key={feature} className="flex items-start gap-3">
-                                            <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
-                                            <span className="text-sm sm:text-base text-foreground">{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                                 <p className="text-sm text-muted-foreground mb-4">E você ainda leva <span className="font-bold text-primary">GRÁTIS</span> 4 bônus exclusivos:</p>
-                                 <ul className="space-y-3 text-muted-foreground">
-                                    {bonusFeatures.map((bonus) => (
-                                        <li key={bonus.name} className="flex items-start gap-3">
-                                            <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                                            <span className="text-sm sm:text-base text-foreground">{bonus.name} <span className="line-through text-muted-foreground/80">({bonus.value})</span></span>
-                                        </li>
-                                    ))}
-                                 </ul>
-                            </CardContent>
-                        </div>
-                        <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-primary/20">
-                                <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$97,00</span> por apenas:</p>
-                                <p className="text-5xl sm:text-8xl font-black my-2 text-primary">
-                                    R$27,90
-                                </p>
-                                <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
-                                    <Link href="https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7">
-                                        QUERO O PLANO COMPLETO
-                                    </Link>
-                                </Button>
-                                <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício a tudo.</p>
+                        <Card className="border-primary/80 border-2 shadow-2xl shadow-primary/20 bg-background overflow-hidden flex flex-col h-full">
+                            <div className="p-6 sm:p-8 flex-grow pt-12">
+                                <CardHeader className="p-0 mb-6 text-center">
+                                    <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Estrategista Completo</CardTitle>
+                                    <CardDescription>O arsenal completo para a aprovação em tempo recorde.</CardDescription>
+                                </CardHeader>
+                                <CardContent className="p-0">
+                                    <p className="text-sm text-muted-foreground mb-4">Acesso ao método principal:</p>
+                                    <ul className="space-y-3 text-muted-foreground mb-6">
+                                        {planoCompletoFeatures.map((feature) => (
+                                            <li key={feature} className="flex items-start gap-3">
+                                                <Check className="h-5 w-5 text-green-400 flex-shrink-0 mt-0.5" />
+                                                <span className="text-sm sm:text-base text-foreground">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                     <p className="text-sm text-muted-foreground mb-4">E você ainda leva <span className="font-bold text-primary">GRÁTIS</span> 4 bônus exclusivos:</p>
+                                     <ul className="space-y-3 text-muted-foreground">
+                                        {bonusFeatures.map((bonus) => (
+                                            <li key={bonus.name} className="flex items-start gap-3">
+                                                <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                                                <span className="text-sm sm:text-base text-foreground">{bonus.name} <span className="line-through text-muted-foreground/80">({bonus.value})</span></span>
+                                            </li>
+                                        ))}
+                                     </ul>
+                                </CardContent>
                             </div>
-                    </Card>
+                            <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-primary/20">
+                                    <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$97,00</span> por apenas:</p>
+                                    <p className="text-5xl sm:text-8xl font-black my-2 text-primary">
+                                        R$27,90
+                                    </p>
+                                    <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
+                                        <Link href="https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7">
+                                            QUERO O PLANO COMPLETO
+                                        </Link>
+                                    </Button>
+                                    <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício a tudo.</p>
+                                </div>
+                        </Card>
+                    </div>
 
                     {/* Plano Essencial */}
-                    <Card className="border-border/50 border bg-zinc-900/80 overflow-hidden flex flex-col">
+                    <Card className="border-border/50 border bg-zinc-900/80 overflow-hidden flex flex-col h-full">
                         <div className="p-6 sm:p-8 flex-grow">
                              <CardHeader className="p-0 mb-6 text-center">
                                 <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Essencial</CardTitle>
