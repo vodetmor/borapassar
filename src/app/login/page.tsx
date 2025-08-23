@@ -24,7 +24,7 @@ export default function LoginPage() {
 
     // Credenciais fixas
     const validUsername = 'futuroUniversitario';
-    const validPassword = 'X7p9Q4Z1';
+    const validPassword = '#Aprovado2024!';
 
     if (username === validUsername && password === validPassword) {
       // Salva o estado de autenticação no localStorage para persistir na sessão
