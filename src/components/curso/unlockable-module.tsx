@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Lock, Key, Sparkles, AlertCircle, BookOpen, ShoppingCart, Download } from 'lucide-react';
+import { Lock, Key, Sparkles, AlertCircle, BookOpen, ShoppingCart, Download, FolderKanban } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import confetti from 'canvas-confetti';
 import Link from 'next/link';
@@ -67,6 +67,10 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
             setError('Código de acesso inválido. Verifique e tente novamente.');
         }
     };
+    
+    const isDriveFolder = downloadLink?.includes('drive.google.com/drive/folders');
+    const isDownloadFile = downloadLink && !isDriveFolder;
+
 
     if (isUnlocked) {
         return (
@@ -84,20 +88,34 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
                                 </div>
                             </div>
                         </div>
-                        {downloadLink && (
-                           <div className="flex justify-center">
-                             <Button asChild className="w-full sm:w-auto animate-pulse-cta">
-                                <Link href={downloadLink} target="_blank" download>
-                                    <Download className="mr-2 h-4 w-4" />
-                                    Baixar PDF
-                                </Link>
-                            </Button>
-                           </div>
-                        )}
                     </div>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
-                    <div className="aspect-video" dangerouslySetInnerHTML={{ __html: iframeContent }} />
+                    {isDownloadFile && (
+                        <div className="flex justify-center mb-6">
+                            <Button asChild className="w-full sm:w-auto animate-pulse-cta">
+                            <Link href={downloadLink} target="_blank" download>
+                                <Download className="mr-2 h-4 w-4" />
+                                Baixar PDF
+                            </Link>
+                        </Button>
+                        </div>
+                    )}
+
+                    {isDriveFolder && (
+                         <div className="flex justify-center mb-6">
+                             <Button asChild size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold shadow-xl shadow-primary/20 px-8 py-7 animate-pulse-cta">
+                                <Link href={downloadLink} target="_blank">
+                                    <FolderKanban className="mr-3 h-6 w-6" />
+                                    Abrir Pasta no Google Drive
+                                </Link>
+                            </Button>
+                         </div>
+                    )}
+                    
+                    {iframeContent && (
+                        <div className="aspect-video" dangerouslySetInnerHTML={{ __html: iframeContent }} />
+                    )}
                 </CardContent>
             </Card>
         );
