@@ -12,6 +12,8 @@ import {
   Atom,
   BookText,
   BrainCircuit,
+  ChevronLeft,
+  ChevronRight,
   Dna,
   FlaskConical,
   Globe,
@@ -21,7 +23,8 @@ import {
   Percent,
   Scale,
 } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
+import { Button } from "../ui/button";
 
 const subjects = [
   {
@@ -99,7 +102,7 @@ const subjects = [
   {
     value: "portugues",
     title: "Português",
-    icon: Atom, // Using Atom as a placeholder, adjust if needed
+    icon: Atom,
     pages: 15,
     description:
       "Resumos objetivos de Gramática, abordando desde substantivos e adjetivos até sintaxe, crase e orações subordinadas. Destaque para funções e variações da linguagem, essenciais para a compreensão textual.",
@@ -115,6 +118,14 @@ const subjects = [
 ];
 
 export function SubjectDetailsSection() {
+  const tabsListRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (scrollOffset: number) => {
+    if (tabsListRef.current) {
+      tabsListRef.current.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="detalhes-mapas" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
@@ -130,18 +141,39 @@ export function SubjectDetailsSection() {
         </div>
 
         <Tabs defaultValue="biologia" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-11 h-auto flex-wrap">
-            {subjects.map((subject) => (
-              <TabsTrigger
-                key={subject.value}
-                value={subject.value}
-                className="flex flex-col sm:flex-row gap-2 items-center text-xs sm:text-sm"
-              >
-                <subject.icon className="w-4 h-4" />
-                {subject.title}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+            <div className="relative flex items-center">
+                 <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-full absolute left-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-l"
+                    onClick={() => scroll(-200)}
+                >
+                    <ChevronLeft className="w-5 h-5" />
+                </Button>
+                <div ref={tabsListRef} className="overflow-x-auto no-scrollbar">
+                    <TabsList className="inline-flex h-auto">
+                        {subjects.map((subject) => (
+                        <TabsTrigger
+                            key={subject.value}
+                            value={subject.value}
+                            className="flex flex-col sm:flex-row gap-2 items-center text-xs sm:text-sm p-3"
+                        >
+                            <subject.icon className="w-4 h-4" />
+                            {subject.title}
+                        </TabsTrigger>
+                        ))}
+                    </TabsList>
+                </div>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-full absolute right-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-r"
+                    onClick={() => scroll(200)}
+                >
+                    <ChevronRight className="w-5 h-5" />
+                </Button>
+            </div>
+         
 
           {subjects.map((subject) => (
             <TabsContent key={subject.value} value={subject.value}>
@@ -176,6 +208,15 @@ export function SubjectDetailsSection() {
           ))}
         </Tabs>
       </div>
+       <style jsx>{`
+        .no-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
