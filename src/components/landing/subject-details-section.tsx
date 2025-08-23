@@ -23,8 +23,9 @@ import {
   Percent,
   Scale,
 } from "lucide-react";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 const subjects = [
   {
@@ -120,26 +121,31 @@ const subjects = [
 export function SubjectDetailsSection() {
   const tabsListRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState(subjects[0].value);
+  const triggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  useEffect(() => {
+    if (triggerRefs.current[activeTab]) {
+      triggerRefs.current[activeTab]?.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
+    }
+  }, [activeTab]);
 
   const handleArrowClick = (direction: 'left' | 'right') => {
-    const scrollAmount = direction === 'left' ? -200 : 200;
-    if (tabsListRef.current) {
-      tabsListRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-
     const currentIndex = subjects.findIndex(
       (subject) => subject.value === activeTab
     );
-    let nextIndex;
 
+    let nextIndex;
     if (direction === 'left') {
       nextIndex = currentIndex === 0 ? subjects.length - 1 : currentIndex - 1;
     } else {
       nextIndex = currentIndex === subjects.length - 1 ? 0 : currentIndex + 1;
     }
     
-    const nextTabValue = subjects[nextIndex].value;
-    setActiveTab(nextTabValue);
+    setActiveTab(subjects[nextIndex].value);
   };
 
   return (
@@ -174,6 +180,7 @@ export function SubjectDetailsSection() {
                             <TabsTrigger
                                 key={subject.value}
                                 value={subject.value}
+                                ref={(el) => (triggerRefs.current[subject.value] = el)}
                                 className="flex flex-col sm:flex-row gap-2 items-center text-xs sm:text-sm p-3"
                             >
                                 <subject.icon className="w-4 h-4" />
@@ -194,7 +201,7 @@ export function SubjectDetailsSection() {
 
                 <div>
                     {subjects.map((subject) => (
-                        <TabsContent key={subject.value} value={subject.value}>
+                        <TabsContent key={subject.value} value={subject.value} className="focus-visible:ring-0 focus-visible:ring-offset-0">
                             <Card className="mt-6 border-primary/30 bg-zinc-900/50">
                                 <CardHeader>
                                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
