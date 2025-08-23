@@ -12,16 +12,28 @@ import { ModuleCard } from '@/components/curso/module-card';
 import type { Module } from '@/components/curso/module-card';
 import { CardContent } from '@/components/ui/card';
 
-const mainContent: Module = {
-  id: 'ebook',
-  type: 'main',
-  title: "Ebook: Passar não é sorte, Aprovação é Método",
-  description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
-  iframeContent: '<iframe src="https://heyzine.com/flip-book/75831e3e6e.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
-  coverImage: 'https://i.imgur.com/PfHqNDi.png',
-  coverImageHint: 'book cover',
-  downloadLink: "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z"
-};
+const mainContent: Module[] = [
+  {
+    id: 'ebook',
+    type: 'main',
+    title: "Ebook: Passar não é sorte, Aprovação é Método",
+    description: "Seu guia central para a aprovação. Acesse o material completo que já te colocou à frente de 99% dos candidatos.",
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/75831e3e6e.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
+    coverImage: 'https://i.imgur.com/PfHqNDi.png',
+    coverImageHint: 'book cover',
+    downloadLink: "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z"
+  },
+  {
+    id: 'mapasmentais',
+    type: 'main',
+    title: "+400 Resumos em Mapas Mentais",
+    description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
+    iframeContent: '<iframe src="https://heyzine.com/flip-book/ac841a1a51.html" style="border:0px;width:100%;height:480px" allowFullScreen="true" class="rounded-lg"></iframe>',
+    coverImage: 'https://i.imgur.com/xkVqPhD.png',
+    coverImageHint: 'mind maps collection',
+    downloadLink: "https://drive.google.com/uc?export=download&id=14VpYIu-I1P2-Fk-V0mQo0oR3eW1xG5vE"
+  }
+];
 
 const orderBumps: Module[] = [
   { 
@@ -151,8 +163,10 @@ export default function CoursePage() {
         <div>
             <h2 className="text-2xl font-bold mb-2">Seu Material Principal</h2>
              <p className="text-muted-foreground mb-6">Comece por aqui! Este é o guia que vai nortear toda a sua preparação.</p>
-            <div className="mb-12 max-w-md mx-auto">
-                 <ModuleCard module={mainContent} />
+            <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                {mainContent.map((module) => (
+                    <ModuleCard key={module.id} module={module} />
+                ))}
             </div>
 
             <h2 className="text-2xl font-bold mb-2">Módulos Complementares</h2>
