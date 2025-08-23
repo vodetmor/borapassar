@@ -22,20 +22,22 @@ const mainContent: Module[] = [
     coverImage: 'https://i.imgur.com/PfHqNDi.png',
     coverImageHint: 'book cover',
     downloadLink: "https://drive.google.com/uc?export=download&id=16Hq21Gen20NdU9EEA-mgojN6oy3Y6o4Z"
-  },
+  }
+];
+
+const orderBumps: Module[] = [
   {
     id: 'mapasmentais',
-    type: 'main',
+    type: 'order_bump',
     title: "+400 Resumos em Mapas Mentais",
     description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
     iframeContent: '',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection',
-    downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing'
-  }
-];
-
-const orderBumps: Module[] = [
+    downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing',
+    unlockCode: 'MAPAS400',
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/m4P4sM3nt4is'
+  },
   { 
     id: 'plano30dias',
     type: 'order_bump',
