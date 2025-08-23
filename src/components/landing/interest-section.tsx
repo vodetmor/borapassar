@@ -70,11 +70,11 @@ export function InterestSection() {
                     align: "start",
                     loop: true,
                 }}
-                className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto"
+                className="w-full max-w-xs sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto"
             >
                 <CarouselContent className="-ml-4">
                     {testimonials.map((testimonial, index) => (
-                        <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                        <CarouselItem key={index} className="pl-4 sm:basis-1/2 lg:basis-1/3">
                             <Card className="bg-background/80 border-border/60 shadow-lg text-left h-full flex flex-col">
                                 <CardContent className="p-6 flex-grow flex flex-col">
                                     <div className="flex items-center gap-4 mb-4">
