@@ -6,6 +6,7 @@ import { WhatsAppButton } from '@/components/landing/whatsapp-button';
 import React, { Suspense } from 'react';
 import Script from 'next/script';
 import { MetaPixel } from '@/components/meta-pixel';
+import { SocialProofToast } from '@/components/landing/social-proof-toast';
 
 export const metadata: Metadata = {
   title: 'Guia Definitivo',
@@ -49,6 +50,7 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <Toaster/>
+        <SocialProofToast />
         <Suspense fallback={null}>
             <MetaPixel />
         </Suspense>
