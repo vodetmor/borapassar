@@ -38,7 +38,7 @@ const premiumModules: Module[] = [
     coverImageHint: 'mind maps collection',
     downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing',
     unlockCode: 'ESTRATEGIAVIP',
-    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh'
   },
   { 
     id: 'plano30dias',
@@ -50,7 +50,7 @@ const premiumModules: Module[] = [
     coverImageHint: 'study plan',
     downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9',
     unlockCode: 'ESTRATEGIAVIP',
-    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh'
   },
   { 
     id: 'guiaredacao',
@@ -62,7 +62,7 @@ const premiumModules: Module[] = [
     coverImageHint: 'writing guide',
     downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy",
     unlockCode: 'ESTRATEGIAVIP',
-    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
+    checkoutLink: 'https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh'
   },
 ];
 
@@ -219,7 +219,7 @@ export default function CoursePage() {
                             unlockCode="ESTRATEGIAVIP"
                             isUnlockedInitial={false}
                             onUnlockSuccess={handlePremiumUnlock}
-                            checkoutLink="https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7"
+                            checkoutLink="https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh"
                         />
                     </DialogContent>
                 </Dialog>
