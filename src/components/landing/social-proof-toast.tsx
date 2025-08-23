@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import { ShoppingCart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -112,6 +113,8 @@ const products = [
     "Plano Essencial"
 ];
 
+const excludedPaths = ['/login', '/curso', '/entrega'];
+
 interface ActiveNotification {
     name: string;
     city: string;
@@ -119,12 +122,17 @@ interface ActiveNotification {
 }
 
 export function SocialProofToast() {
+  const pathname = usePathname();
   const [activeNotification, setActiveNotification] = useState<ActiveNotification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const lastIndex = useRef<number | null>(null);
   const mainTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  const shouldShow = !excludedPaths.some(path => pathname.startsWith(path));
+
   useEffect(() => {
+    if (!shouldShow) return;
+
     const showRandomNotification = () => {
       let randomIndex;
       do {
@@ -160,9 +168,9 @@ export function SocialProofToast() {
       clearTimeout(initialTimeout);
       if (mainTimeoutRef.current) clearTimeout(mainTimeoutRef.current);
     };
-  }, []);
+  }, [shouldShow]);
 
-  if (!activeNotification) {
+  if (!activeNotification || !shouldShow) {
     return null;
   }
 
