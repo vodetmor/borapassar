@@ -45,7 +45,7 @@ export default function EntregaPremiumPage() {
           <CardContent className="p-6 sm:p-8 pt-0">
              <div className="bg-background/50 border border-border/50 rounded-lg p-4 mb-6">
                 <p className="font-bold text-lg">Seu Código de Acesso Premium:</p>
-                <p className="font-mono text-2xl sm:text-3xl font-bold my-2 text-yellow-400 tracking-widest bg-black/50 py-2 rounded-md">ALUNOESTRATEGICO</p>
+                <p className="font-mono text-2xl sm:text-3xl font-bold my-2 text-yellow-400 tracking-widest bg-black/50 py-2 rounded-md">ESTRATEGIAVIP</p>
                 <p className="text-muted-foreground text-sm">Use este código para desbloquear TODOS os módulos premium na sua Área de Membros.</p>
             </div>
             <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-8 py-7 animate-pulse-cta">

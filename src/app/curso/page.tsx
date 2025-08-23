@@ -37,7 +37,7 @@ const premiumModules: Module[] = [
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection',
     downloadLink: 'https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing',
-    unlockCode: 'ALUNOESTRATEGICO',
+    unlockCode: 'ESTRATEGIAVIP',
     checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
   },
   { 
@@ -49,7 +49,7 @@ const premiumModules: Module[] = [
     coverImage: 'https://i.imgur.com/OF7AWQT.png',
     coverImageHint: 'study plan',
     downloadLink: 'https://drive.google.com/uc?export=download&id=1ZXE4IIDX7sNtvdllsCH8QhNrWagczBR9',
-    unlockCode: 'ALUNOESTRATEGICO',
+    unlockCode: 'ESTRATEGIAVIP',
     checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
   },
   { 
@@ -61,7 +61,7 @@ const premiumModules: Module[] = [
     coverImage: 'https://i.imgur.com/DRLVZOB.png',
     coverImageHint: 'writing guide',
     downloadLink: "https://drive.google.com/uc?export=download&id=1qB_m8XXInrelGC7AsRxrY_YHnb933Dvy",
-    unlockCode: 'ALUNOESTRATEGICO',
+    unlockCode: 'ESTRATEGIAVIP',
     checkoutLink: 'https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7'
   },
 ];
@@ -216,7 +216,7 @@ export default function CoursePage() {
                             title="Acesso Premium"
                             description="Insira seu código para desbloquear todos os módulos premium."
                             iframeContent=""
-                            unlockCode="ALUNOESTRATEGICO"
+                            unlockCode="ESTRATEGIAVIP"
                             isUnlockedInitial={false}
                             onUnlockSuccess={handlePremiumUnlock}
                             checkoutLink="https://www.ggcheckout.com/checkout/v2/g5OAn42lZ6qL3P2bQWJ7"
@@ -239,5 +239,3 @@ export default function CoursePage() {
     </div>
   );
 }
-
-    

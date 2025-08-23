@@ -22,7 +22,7 @@ interface UnlockableModuleProps {
     onUnlockSuccess: () => void;
 }
 
-const PREMIUM_CODE = 'ALUNOESTRATEGICO';
+const PREMIUM_CODE = 'ESTRATEGIAVIP';
 const PREMIUM_MODULE_IDS = ['mapasmentais', 'plano30dias', 'guiaredacao'];
 
 export function UnlockableModule({ id, title, description, iframeContent, downloadLink, checkoutLink, unlockCode, isUnlockedInitial, onUnlockSuccess }: UnlockableModuleProps) {
@@ -190,5 +190,3 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
         </Card>
     );
 }
-
-    
