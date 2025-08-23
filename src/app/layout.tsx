@@ -43,7 +43,7 @@ export default function RootLayout({
           data-utmify-prevent-subids
           async
           defer
-        ></Script>
+        />
       </head>
       <body className="font-body antialiased">
         {children}
