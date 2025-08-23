@@ -93,7 +93,7 @@ export function MindMapsPreviewSection() {
                                             </CardContent>
                                         </Card>
                                     </DialogTrigger>
-                                    <DialogContent className="max-w-4xl h-[90vh] p-4 bg-background/80 backdrop-blur-sm border-primary/30">
+                                    <DialogContent className="max-w-4xl h-[85vh] p-4 bg-background/80 backdrop-blur-sm border-primary/30">
                                         <Image
                                             src={map.src}
                                             alt={map.alt}
