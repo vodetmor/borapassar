@@ -154,7 +154,7 @@ export function SocialProofToast() {
     <div
       className={cn(
         'fixed bottom-4 left-4 z-50 w-full max-w-xs p-4 bg-background border border-border rounded-lg shadow-lg transition-transform duration-500 ease-in-out',
-        isVisible ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-[calc(100%+2rem)] opacity-0'
       )}
     >
       <div className="flex items-center gap-3">
