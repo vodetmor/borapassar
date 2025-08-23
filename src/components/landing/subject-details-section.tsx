@@ -33,7 +33,7 @@ const subjects = [
     icon: Dna,
     pages: 108,
     description:
-      "Resumos completos sobre Bioquímica, Citologia, Fisiologia, Genética, Evolução e Ecologia. Explore sistemas do corpo humano, ciclos naturais, diversidade de espécies e processos celulares, com foco em temas essenciais para o estudo biológico.",
+      "Bioquímica, Citologia, Fisiologia, Genética, Evolução e Ecologia. Explore sistemas do corpo humano, ciclos naturais, diversidade de espécies e processos celulares.",
   },
   {
     value: "fisica",
@@ -41,7 +41,7 @@ const subjects = [
     icon: Microwave,
     pages: 51,
     description:
-      "Resumos essenciais de Física, abordando Cinemática, Dinâmica, Termodinâmica, Eletrostática e Gravitação Universal. Explore conceitos como calor, forças, ondas e trabalho, além de fórmulas para compreender os fenômenos físicos.",
+      "Cinemática, Dinâmica, Termodinâmica, Eletrostática e Gravitação Universal. Explore conceitos como calor, forças, ondas e trabalho para dominar os fenômenos físicos.",
   },
   {
     value: "quimica",
@@ -49,7 +49,7 @@ const subjects = [
     icon: FlaskConical,
     pages: 61,
     description:
-      "Resumos claros sobre Química Orgânica e Inorgânica, Cinética, Termoquímica e Eletroquímica. Explore ligações químicas, equilíbrio, gases e soluções, além de tópicos como poluição ambiental e propriedades periódicas essenciais.",
+      "Química Orgânica e Inorgânica, Cinética, Termoquímica e Eletroquímica. Explore ligações, equilíbrio, gases e soluções, além de tópicos como poluição e propriedades periódicas.",
   },
   {
     value: "geografia",
@@ -57,7 +57,7 @@ const subjects = [
     icon: Globe,
     pages: 63,
     description:
-      "Resumos completos sobre clima, relevo, hidrografia e vegetação, além de temas como globalização, urbanização e recursos energéticos. Explore a dinâmica do espaço geográfico brasileiro e global, com foco em agricultura, indústria e regionalização.",
+      "Clima, relevo, hidrografia e vegetação, além de globalização, urbanização e energia. Domine a dinâmica do espaço geográfico brasileiro e mundial.",
   },
   {
     value: "historia",
@@ -65,7 +65,7 @@ const subjects = [
     icon: Landmark,
     pages: 77,
     description:
-      "Resumos que exploram desde a História Antiga até o Brasil contemporâneo, com temas como Revoluções, Guerras Mundiais, Idade Média, Renascimento e Regime Militar. Entenda transformações políticas, sociais e econômicas que moldaram o mundo e o Brasil.",
+      "Da História Antiga ao Brasil contemporâneo: Revoluções, Guerras Mundiais, Idade Média, Renascimento e Regime Militar. Entenda as transformações que moldaram o mundo.",
   },
   {
     value: "filosofia",
@@ -73,7 +73,7 @@ const subjects = [
     icon: BrainCircuit,
     pages: 24,
     description:
-      "Resumos que abrangem Epistemologia, Filosofia Moral e Política, explorando conceitos como ética, conhecimento, contrato social e feminismo. Destaque para pensadores clássicos e modernos, como Platão, Kant, Maquiavel e Arendt.",
+      "Epistemologia, Filosofia Moral e Política. Explore conceitos como ética, conhecimento e contrato social, com pensadores clássicos e modernos de Platão a Kant.",
   },
   {
     value: "sociologia",
@@ -81,7 +81,7 @@ const subjects = [
     icon: Scale,
     pages: 12,
     description:
-      "Resumos sobre a origem e os fundamentos da Sociologia, com destaque para teóricos como Marx, Durkheim e Weber. Explore conceitos como democracia, direitos humanos, sociedade de consumo e influência midiática.",
+      "Fundamentos da Sociologia, com Marx, Durkheim e Weber. Explore conceitos como democracia, direitos humanos, sociedade de consumo e influência da mídia.",
   },
   {
     value: "artes",
@@ -89,7 +89,7 @@ const subjects = [
     icon: Palette,
     pages: 40,
     description:
-      "Resumos que percorrem desde a Arte Pré-Histórica até o Modernismo, explorando estilos como Barroco, Neoclassicismo, Realismo e Expressionismo. Destaque para manifestações artísticas no Brasil e no mundo.",
+      "Da Arte Pré-Histórica ao Modernismo, explorando Barroco, Neoclassicismo, Realismo e Expressionismo. Domine as manifestações artísticas no Brasil e no mundo.",
   },
   {
     value: "literatura",
@@ -97,7 +97,7 @@ const subjects = [
     icon: BookText,
     pages: 18,
     description:
-      "Resumos sobre as principais escolas literárias, do Trovadorismo ao Modernismo, explorando a evolução da Literatura Brasileira e suas fases no Brasil Colônia, Império e República, até a Literatura Contemporânea.",
+      "As principais escolas literárias, do Trovadorismo ao Modernismo, explorando a evolução da Literatura Brasileira e suas fases até a contemporaneidade.",
   },
   {
     value: "portugues",
@@ -105,7 +105,7 @@ const subjects = [
     icon: Atom,
     pages: 15,
     description:
-      "Resumos objetivos de Gramática, abordando desde substantivos e adjetivos até sintaxe, crase e orações subordinadas. Destaque para funções e variações da linguagem, essenciais para a compreensão textual.",
+      "Resumos objetivos de Gramática, de substantivos e adjetivos até sintaxe, crase e orações subordinadas. Essencial para a compreensão textual.",
   },
   {
     value: "matematica",
@@ -113,7 +113,7 @@ const subjects = [
     icon: Percent,
     pages: 19,
     description:
-      "Resumos que abrangem funções, estatística, geometria plana e trigonometria. Explore conceitos de porcentagem, razão e proporção, além de fórmulas essenciais para resolução de problemas matemáticos.",
+      "Funções, estatística, geometria plana e trigonometria. Explore conceitos de porcentagem, razão e proporção, além de fórmulas essenciais para a aprovação.",
   },
 ];
 
@@ -156,9 +156,9 @@ export function SubjectDetailsSection() {
           </p>
         </div>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            {/* Mobile Layout */}
-            <div className="lg:hidden">
+        {/* Mobile Layout with Tabs */}
+        <div className="lg:hidden">
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
                 <div className="relative flex items-center">
                     <Button
                         variant="outline"
@@ -191,51 +191,33 @@ export function SubjectDetailsSection() {
                         <ChevronRight className="w-5 h-5" />
                     </Button>
                 </div>
-            </div>
 
-            {/* Desktop Layout */}
-            <div className="hidden lg:grid lg:grid-cols-12 lg:gap-8">
-                <div className="lg:col-span-4 xl:col-span-3">
-                    <TabsList className="flex flex-col h-auto w-full items-stretch bg-transparent p-0">
-                         {subjects.map((subject) => (
-                        <TabsTrigger
-                            key={subject.value}
-                            value={subject.value}
-                            className="flex justify-start gap-3 items-center text-base p-4 data-[state=active]:bg-zinc-900/80 data-[state=active]:shadow-lg data-[state=active]:border-primary/50 data-[state=active]:border-l-4"
-                        >
-                            <subject.icon className="w-5 h-5 text-primary" />
-                            {subject.title}
-                        </TabsTrigger>
-                        ))}
-                    </TabsList>
-                </div>
-
-                <div className="lg:col-span-8 xl:col-span-9">
-                     {subjects.map((subject) => (
-                        <TabsContent key={subject.value} value={subject.value} className="m-0">
-                            <Card className="border-primary/30 bg-zinc-900/50 h-full">
+                <div>
+                    {subjects.map((subject) => (
+                        <TabsContent key={subject.value} value={subject.value}>
+                            <Card className="mt-6 border-primary/30 bg-zinc-900/50">
                                 <CardHeader>
                                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
                                     <div className="flex items-center gap-4">
                                     <div className="p-3 bg-primary/10 rounded-full">
-                                        <subject.icon className="w-8 h-8 text-primary" />
+                                        <subject.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
                                     </div>
-                                    <CardTitle className="text-3xl font-bold">
+                                    <CardTitle className="text-2xl sm:text-3xl font-bold">
                                         {subject.title}
                                     </CardTitle>
                                     </div>
                                     <div className="text-center sm:text-right">
-                                    <p className="text-4xl font-bold text-primary">
+                                    <p className="text-2xl sm:text-4xl font-bold text-primary">
                                         {subject.pages}
                                     </p>
                                     <p className="text-sm text-muted-foreground -mt-1">
-                                        Páginas de Conteúdo
+                                        Páginas
                                     </p>
                                     </div>
                                 </div>
                                 </CardHeader>
                                 <CardContent>
-                                <p className="text-lg text-muted-foreground">
+                                <p className="text-base sm:text-lg text-muted-foreground">
                                     {subject.description}
                                 </p>
                                 </CardContent>
@@ -243,43 +225,33 @@ export function SubjectDetailsSection() {
                         </TabsContent>
                     ))}
                 </div>
-            </div>
+            </Tabs>
+        </div>
 
-            {/* Mobile Content */}
-             <div className="lg:hidden">
-                {subjects.map((subject) => (
-                    <TabsContent key={subject.value} value={subject.value}>
-                        <Card className="mt-6 border-primary/30 bg-zinc-900/50">
-                            <CardHeader>
-                            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
-                                <div className="flex items-center gap-4">
-                                <div className="p-3 bg-primary/10 rounded-full">
-                                    <subject.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
-                                </div>
-                                <CardTitle className="text-2xl sm:text-3xl font-bold">
-                                    {subject.title}
-                                </CardTitle>
-                                </div>
-                                <div className="text-center sm:text-right">
-                                <p className="text-2xl sm:text-4xl font-bold text-primary">
-                                    {subject.pages}
-                                </p>
-                                <p className="text-sm text-muted-foreground -mt-1">
-                                    Páginas de Conteúdo
-                                </p>
-                                </div>
-                            </div>
-                            </CardHeader>
-                            <CardContent>
-                            <p className="text-base sm:text-lg text-muted-foreground">
-                                {subject.description}
-                            </p>
-                            </CardContent>
-                        </Card>
-                    </TabsContent>
-                ))}
-            </div>
-        </Tabs>
+        {/* Desktop Layout with Grid */}
+        <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {subjects.map((subject) => (
+            <Card key={subject.value} className="border-primary/20 bg-zinc-900/50 flex flex-col">
+              <CardHeader>
+                <div className="flex justify-between items-start gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2 bg-primary/10 rounded-full">
+                      <subject.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl font-bold">{subject.title}</CardTitle>
+                  </div>
+                   <div className="text-right flex-shrink-0">
+                    <p className="text-2xl font-bold text-primary">{subject.pages}</p>
+                    <p className="text-xs text-muted-foreground -mt-1">Páginas</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-sm text-muted-foreground">{subject.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
        <style jsx>{`
         .no-scrollbar::-webkit-scrollbar {
