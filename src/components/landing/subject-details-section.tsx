@@ -157,71 +157,128 @@ export function SubjectDetailsSection() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <div className="relative flex items-center">
-                 <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-full absolute left-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-l"
-                    onClick={() => handleArrowClick('left')}
-                >
-                    <ChevronLeft className="w-5 h-5" />
-                </Button>
-                <div ref={tabsListRef} className="overflow-x-auto no-scrollbar">
-                    <TabsList className="inline-flex h-auto">
-                        {subjects.map((subject) => (
+            {/* Mobile Layout */}
+            <div className="lg:hidden">
+                <div className="relative flex items-center">
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="h-full absolute left-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-l"
+                        onClick={() => handleArrowClick('left')}
+                    >
+                        <ChevronLeft className="w-5 h-5" />
+                    </Button>
+                    <div ref={tabsListRef} className="overflow-x-auto no-scrollbar">
+                        <TabsList className="inline-flex h-auto">
+                            {subjects.map((subject) => (
+                            <TabsTrigger
+                                key={subject.value}
+                                value={subject.value}
+                                className="flex flex-col sm:flex-row gap-2 items-center text-xs sm:text-sm p-3"
+                            >
+                                <subject.icon className="w-4 h-4" />
+                                {subject.title}
+                            </TabsTrigger>
+                            ))}
+                        </TabsList>
+                    </div>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="h-full absolute right-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-r"
+                        onClick={() => handleArrowClick('right')}
+                    >
+                        <ChevronRight className="w-5 h-5" />
+                    </Button>
+                </div>
+            </div>
+
+            {/* Desktop Layout */}
+            <div className="hidden lg:grid lg:grid-cols-12 lg:gap-8">
+                <div className="lg:col-span-4 xl:col-span-3">
+                    <TabsList className="flex flex-col h-auto w-full items-stretch bg-transparent p-0">
+                         {subjects.map((subject) => (
                         <TabsTrigger
                             key={subject.value}
                             value={subject.value}
-                            className="flex flex-col sm:flex-row gap-2 items-center text-xs sm:text-sm p-3"
+                            className="flex justify-start gap-3 items-center text-base p-4 data-[state=active]:bg-zinc-900/80 data-[state=active]:shadow-lg data-[state=active]:border-primary/50 data-[state=active]:border-l-4"
                         >
-                            <subject.icon className="w-4 h-4" />
+                            <subject.icon className="w-5 h-5 text-primary" />
                             {subject.title}
                         </TabsTrigger>
                         ))}
                     </TabsList>
                 </div>
-                <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-full absolute right-0 z-10 bg-background/80 hover:bg-background rounded-none border-y border-r"
-                    onClick={() => handleArrowClick('right')}
-                >
-                    <ChevronRight className="w-5 h-5" />
-                </Button>
-            </div>
-         
 
-          {subjects.map((subject) => (
-            <TabsContent key={subject.value} value={subject.value}>
-              <Card className="mt-6 border-primary/30 bg-zinc-900/50">
-                <CardHeader>
-                  <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 bg-primary/10 rounded-full">
-                        <subject.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
-                      </div>
-                      <CardTitle className="text-2xl sm:text-3xl font-bold">
-                        {subject.title}
-                      </CardTitle>
-                    </div>
-                    <div className="text-center sm:text-right">
-                      <p className="text-2xl sm:text-4xl font-bold text-primary">
-                        {subject.pages}
-                      </p>
-                      <p className="text-sm text-muted-foreground -mt-1">
-                        Páginas de Conteúdo
-                      </p>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-base sm:text-lg text-muted-foreground">
-                    {subject.description}
-                  </p>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          ))}
+                <div className="lg:col-span-8 xl:col-span-9">
+                     {subjects.map((subject) => (
+                        <TabsContent key={subject.value} value={subject.value} className="m-0">
+                            <Card className="border-primary/30 bg-zinc-900/50 h-full">
+                                <CardHeader>
+                                <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                                    <div className="flex items-center gap-4">
+                                    <div className="p-3 bg-primary/10 rounded-full">
+                                        <subject.icon className="w-8 h-8 text-primary" />
+                                    </div>
+                                    <CardTitle className="text-3xl font-bold">
+                                        {subject.title}
+                                    </CardTitle>
+                                    </div>
+                                    <div className="text-center sm:text-right">
+                                    <p className="text-4xl font-bold text-primary">
+                                        {subject.pages}
+                                    </p>
+                                    <p className="text-sm text-muted-foreground -mt-1">
+                                        Páginas de Conteúdo
+                                    </p>
+                                    </div>
+                                </div>
+                                </CardHeader>
+                                <CardContent>
+                                <p className="text-lg text-muted-foreground">
+                                    {subject.description}
+                                </p>
+                                </CardContent>
+                            </Card>
+                        </TabsContent>
+                    ))}
+                </div>
+            </div>
+
+            {/* Mobile Content */}
+             <div className="lg:hidden">
+                {subjects.map((subject) => (
+                    <TabsContent key={subject.value} value={subject.value}>
+                        <Card className="mt-6 border-primary/30 bg-zinc-900/50">
+                            <CardHeader>
+                            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                                <div className="flex items-center gap-4">
+                                <div className="p-3 bg-primary/10 rounded-full">
+                                    <subject.icon className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+                                </div>
+                                <CardTitle className="text-2xl sm:text-3xl font-bold">
+                                    {subject.title}
+                                </CardTitle>
+                                </div>
+                                <div className="text-center sm:text-right">
+                                <p className="text-2xl sm:text-4xl font-bold text-primary">
+                                    {subject.pages}
+                                </p>
+                                <p className="text-sm text-muted-foreground -mt-1">
+                                    Páginas de Conteúdo
+                                </p>
+                                </div>
+                            </div>
+                            </CardHeader>
+                            <CardContent>
+                            <p className="text-base sm:text-lg text-muted-foreground">
+                                {subject.description}
+                            </p>
+                            </CardContent>
+                        </Card>
+                    </TabsContent>
+                ))}
+            </div>
         </Tabs>
       </div>
        <style jsx>{`
