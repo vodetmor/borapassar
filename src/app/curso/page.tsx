@@ -28,7 +28,7 @@ const mainContent: Module[] = [
     type: 'main',
     title: "+400 Resumos em Mapas Mentais",
     description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
-    iframeContent: '<iframe src="https://drive.google.com/drive/folders/1-5lWYcxZFr47R97cGFkqKMQ5Lpugtk0o?usp=sharing&embeds_origin=https%3A%2F%2Fwww.YOUR_DOMAIN.com" style="border:0; width:100%; height:480px;" allow="fullscreen"></iframe>',
+    iframeContent: '<iframe src="https://trove.so/embed/s/mUaS8lJk1rS" style="width:100%;height:480px;border-radius:8px;border:none" allowfullscreen></iframe>',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection'
   }
