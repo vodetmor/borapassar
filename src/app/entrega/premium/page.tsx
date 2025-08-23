@@ -4,12 +4,21 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
-import { Key, Rocket, Star } from 'lucide-react';
+import { Key, Rocket, Star, Copy, Check } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 
 export default function EntregaPremiumPage() {
+    const [copiedField, setCopiedField] = useState<string | null>(null);
+
+    const handleCopy = (text: string, field: string) => {
+        navigator.clipboard.writeText(text);
+        setCopiedField(field);
+        setTimeout(() => {
+            setCopiedField(null);
+        }, 2000);
+    };
 
     useEffect(() => {
         const duration = 3 * 1000;
@@ -39,15 +48,42 @@ export default function EntregaPremiumPage() {
             <Star className="mx-auto h-16 w-16 text-yellow-400 mb-6" />
             <CardTitle className="text-3xl sm:text-4xl font-black text-primary tracking-tight">PLANO PREMIUM LIBERADO!</CardTitle>
             <CardDescription className="mt-4 text-base sm:text-lg max-w-xl mx-auto text-muted-foreground">
-              Parabéns por investir em sua preparação! Você acaba de adquirir o acesso completo ao Plano Estrategista.
+              Parabéns! Aqui estão todas as suas informações de acesso. Guarde-as em um local seguro.
             </CardDescription>
           </CardHeader>
-          <CardContent className="p-6 sm:p-8 pt-0">
-             <div className="bg-background/50 border border-border/50 rounded-lg p-4 mb-6">
-                <p className="font-bold text-lg">Seu Código de Acesso Premium:</p>
-                <p className="font-mono text-2xl sm:text-3xl font-bold my-2 text-yellow-400 tracking-widest bg-black/50 py-2 rounded-md">ESTRATEGIAVIP</p>
-                <p className="text-muted-foreground text-sm">Use este código para desbloquear TODOS os módulos premium na sua Área de Membros.</p>
+          <CardContent className="p-6 sm:p-8 pt-0 space-y-6">
+             <div className="bg-background/50 border border-border/50 rounded-lg p-4 sm:p-6 text-left space-y-4">
+                <div>
+                    <p className="font-bold text-lg text-muted-foreground">Usuário:</p>
+                     <div className="flex items-center gap-2">
+                        <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md flex-grow">futuroUniversitario</p>
+                        <Button variant="outline" size="icon" onClick={() => handleCopy('futuroUniversitario', 'username')}>
+                            {copiedField === 'username' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                        </Button>
+                    </div>
+                </div>
+                 <div>
+                    <p className="font-bold text-lg text-muted-foreground">Senha:</p>
+                    <div className="flex items-center gap-2">
+                        <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md flex-grow">X7p9Q4Z1</p>
+                         <Button variant="outline" size="icon" onClick={() => handleCopy('X7p9Q4Z1', 'password')}>
+                            {copiedField === 'password' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                        </Button>
+                    </div>
+                </div>
             </div>
+
+             <div className="bg-background/50 border border-border/50 rounded-lg p-4">
+                <p className="font-bold text-lg">Seu Código de Acesso Premium:</p>
+                 <div className="flex items-center gap-2 mt-2">
+                    <p className="font-mono text-2xl sm:text-3xl font-bold text-yellow-400 tracking-widest bg-black/50 py-2 rounded-md flex-grow">ESTRATEGIAVIP</p>
+                    <Button variant="outline" size="icon" onClick={() => handleCopy('ESTRATEGIAVIP', 'code')}>
+                        {copiedField === 'code' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                    </Button>
+                </div>
+                <p className="text-muted-foreground text-sm mt-2">Use este código para desbloquear TODOS os módulos premium na sua Área de Membros.</p>
+            </div>
+            
             <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-8 py-7 animate-pulse-cta">
               <Link href="/login">
                 <Rocket className="mr-2 h-5 w-5" />

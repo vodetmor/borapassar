@@ -4,12 +4,21 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
-import { Key, Rocket } from 'lucide-react';
+import { Key, Rocket, Copy, Check } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 
 export default function EntregaAcessoPage() {
+    const [copiedField, setCopiedField] = useState<string | null>(null);
+
+    const handleCopy = (text: string, field: string) => {
+        navigator.clipboard.writeText(text);
+        setCopiedField(field);
+        setTimeout(() => {
+            setCopiedField(null);
+        }, 2000);
+    };
 
     useEffect(() => {
         // Fire confetti on mount
@@ -52,11 +61,21 @@ export default function EntregaAcessoPage() {
              <div className="bg-background/50 border border-border/50 rounded-lg p-4 sm:p-6 mb-6 text-left space-y-4">
                 <div>
                     <p className="font-bold text-lg text-muted-foreground">Usuário:</p>
-                    <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md">futuroUniversitario</p>
+                    <div className="flex items-center gap-2">
+                        <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md flex-grow">futuroUniversitario</p>
+                        <Button variant="outline" size="icon" onClick={() => handleCopy('futuroUniversitario', 'username')}>
+                            {copiedField === 'username' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                        </Button>
+                    </div>
                 </div>
                  <div>
                     <p className="font-bold text-lg text-muted-foreground">Senha:</p>
-                    <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md">X7p9Q4Z1</p>
+                    <div className="flex items-center gap-2">
+                         <p className="font-mono text-xl sm:text-2xl font-bold text-yellow-400 tracking-wider bg-black/50 p-2 rounded-md flex-grow">X7p9Q4Z1</p>
+                         <Button variant="outline" size="icon" onClick={() => handleCopy('X7p9Q4Z1', 'password')}>
+                            {copiedField === 'password' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                        </Button>
+                    </div>
                 </div>
             </div>
             <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-8 py-7 animate-pulse-cta">

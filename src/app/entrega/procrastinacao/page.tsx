@@ -4,12 +4,21 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Footer } from '@/components/landing/footer';
-import { Key, Rocket } from 'lucide-react';
+import { Key, Rocket, Copy, Check } from 'lucide-react';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 
 export default function EntregaProcrastinacaoPage() {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = (text: string) => {
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    };
 
     useEffect(() => {
         const duration = 3 * 1000;
@@ -45,7 +54,12 @@ export default function EntregaProcrastinacaoPage() {
           <CardContent className="p-6 sm:p-8 pt-0">
              <div className="bg-background/50 border border-border/50 rounded-lg p-4 mb-6">
                 <p className="font-bold text-lg">Seu Código de Acesso Exclusivo:</p>
-                <p className="font-mono text-2xl sm:text-3xl font-bold my-2 text-yellow-400 tracking-widest bg-black/50 py-2 rounded-md">ADEUSPREGUICA</p>
+                <div className="flex items-center gap-2 mt-2">
+                    <p className="font-mono text-2xl sm:text-3xl font-bold my-2 text-yellow-400 tracking-widest bg-black/50 py-2 rounded-md flex-grow">ADEUSPREGUICA</p>
+                    <Button variant="outline" size="icon" onClick={() => handleCopy('ADEUSPREGUICA')}>
+                        {copied ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
+                    </Button>
+                </div>
                 <p className="text-muted-foreground text-sm">Use este código para desbloquear o módulo na sua Área de Membros.</p>
             </div>
             <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-8 py-7 animate-pulse-cta">
