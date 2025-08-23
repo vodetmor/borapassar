@@ -107,8 +107,19 @@ const notifications = [
     "Rafaela, Ipatinga"
 ];
 
+const products = [
+    "Plano Estrategista Completo",
+    "Plano Essencial"
+];
+
+interface ActiveNotification {
+    name: string;
+    city: string;
+    product: string;
+}
+
 export function SocialProofToast() {
-  const [activeNotification, setActiveNotification] = useState<string | null>(null);
+  const [activeNotification, setActiveNotification] = useState<ActiveNotification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const lastIndex = useRef<number | null>(null);
   const mainTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -121,7 +132,14 @@ export function SocialProofToast() {
       } while (randomIndex === lastIndex.current);
       lastIndex.current = randomIndex;
       
-      setActiveNotification(notifications[randomIndex]);
+      const randomProductIndex = Math.floor(Math.random() * products.length);
+      const [name, city] = notifications[randomIndex].split(', ');
+      
+      setActiveNotification({
+          name,
+          city,
+          product: products[randomProductIndex]
+      });
       setIsVisible(true);
 
       // Hide notification after 5 seconds
@@ -136,7 +154,7 @@ export function SocialProofToast() {
     };
 
     // Initial delay before first notification
-    const initialTimeout = setTimeout(showRandomNotification, 5000);
+    const initialTimeout = setTimeout(showRandomNotification, 8000);
 
     return () => {
       clearTimeout(initialTimeout);
@@ -148,22 +166,24 @@ export function SocialProofToast() {
     return null;
   }
 
-  const [name, city] = activeNotification.split(', ');
-
   return (
     <div
       className={cn(
-        'fixed bottom-4 left-4 z-50 w-full max-w-xs p-4 bg-background border border-border rounded-lg shadow-lg transition-transform duration-500 ease-in-out',
+        'fixed bottom-4 left-4 z-50 w-full max-w-sm p-4 bg-background border border-border rounded-lg shadow-lg transition-all duration-500 ease-out',
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-[calc(100%+2rem)] opacity-0'
       )}
     >
-      <div className="flex items-center gap-3">
-        <div className="flex-shrink-0 p-2 bg-primary/10 rounded-full">
+      <div className="flex items-start gap-3">
+        <div className="flex-shrink-0 p-2 bg-primary/10 rounded-full mt-1">
           <ShoppingCart className="w-5 h-5 text-primary" />
         </div>
         <div className="flex-1">
-          <p className="text-sm font-semibold text-foreground">{name} acabou de comprar</p>
-          <p className="text-xs text-muted-foreground">{city}</p>
+          <p className="text-sm font-semibold text-foreground">
+              {activeNotification.name} de {activeNotification.city}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Acabou de comprar o <span className="font-bold">{activeNotification.product}</span>
+          </p>
         </div>
       </div>
     </div>
