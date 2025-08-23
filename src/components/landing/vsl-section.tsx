@@ -3,11 +3,28 @@
 
 import { Button } from '@/components/ui/button';
 import { VslPlayer } from './vsl-player';
+import Link from 'next/link';
+import { LogIn } from 'lucide-react';
 
 export function VslSection() {
   return (
-    <section id="vsl" className="pt-16 pb-12 sm:pt-24 sm:pb-16 bg-background">
+    <section id="vsl" className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-background">
       <div className="container mx-auto px-4 text-center">
+
+        <div className="flex justify-end mb-8">
+           <Button 
+              asChild 
+              variant="outline" 
+              className="border-primary/30 hover:bg-primary/10 hover:text-primary transition-all w-auto text-sm h-10 sm:h-10 px-3 sm:px-4"
+            >
+              <Link href="/login">
+                <LogIn className="mr-2 h-4 w-4" />
+                <span>Área de Membros</span>
+              </Link>
+            </Button>
+        </div>
+
+
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
           Método <span className="text-red-500">Secreto</span> que quem Passa no <span className="text-primary">ENEM</span> Não Quer que Você Descubra
         </h1>
