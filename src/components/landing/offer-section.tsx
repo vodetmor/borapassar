@@ -77,6 +77,7 @@ export function OfferSection() {
                                     <p className="text-5xl sm:text-8xl font-black my-2 text-primary">
                                         R$37,90
                                     </p>
+                                    <p className="font-bold text-lg text-accent -mt-2 mb-4">Você economiza R$59,10 (61% OFF)</p>
                                     <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
                                         <Link href="https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh">
                                             QUERO O PLANO COMPLETO
@@ -120,6 +121,7 @@ export function OfferSection() {
                                 <p className="text-5xl sm:text-8xl font-black my-2 text-primary/80">
                                     R$27,90
                                 </p>
+                                <p className="font-bold text-lg text-accent/80 -mt-2 mb-4">Você economiza R$19,10 (41% OFF)</p>
                                 <Button asChild size="lg" className="w-full bg-primary/80 text-primary-foreground hover:bg-primary/70 text-base sm:text-xl font-bold shadow-lg shadow-primary/10 py-4 sm:py-7">
                                     <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
                                         QUERO O PLANO ESSENCIAL
