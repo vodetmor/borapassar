@@ -48,6 +48,7 @@ export function MindMapsPreviewSection() {
                         grabCursor={true}
                         centeredSlides={true}
                         loop={true}
+                        preventInteractionOnTransition={true}
                         coverflowEffect={{
                             rotate: 0,
                             stretch: 0,
