@@ -1,15 +1,20 @@
 
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Zap, Brain, Goal, ArrowRight } from 'lucide-react';
+import { Zap, Brain, Goal, ArrowRight, Book, Edit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const pillars = [
-  {
-    icon: Zap,
-    title: '30% - Teoria Estratégica',
-    description: 'Foco no essencial. Você vai aprender a identificar e absorver os 20% de conteúdo que geram 80% dos acertos. Chega de perder tempo com o que não cai na prova.',
-  },
+const theoryPillar = {
+  icon: Zap,
+  title: '30% - Teoria Estratégica',
+  description: 'Foco no essencial. Você vai aprender a identificar e absorver os 20% de conteúdo que geram 80% dos acertos. Chega de perder tempo com o que não cai na prova.',
+};
+
+const practicePillars = [
   {
     icon: Brain,
     title: '35% - Prática Ativa (Retrieval)',
@@ -23,6 +28,8 @@ const pillars = [
 ];
 
 export function MethodologySection() {
+  const [isSeventyExpanded, setIsSeventyExpanded] = useState(false);
+
   return (
     <section id="metodologia" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4">
@@ -31,35 +38,85 @@ export function MethodologySection() {
             A Ciência por Trás da <span className="text-primary">Aprovação</span>
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-            Nosso método não é achismo. É a Metodologia 30-35-35, fundamentada na neurociência da aprendizagem. Simples, brutal e absurdamente eficaz.
+            Nosso método não é achismo. É a Metodologia 30-70, fundamentada na neurociência da aprendizagem. Simples, brutal e absurdamente eficaz.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pillars.map((pillar) => (
-            <Card key={pillar.title} className="bg-background/50 border-border/50 text-center p-6">
-                <CardHeader className="p-0 flex flex-col items-center">
-                    <div className="p-4 bg-primary/10 rounded-full mb-4 inline-flex">
-                        <pillar.icon className="w-8 h-8 text-primary" />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* 30% Column */}
+          <Card className="bg-background/50 border-border/50 text-center p-6 flex flex-col justify-center">
+            <CardHeader className="p-0 flex flex-col items-center">
+              <div className="p-4 bg-primary/10 rounded-full mb-4 inline-flex">
+                <theoryPillar.icon className="w-8 h-8 text-primary" />
+              </div>
+              <CardTitle className="text-xl font-bold">{theoryPillar.title}</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 mt-4">
+              <p className="text-muted-foreground text-sm">{theoryPillar.description}</p>
+            </CardContent>
+          </Card>
+
+          {/* 70% Column */}
+          <div className="lg:col-span-2">
+            <AnimatePresence mode="wait">
+              {!isSeventyExpanded ? (
+                <motion.div
+                  key="unexpanded"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card className="bg-primary/10 border-primary/50 text-center p-6 sm:p-8 flex flex-col justify-center items-center h-full">
+                     <div className="p-4 bg-primary/20 rounded-full mb-4 inline-flex">
+                        <Book className="w-8 h-8 text-primary" />
                     </div>
-                    <CardTitle className="text-xl font-bold">{pillar.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="p-0 mt-4">
-                    <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                </CardContent>
-            </Card>
-          ))}
+                    <CardTitle className="text-2xl sm:text-3xl font-bold">70% - Prática e Revisão</CardTitle>
+                    <p className="text-primary-foreground/80 mt-4 max-w-lg">
+                      É aqui que a aprovação é construída. A maior parte do seu tempo deve ser dedicada a aplicar e solidificar o que você aprendeu.
+                    </p>
+                    <Button onClick={() => setIsSeventyExpanded(true)} className="mt-6">
+                      Entenda os 70%
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Card>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="expanded"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full"
+                >
+                  {practicePillars.map((pillar) => (
+                    <Card key={pillar.title} className="bg-background/50 border-border/50 text-center p-6 flex flex-col justify-center">
+                      <CardHeader className="p-0 flex flex-col items-center">
+                        <div className="p-4 bg-primary/10 rounded-full mb-4 inline-flex">
+                          <pillar.icon className="w-8 h-8 text-primary" />
+                        </div>
+                        <CardTitle className="text-xl font-bold">{pillar.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="p-0 mt-4">
+                        <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
-         <div className="text-center mt-20">
-            <p className="text-base sm:text-lg text-muted-foreground mb-8">
-                Técnicas como <strong className="text-foreground">Repetição Espaçada</strong>, <strong className="text-foreground">Recordação Ativa</strong> e <strong className="text-foreground">Técnica Pomodoro</strong> são integradas para otimizar cada minuto do seu estudo.
-            </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full animate-pulse-cta">
-                <a href="#oferta">
-                    QUERO APLICAR O MÉTODO
-                </a>
-            </Button>
+        <div className="text-center mt-20">
+          <p className="text-base sm:text-lg text-muted-foreground mb-8">
+            Técnicas como <strong className="text-foreground">Repetição Espaçada</strong>, <strong className="text-foreground">Recordação Ativa</strong> e <strong className="text-foreground">Técnica Pomodoro</strong> são integradas para otimizar cada minuto do seu estudo.
+          </p>
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full animate-pulse-cta">
+            <a href="#oferta">
+              QUERO APLICAR O MÉTODO
+            </a>
+          </Button>
         </div>
       </div>
     </section>
