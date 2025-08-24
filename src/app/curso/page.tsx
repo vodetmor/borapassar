@@ -103,7 +103,6 @@ export default function CoursePage() {
     const authStatus = localStorage.getItem('isAuthenticated');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
-      // Check if premium modules are unlocked
       const premiumUnlocked = localStorage.getItem('module_premium_unlocked') === 'true';
       setArePremiumModulesUnlocked(premiumUnlocked);
     } else {
@@ -112,14 +111,13 @@ export default function CoursePage() {
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.clear(); // Limpa tudo para garantir
+    localStorage.clear();
     router.push('/login');
   };
 
   const handlePremiumUnlock = () => {
       setArePremiumModulesUnlocked(true);
-      // This will cause a page reload via the UnlockableModule component,
-      // which will then read the new state from localStorage.
+      setTimeout(() => window.location.reload(), 500); 
   };
 
   if (isAuthenticated === null) {
@@ -189,41 +187,45 @@ export default function CoursePage() {
             <h2 className="text-2xl font-bold mb-2">Módulos Premium</h2>
             <p className="text-muted-foreground mb-6">Acelere sua aprovação com os bônus do Plano Estrategista Completo.</p>
              
-            <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {premiumModules.map((module) => (
-                    <ModuleCard key={module.id} module={module} />
-                ))}
-            </div>
+            <div className="relative mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {premiumModules.map((module) => (
+                        <ModuleCard key={module.id} module={module} />
+                    ))}
+                </div>
 
-            {!arePremiumModulesUnlocked && (
-                <Dialog>
-                    <DialogTrigger asChild>
-                        <Card className="mb-12 border-primary/50 border-2 bg-primary/10 text-center p-8 cursor-pointer hover:bg-primary/20 transition-all transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20">
-                            <Star className="mx-auto h-12 w-12 text-yellow-400 mb-4" />
-                            <CardTitle className="text-2xl sm:text-3xl font-bold">Desbloquear o Plano Premium</CardTitle>
-                            <CardDescription className="mt-2 text-base text-primary-foreground/80 max-w-2xl mx-auto">
-                                Clique aqui e insira seu código de acesso para liberar todos os bônus ou adquira seu acesso agora mesmo.
-                            </CardDescription>
-                            <Button className="mt-6 animate-pulse-cta" size="lg">
-                                <Key className="mr-2 h-5 w-5" />
-                                Liberar Acesso Premium
-                            </Button>
-                        </Card>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
-                         <UnlockableModule 
-                            id="premium"
-                            title="Acesso Premium"
-                            description="Insira seu código para desbloquear todos os módulos premium."
-                            iframeContent=""
-                            unlockCode="ESTRATEGIAVIP"
-                            isUnlockedInitial={false}
-                            onUnlockSuccess={handlePremiumUnlock}
-                            checkoutLink="https://www.ggcheckout.com/checkout/v2/Ht59QH0MKVmX5zqAO6ae"
-                        />
-                    </DialogContent>
-                </Dialog>
-            )}
+                {!arePremiumModulesUnlocked && (
+                     <Dialog>
+                        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm flex flex-col justify-center items-center rounded-lg p-8 text-center z-10 border-2 border-dashed border-primary/50">
+                             <DialogTrigger asChild>
+                                <div className="cursor-pointer">
+                                    <Star className="mx-auto h-12 w-12 text-yellow-400 mb-4" />
+                                    <h3 className="text-2xl sm:text-3xl font-bold">Desbloquear o Plano Premium</h3>
+                                    <p className="mt-2 text-base text-primary-foreground/80 max-w-xl mx-auto">
+                                        Clique aqui e insira seu código para liberar todos os bônus ou adquira seu acesso agora mesmo.
+                                    </p>
+                                    <Button className="mt-6 animate-pulse-cta" size="lg">
+                                        <Key className="mr-2 h-5 w-5" />
+                                        Liberar Acesso Premium
+                                    </Button>
+                                </div>
+                            </DialogTrigger>
+                        </div>
+                        <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
+                            <UnlockableModule 
+                                id="premium"
+                                title="Acesso Premium"
+                                description="Insira seu código para desbloquear todos os módulos premium."
+                                iframeContent=""
+                                unlockCode="ESTRATEGIAVIP"
+                                isUnlockedInitial={false}
+                                onUnlockSuccess={handlePremiumUnlock}
+                                checkoutLink="https://www.ggcheckout.com/checkout/v2/Ht59QH0MKVmX5zqAO6ae"
+                            />
+                        </DialogContent>
+                    </Dialog>
+                )}
+            </div>
 
 
             <h2 className="text-2xl font-bold mb-2">Módulos Complementares</h2>
