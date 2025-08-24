@@ -17,8 +17,8 @@ const planoCompletoFeatures = [
 
 const bonusFeatures = [
     { name: 'BÔNUS #1: +400 Mapas Mentais do ENEM', value: 'R$67' },
-    { name: 'BÔNUS #2: Plano de Estudo Express 30 Dias', value: 'R$27' },
-    { name: 'BÔNUS #3: Guia para Redação de Vestibulares', value: 'R$27' },
+    { name: 'BÔNUS #2: Plano de Estudo Express 30 Dias', value: 'R$13' },
+    { name: 'BÔNUS #3: Guia para Redação de Vestibulares', value: 'R$17' },
 ]
 
 export function OfferSection() {
@@ -73,7 +73,7 @@ export function OfferSection() {
                                 </CardContent>
                             </div>
                             <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-primary/20">
-                                    <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$144,00</span> por apenas:</p>
+                                    <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$97,00</span> por apenas:</p>
                                     <p className="text-5xl sm:text-8xl font-black my-2 text-primary">
                                         R$37,90
                                     </p>
