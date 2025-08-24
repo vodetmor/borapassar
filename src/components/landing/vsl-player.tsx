@@ -16,18 +16,6 @@ export function VslPlayer({ videoSrc }: VslPlayerProps) {
   const [progress, setProgress] = useState(0);
   const hasUnmuted = useRef(false);
 
-  useEffect(() => {
-    if (videoRef.current) {
-        videoRef.current.muted = true;
-        videoRef.current.play().then(() => {
-            setIsPlaying(true);
-        }).catch(error => {
-            console.error("Autoplay failed:", error);
-            setIsPlaying(false);
-        });
-    }
-  }, []);
-
   const handlePlayerClick = () => {
     if (!videoRef.current) return;
 
@@ -41,8 +29,10 @@ export function VslPlayer({ videoSrc }: VslPlayerProps) {
     } else {
       if (videoRef.current.paused) {
         videoRef.current.play();
+        setIsPlaying(true);
       } else {
         videoRef.current.pause();
+        setIsPlaying(false);
       }
     }
   };
@@ -74,7 +64,7 @@ export function VslPlayer({ videoSrc }: VslPlayerProps) {
         controls={false}
       />
       
-      {isMuted && isPlaying && (
+      {isMuted && (
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 transition-opacity duration-300 pointer-events-none">
           <p className="text-white font-bold text-xl mb-2">CLIQUE PARA OUVIR</p>
           <div className="bg-primary text-primary-foreground rounded-full p-4">
