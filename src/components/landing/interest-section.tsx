@@ -4,8 +4,8 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Button } from '../ui/button';
-import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
 
 const testimonials = [
   { src: 'https://i.imgur.com/24ZYd7c.png', alt: 'Depoimento de cliente no WhatsApp 1', hint: 'whatsapp testimonial' },
@@ -26,29 +26,16 @@ export function InterestSection() {
         {/* Desktop Grid */}
         <div className="mt-12 hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {testimonials.map((testimonial, index) => (
-               <Dialog key={index}>
-                <DialogTrigger asChild>
-                    <div className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20 cursor-pointer hover:shadow-primary/30 hover:border-primary/40 transition-all">
-                        <Image
-                            src={testimonial.src}
-                            alt={testimonial.alt}
-                            width={400}
-                            height={800}
-                            className="rounded-md w-full h-auto object-cover"
-                            data-ai-hint={testimonial.hint}
-                        />
-                    </div>
-                </DialogTrigger>
-                <DialogContent className="max-w-md p-2 bg-background/80 backdrop-blur-sm border-primary/30">
+                <div key={index} className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20 hover:shadow-primary/30 hover:border-primary/40 transition-all">
                     <Image
                         src={testimonial.src}
                         alt={testimonial.alt}
-                        width={600}
-                        height={1200}
-                        className="w-full h-auto object-contain rounded-md"
+                        width={400}
+                        height={800}
+                        className="rounded-md w-full h-auto object-cover"
+                        data-ai-hint={testimonial.hint}
                     />
-                </DialogContent>
-            </Dialog>
+                </div>
             ))}
         </div>
 
@@ -64,29 +51,16 @@ export function InterestSection() {
                 <CarouselContent>
                     {testimonials.map((testimonial, index) => (
                         <CarouselItem key={index} className="sm:basis-1/2">
-                             <Dialog>
-                                <DialogTrigger asChild>
-                                    <div className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20 cursor-pointer hover:shadow-primary/30 hover:border-primary/40 transition-all">
-                                        <Image
-                                            src={testimonial.src}
-                                            alt={testimonial.alt}
-                                            width={400}
-                                            height={800}
-                                            className="rounded-md w-full h-auto object-cover"
-                                            data-ai-hint={testimonial.hint}
-                                        />
-                                    </div>
-                                </DialogTrigger>
-                                <DialogContent className="max-w-md p-2 bg-background/80 backdrop-blur-sm border-primary/30">
-                                    <Image
-                                        src={testimonial.src}
-                                        alt={testimonial.alt}
-                                        width={600}
-                                        height={1200}
-                                        className="w-full h-auto object-contain rounded-md"
-                                    />
-                                </DialogContent>
-                            </Dialog>
+                           <div className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
+                                <Image
+                                    src={testimonial.src}
+                                    alt={testimonial.alt}
+                                    width={400}
+                                    height={800}
+                                    className="rounded-md w-full h-auto object-cover"
+                                    data-ai-hint={testimonial.hint}
+                                />
+                            </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
