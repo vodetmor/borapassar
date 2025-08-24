@@ -38,7 +38,7 @@ export function MethodologySection() {
             A Ciência por Trás da <span className="text-primary">Aprovação</span>
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-            Nosso método não é achismo. É a Metodologia 30-70, fundamentada na neurociência da aprendizagem. Simples, brutal e absurdamente eficaz.
+            Nosso método não é achismo. É a Metodologia 30-70, fundamentada na neurociência da aprendizagem. Simples, direto e eficaz.
           </p>
         </div>
         
