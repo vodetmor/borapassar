@@ -39,7 +39,7 @@ export function ComparisonSection() {
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-sm sm:text-base text-foreground">
-              <p>✅ Usa a metodologia 30-35-35 para estudar com foco total.</p>
+              <p>✅ Usa a metodologia 30-70 para estudar com foco total.</p>
               <p>✅ Aplica Active Recall e fixa o conteúdo para sempre.</p>
               <p>✅ Salta para +800 em matemática usando a lógica certa.</p>
               <p>✅ Tira +960 na redação com um modelo validado.</p>

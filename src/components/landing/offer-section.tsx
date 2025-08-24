@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const planoCompletoFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
-  'Metodologia 30-35-35 Validada',
+  'Metodologia 30-70 Validada',
   'Técnicas de Neurociência para Aprendizagem',
   'Modelo de Redação +960 Pontos',
   'Guia Anti-Procrastinação e Controle Emocional',

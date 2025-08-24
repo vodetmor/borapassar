@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 const benefits = [
-  { icon: Target, text: 'Método 30-35-35: Pare de estudar igual um idiota. Absorva, fixe e aplique o conhecimento de forma brutal.' },
+  { icon: Target, text: 'Método 30-70: Pare de estudar igual um idiota. Absorva, fixe e aplique o conhecimento de forma brutal.' },
   { icon: BrainCircuit, text: 'Neurociência de Combate: Transforme seu cérebro numa máquina de aprender. Esqueça o esquecimento.' },
   { icon: PenSquare, text: 'Redação Destruidora: Um modelo de +960 pontos para aniquilar a prova de redação, mesmo que você não saiba por onde começar.' },
   { icon: TimerOff, text: 'O Fim da Procrastinação: Um comando de execução imediata para vencer a preguiça e a ansiedade que te paralisam.' },
