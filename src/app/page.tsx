@@ -14,7 +14,6 @@ import { Header } from '@/components/landing/header';
 import { MindMapsPreviewSection } from '@/components/landing/mindmaps-preview-section';
 import { SubjectDetailsSection } from '@/components/landing/subject-details-section';
 import { useEffect } from 'react';
-import { MindMapsBenefitSection } from '@/components/landing/mind-maps-benefit-section';
 
 
 export default function Home() {
@@ -33,7 +32,6 @@ export default function Home() {
         <MethodologySection />
         <ComparisonSection />
         <DesireSection />
-        <MindMapsBenefitSection />
         <MindMapsPreviewSection />
         <SubjectDetailsSection />
         <InterestSection />
@@ -44,5 +42,3 @@ export default function Home() {
     </div>
   );
 }
-
-
