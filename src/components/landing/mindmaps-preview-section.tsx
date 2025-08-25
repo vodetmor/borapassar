@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react';
@@ -81,18 +82,16 @@ export function MindMapsPreviewSection() {
                             <SwiperSlide key={index}>
                                 <Dialog>
                                     <DialogTrigger asChild>
-                                        <Card className="overflow-hidden cursor-pointer group border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/20 h-full bg-zinc-900/50">
-                                            <CardContent className="p-0 h-full">
-                                                <Image
-                                                    src={map.src}
-                                                    alt={map.alt}
-                                                    width={800}
-                                                    height={1200}
-                                                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                                                    data-ai-hint={map.hint}
-                                                />
-                                            </CardContent>
-                                        </Card>
+                                        <div className="h-full w-full cursor-pointer group">
+                                            <Image
+                                                src={map.src}
+                                                alt={map.alt}
+                                                width={800}
+                                                height={1200}
+                                                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 rounded-lg shadow-lg hover:shadow-primary/20"
+                                                data-ai-hint={map.hint}
+                                            />
+                                        </div>
                                     </DialogTrigger>
                                     <DialogContent className="max-w-4xl p-4 bg-background/80 backdrop-blur-sm border-primary/30">
                                         <Image
