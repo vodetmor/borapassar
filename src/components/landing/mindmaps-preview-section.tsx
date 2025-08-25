@@ -75,7 +75,7 @@ export function MindMapsPreviewSection() {
                             prevEl: '.swiper-button-prev',
                         }}
                         modules={[EffectCoverflow, Pagination, Navigation]}
-                        className="w-full max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-6xl h-[500px] relative"
+                        className="w-full max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-6xl h-[450px] relative"
                     >
                         {mindMaps.map((map, index) => (
                             <SwiperSlide key={index}>
