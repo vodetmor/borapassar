@@ -73,6 +73,10 @@
   }
 }
 
+.swiper-slide {
+  box-shadow: none !important;
+}
+
 .swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
   display: none !important;

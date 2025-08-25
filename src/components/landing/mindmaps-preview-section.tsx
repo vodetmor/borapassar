@@ -57,7 +57,7 @@ export function MindMapsPreviewSection() {
                         }}
                         breakpoints={{
                             320: {
-                                slidesPerView: 1.2,
+                                slidesPerView: 1,
                                 spaceBetween: 10,
                             },
                             640: {
