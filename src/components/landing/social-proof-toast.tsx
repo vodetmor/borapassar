@@ -109,7 +109,7 @@ const notifications = [
 ];
 
 const products = [
-    "Plano Estrategista Completo",
+    "Plano Premium",
     "Plano Essencial"
 ];
 
