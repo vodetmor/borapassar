@@ -20,8 +20,8 @@ export function VslSection() {
           Existe um atalho para a <span className="text-primary font-bold">aprovação</span> que a maioria <span className="text-red-500 font-bold">esconde</span>. Assista ao vídeo e veja como ter acesso não só ao método, mas ao arsenal de +400 mapas mentais que vai te poupar meses de estudo.
         </p>
 
-        <div className="mt-8 mb-8 aspect-video max-w-4xl mx-auto">
-            <VslPlayer videoSrc="https://i.imgur.com/fKBWa6S.mp4" />
+        <div className="mt-8 mb-8 mx-auto max-w-sm aspect-[9/16]">
+            <VslPlayer videoSrc="https://i.imgur.com/p6Y0HxG.mp4" />
         </div>
 
         <div className="mt-10">
@@ -39,4 +39,5 @@ export function VslSection() {
     </section>
   );
 }
+
 
