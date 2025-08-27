@@ -48,8 +48,8 @@ export function OfferSection() {
                         <Card className="border-primary/80 border-2 shadow-2xl shadow-primary/20 bg-background overflow-hidden flex flex-col h-full pt-6">
                             <div className="p-6 sm:p-8 flex-grow">
                                 <CardHeader className="p-0 mb-6 text-center">
-                                    <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Estrategista Completo</CardTitle>
-                                    <CardDescription>O arsenal completo para a aprovação em tempo recorde.</CardDescription>
+                                    <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Premium</CardTitle>
+                                    <CardDescription>Acesso completo + Bônus exclusivos.</CardDescription>
                                 </CardHeader>
                                 <CardContent className="p-0">
                                     <p className="text-sm text-muted-foreground mb-4">Acesso ao método principal:</p>
@@ -80,7 +80,7 @@ export function OfferSection() {
                                     <p className="font-bold text-lg text-accent -mt-2 mb-4">Você economiza R$59,10 (61% OFF)</p>
                                     <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
                                         <Link href="https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh">
-                                            QUERO O PLANO COMPLETO
+                                            QUERO O PLANO PREMIUM
                                         </Link>
                                     </Button>
                                     <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício a tudo.</p>
@@ -93,7 +93,7 @@ export function OfferSection() {
                         <div className="p-6 sm:p-8 flex-grow">
                              <CardHeader className="p-0 mb-6 text-center">
                                 <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Essencial</CardTitle>
-                                <CardDescription>O método principal para começar seus estudos.</CardDescription>
+                                <CardDescription>Acesso ao método principal.</CardDescription>
                             </CardHeader>
                             <CardContent className="p-0">
                                  <p className="text-sm text-muted-foreground mb-4">Acesso ao método principal:</p>
