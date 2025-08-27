@@ -177,7 +177,7 @@ export function SocialProofToast() {
   return (
     <div
       className={cn(
-        'fixed bottom-4 left-4 z-50 w-full max-w-sm p-4 bg-background border border-border rounded-lg shadow-lg transition-all duration-500 ease-out',
+        'fixed bottom-4 left-4 z-50 max-w-sm p-4 bg-background border border-border rounded-lg shadow-lg transition-all duration-500 ease-out',
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-[calc(100%+2rem)] opacity-0'
       )}
     >
