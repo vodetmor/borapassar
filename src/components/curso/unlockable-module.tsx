@@ -9,6 +9,7 @@ import { Lock, Key, Sparkles, AlertCircle, BookOpen, ShoppingCart, Download, Fol
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import confetti from 'canvas-confetti';
 import Link from 'next/link';
+import { ScrollArea } from '../ui/scroll-area';
 
 interface UnlockableModuleProps {
     id: string;
@@ -85,50 +86,52 @@ export function UnlockableModule({ id, title, description, iframeContent, downlo
 
     if (isUnlocked) {
         return (
-            <Card className="border-0 bg-transparent shadow-none">
-                 <CardHeader className="p-6">
-                    <div className="flex flex-col gap-4">
-                        <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
-                            <div className="flex items-start gap-4">
-                                <div className="p-3 bg-primary/10 rounded-full mt-1">
-                                <BookOpen className="w-6 h-6 text-primary flex-shrink-0" />
-                                </div>
-                                <div>
-                                    <CardTitle className="text-xl font-bold">{title}</CardTitle>
-                                    <CardDescription className="mt-1 text-muted-foreground">{isUnlockedInitial ? description : 'Parabéns! Você desbloqueou este conteúdo exclusivo.'}</CardDescription>
+             <ScrollArea className="max-h-[85vh]">
+                <Card className="border-0 bg-transparent shadow-none">
+                    <CardHeader className="p-6">
+                        <div className="flex flex-col gap-4">
+                            <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
+                                <div className="flex items-start gap-4">
+                                    <div className="p-3 bg-primary/10 rounded-full mt-1">
+                                    <BookOpen className="w-6 h-6 text-primary flex-shrink-0" />
+                                    </div>
+                                    <div>
+                                        <CardTitle className="text-xl font-bold">{title}</CardTitle>
+                                        <CardDescription className="mt-1 text-muted-foreground">{isUnlockedInitial ? description : 'Parabéns! Você desbloqueou este conteúdo exclusivo.'}</CardDescription>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </CardHeader>
-                <CardContent className="p-6 pt-0">
-                    {isDownloadFile && (
-                        <div className="flex justify-center mb-6">
-                            <Button asChild className="w-full sm:w-auto animate-pulse-cta">
-                            <Link href={downloadLink} target="_blank" download>
-                                <Download className="mr-2 h-4 w-4" />
-                                Baixar PDF
-                            </Link>
-                        </Button>
-                        </div>
-                    )}
-
-                    {isDriveFolder && (
-                         <div className="flex justify-center mb-6">
-                             <Button asChild size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold shadow-xl shadow-primary/20 px-8 py-7 animate-pulse-cta">
-                                <Link href={downloadLink} target="_blank">
-                                    <FolderKanban className="mr-3 h-6 w-6" />
-                                    Abrir Pasta no Google Drive
+                    </CardHeader>
+                    <CardContent className="p-6 pt-0">
+                        {isDownloadFile && (
+                            <div className="flex justify-center mb-6">
+                                <Button asChild className="w-full sm:w-auto animate-pulse-cta">
+                                <Link href={downloadLink} target="_blank" download>
+                                    <Download className="mr-2 h-4 w-4" />
+                                    Baixar PDF
                                 </Link>
                             </Button>
-                         </div>
-                    )}
-                    
-                    {iframeContent && (
-                        <div className="aspect-video" dangerouslySetInnerHTML={{ __html: iframeContent }} />
-                    )}
-                </CardContent>
-            </Card>
+                            </div>
+                        )}
+
+                        {isDriveFolder && (
+                            <div className="flex justify-center mb-6">
+                                <Button asChild size="lg" className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 text-base font-bold shadow-xl shadow-primary/20 px-8 py-7 animate-pulse-cta">
+                                    <Link href={downloadLink} target="_blank">
+                                        <FolderKanban className="mr-3 h-6 w-6" />
+                                        Abrir Pasta no Google Drive
+                                    </Link>
+                                </Button>
+                            </div>
+                        )}
+                        
+                        {iframeContent && (
+                            <div className="aspect-video" dangerouslySetInnerHTML={{ __html: iframeContent }} />
+                        )}
+                    </CardContent>
+                </Card>
+            </ScrollArea>
         );
     }
 
