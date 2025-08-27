@@ -3,7 +3,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
@@ -88,18 +87,18 @@ export function MindMapsPreviewSection() {
                                                 alt={map.alt}
                                                 width={800}
                                                 height={1200}
-                                                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 rounded-lg shadow-lg hover:shadow-primary/20"
+                                                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-primary/20"
                                                 data-ai-hint={map.hint}
                                             />
                                         </div>
                                     </DialogTrigger>
-                                    <DialogContent className="max-w-4xl p-4 bg-background/80 backdrop-blur-sm border-primary/30">
+                                    <DialogContent className="max-w-4xl p-2 sm:p-4 bg-background/80 backdrop-blur-sm border-primary/30 w-[95vw] sm:w-full">
                                         <Image
                                             src={map.src}
                                             alt={map.alt}
                                             width={1200}
                                             height={1800}
-                                            className="w-full object-contain max-h-[80vh]"
+                                            className="w-full object-contain max-h-[85vh] rounded-md"
                                         />
                                     </DialogContent>
                                 </Dialog>

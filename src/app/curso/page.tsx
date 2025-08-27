@@ -211,7 +211,7 @@ export default function CoursePage() {
                                 </div>
                             </DialogTrigger>
                         </div>
-                        <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
+                        <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background w-[95vw] sm:w-full">
                             <UnlockableModule 
                                 id="premium"
                                 title="Acesso Premium"
@@ -241,5 +241,3 @@ export default function CoursePage() {
     </div>
   );
 }
-
-    

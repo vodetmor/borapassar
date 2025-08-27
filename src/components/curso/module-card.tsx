@@ -83,7 +83,7 @@ export function ModuleCard({ module }: ModuleCardProps) {
                     </CardFooter>
                 </Card>
             </DialogTrigger>
-            <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background">
+            <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background w-[95vw] sm:w-full">
                 <DialogHeader>
                     <DialogTitle className="sr-only">{module.title}</DialogTitle>
                 </DialogHeader>
