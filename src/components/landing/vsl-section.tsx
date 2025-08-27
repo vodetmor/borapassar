@@ -21,7 +21,7 @@ export function VslSection() {
         </p>
 
         <div className="mt-8 mb-8 mx-auto max-w-sm aspect-[9/16]">
-            <VslPlayer videoSrc="https://i.imgur.com/p6Y0HxG.mp4" />
+            <VslPlayer videoSrc="https://i.imgur.com/woTizNZ.mp4" />
         </div>
 
         <div className="mt-10">
@@ -39,6 +39,7 @@ export function VslSection() {
     </section>
   );
 }
+
 
 
 
