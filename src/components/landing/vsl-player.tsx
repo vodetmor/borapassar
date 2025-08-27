@@ -12,9 +12,15 @@ interface VslPlayerProps {
 export function VslPlayer({ videoSrc }: VslPlayerProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isMuted, setIsMuted] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true); // Start as playing since it will autoplay
   const [progress, setProgress] = useState(0);
   const hasUnmuted = useRef(false);
+
+  useEffect(() => {
+    if (videoRef.current) {
+        videoRef.current.muted = true;
+    }
+  }, []);
 
   const handlePlayerClick = () => {
     if (!videoRef.current) return;
@@ -57,6 +63,8 @@ export function VslPlayer({ videoSrc }: VslPlayerProps) {
         src={videoSrc}
         loop
         playsInline
+        autoPlay 
+        muted 
         className="w-full h-full rounded-lg pointer-events-none object-cover"
         onPlay={handlePlay}
         onPause={handlePause}
