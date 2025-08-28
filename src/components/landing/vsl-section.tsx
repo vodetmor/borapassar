@@ -9,6 +9,10 @@ import { useEffect } from 'react';
 
 export function VslSection() {
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <section id="vsl" className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-background">
       <div className="container mx-auto px-4 text-center">
@@ -39,8 +43,3 @@ export function VslSection() {
     </section>
   );
 }
-
-
-
-
-
