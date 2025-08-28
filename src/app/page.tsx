@@ -14,6 +14,7 @@ import { Header } from '@/components/landing/header';
 import { MindMapsPreviewSection } from '@/components/landing/mindmaps-preview-section';
 import { SubjectDetailsSection } from '@/components/landing/subject-details-section';
 import { useEffect } from 'react';
+import { StickyCtaButton } from '@/components/landing/sticky-cta-button';
 
 
 export default function Home() {
@@ -39,6 +40,7 @@ export default function Home() {
         <FaqSection />
       </main>
       <Footer />
+      <StickyCtaButton />
     </div>
   );
 }

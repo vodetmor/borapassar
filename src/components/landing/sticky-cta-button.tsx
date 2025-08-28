@@ -1,0 +1,58 @@
+
+"use client";
+
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
+
+export function StickyCtaButton() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      const scrolled = window.scrollY;
+      const offerSection = document.getElementById('oferta');
+      
+      let offerSectionVisible = false;
+      if (offerSection) {
+        const { top, bottom } = offerSection.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        // Considera a seção visível se pelo menos uma parte dela estiver na tela
+        offerSectionVisible = top < windowHeight && bottom > 0;
+      }
+      
+      // Aparece depois de rolar um pouco, e desaparece se a seção de oferta estiver visível
+      if (scrolled > 400 && !offerSectionVisible) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+    };
+  }, []);
+
+  return (
+    <div className={cn(
+        "fixed bottom-6 w-full px-4 flex justify-center items-center z-40 transition-all duration-300 ease-in-out",
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0',
+        "pointer-events-none" // O container não deve ser clicável
+    )}>
+      <Button 
+        asChild 
+        size="lg" 
+        className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-2xl shadow-accent/30 px-6 py-4 sm:px-8 sm:py-6 rounded-full animate-pulse-cta pointer-events-auto"
+      >
+        <a href="#oferta">
+            GARANTIR OFERTA AGORA
+            <ArrowRight className="ml-2 h-5 w-5"/>
+        </a>
+      </Button>
+    </div>
+  );
+}
