@@ -19,11 +19,7 @@ export function InterestSection() {
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
          <h2 
-            className="text-3xl sm:text-4xl font-bold tracking-tight text-primary drop-shadow-[0_0_10px_hsl(var(--primary)_/_0.5)]"
-            style={{
-                WebkitTextStroke: '1px hsl(var(--primary) / 0.4)',
-                textStroke: '1px hsl(var(--primary) / 0.4)',
-            } as React.CSSProperties}
+            className="inline-block rounded-lg border-2 border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground"
         >
             Veja a avaliação de quem já comprou
         </h2>
