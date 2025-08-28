@@ -22,10 +22,10 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <VslSection />
-        <CredibilitySection />
-        <MethodologySection />
         <ComparisonSection />
         <DesireSection />
+        <CredibilitySection />
+        <MethodologySection />
         <MindMapsPreviewSection />
         <InterestSection />
         <OfferSection />
