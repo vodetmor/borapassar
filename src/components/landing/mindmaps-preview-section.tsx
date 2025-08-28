@@ -36,10 +36,10 @@ export function MindMapsPreviewSection() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-                        <span className="text-primary">BÔNUS PREMIUM:</span> O Material Visual com +400 Mapas Mentais
+                        <span className="text-primary">BÔNUS PREMIUM:</span> +400 MAPAS MENTAIS
                     </h2>
                     <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-                        Este material, que era vendido separadamente por <span className="line-through">R$67</span>, agora é seu <span className="font-bold text-primary">DE GRAÇA</span> ao garantir seu acesso ao plano principal. Absorva o conteúdo de um ano inteiro em poucas horas.
+                        Um material de revisão visual para absorver o conteúdo de um ano em poucas horas. Antes <span className="line-through">R$67</span>, hoje <span className="font-bold text-primary">GRÁTIS</span> no Plano Premium.
                     </p>
                 </div>
                 <div className="relative flex justify-center items-center">
