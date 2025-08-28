@@ -13,17 +13,10 @@ import { CredibilitySection } from '@/components/landing/credibility-section';
 import { Header } from '@/components/landing/header';
 import { MindMapsPreviewSection } from '@/components/landing/mindmaps-preview-section';
 import { SubjectDetailsSection } from '@/components/landing/subject-details-section';
-import { useEffect } from 'react';
 import { StickyCtaButton } from '@/components/landing/sticky-cta-button';
 
 
 export default function Home() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-  }, []);
-  
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground non-selectable">
       <Header />
@@ -34,9 +27,9 @@ export default function Home() {
         <ComparisonSection />
         <DesireSection />
         <MindMapsPreviewSection />
-        <SubjectDetailsSection />
         <InterestSection />
         <OfferSection />
+        <SubjectDetailsSection />
         <FaqSection />
       </main>
       <Footer />
