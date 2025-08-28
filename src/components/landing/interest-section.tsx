@@ -18,10 +18,7 @@ export function InterestSection() {
   return (
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Enquanto você está <span className="text-red-500">pensando</span>, outros estão <span className="text-primary">passando</span>.</h2>
-        <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-          Veja só depoimentos de quem comprou e aprovou.
-        </p>
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Veja a avaliação de quem já comprou</h2>
         
         {/* Desktop Grid */}
         <div className="mt-12 hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
