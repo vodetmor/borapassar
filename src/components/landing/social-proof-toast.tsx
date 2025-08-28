@@ -177,8 +177,8 @@ export function SocialProofToast() {
   return (
     <div
       className={cn(
-        'fixed bottom-4 left-4 z-50 max-w-sm p-4 bg-background border border-border rounded-lg shadow-lg transition-all duration-500 ease-out',
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-[calc(100%+2rem)] opacity-0'
+        'fixed top-4 right-4 z-50 max-w-sm p-4 bg-background border border-border rounded-lg shadow-lg transition-all duration-500 ease-out',
+        isVisible ? 'translate-x-0 opacity-100' : 'translate-x-[calc(100%+2rem)] opacity-0'
       )}
     >
       <div className="flex items-start gap-3">
