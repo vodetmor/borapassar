@@ -20,7 +20,7 @@ export function InterestSection() {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Enquanto você está <span className="text-red-500">pensando</span>, outros estão <span className="text-primary">passando</span>.</h2>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-          Este não é um "método fofinho". É uma arma de aprovação em massa. Validado por quem saiu do zero e hoje está na universidade dos sonhos.
+          Veja só depoimentos de quem comprou e aprovou.
         </p>
         
         {/* Desktop Grid */}
