@@ -68,14 +68,6 @@ export function InterestSection() {
                 <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 z-10" />
             </Carousel>
         </div>
-
-        <div className="mt-16 text-center">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm sm:text-lg font-bold shadow-xl shadow-accent/20 px-6 py-4 sm:px-8 sm:py-6 rounded-full animate-pulse-cta">
-                <a href="#oferta">
-                    EU QUERO ESSES RESULTADOS
-                </a>
-            </Button>
-        </div>
       </div>
     </section>
   );
