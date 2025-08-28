@@ -18,7 +18,15 @@ export function InterestSection() {
   return (
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Veja a avaliação de quem já comprou</h2>
+         <h2 
+            className="text-3xl sm:text-4xl font-bold tracking-tight text-primary drop-shadow-[0_0_10px_hsl(var(--primary)_/_0.5)]"
+            style={{
+                WebkitTextStroke: '1px hsl(var(--primary) / 0.4)',
+                textStroke: '1px hsl(var(--primary) / 0.4)',
+            } as React.CSSProperties}
+        >
+            Veja a avaliação de quem já comprou
+        </h2>
         
         {/* Desktop Grid */}
         <div className="mt-12 hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
