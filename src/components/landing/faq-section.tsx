@@ -7,6 +7,22 @@ import {
 
 const faqs = [
   {
+    question: 'Os mapas mentais são um produto separado?',
+    answer: 'Eles eram vendidos separadamente por R$67, mas ao garantir seu acesso ao Plano Premium hoje, você os recebe como um bônus, totalmente de graça. É um arsenal completo que se integra ao método principal.',
+  },
+  {
+    question: 'Como eu acesso os +400 mapas mentais?',
+    answer: 'Assim que você adquire o Plano Premium, eles são liberados instantaneamente na sua Área de Membros, junto com o guia principal. Estão organizados por matéria para você encontrar exatamente o que precisa, de forma rápida e fácil.',
+  },
+  {
+    question: 'Os mapas cobrem todas as matérias do ENEM?',
+    answer: 'Sim. O pacote inclui mais de 400 mapas mentais que cobrem os tópicos de maior incidência em todas as áreas do conhecimento: Ciências da Natureza, Ciências Humanas, Linguagens e Matemática. É a cobertura completa que você precisa.',
+  },
+  {
+    question: 'Eu realmente preciso dos mapas ou só o guia já basta?',
+    answer: 'O guia principal é a estratégia, o "como" estudar. Os mapas mentais são a aceleração, o "o quê" estudar de forma visual e rápida. Usar os dois juntos é a combinação que coloca você na frente de 99% dos concorrentes. Um potencializa o outro.',
+  },
+  {
     question: 'Isso é só mais um cursinho ou livro chato?',
     answer: 'Não. É um sistema de ataque. Uma área de membros com um guia estratégico, direto ao ponto, que você acessa na hora. Sem enrolação, sem conteúdo inútil. É o mapa da mina para a sua aprovação, para acessar no celular, tablet ou onde quiser.',
   },
