@@ -5,13 +5,8 @@ import { Button } from '@/components/ui/button';
 import { VslPlayer } from './vsl-player';
 import Link from 'next/link';
 import { LogIn } from 'lucide-react';
-import { useEffect } from 'react';
 
 export function VslSection() {
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <section id="vsl" className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-background">
