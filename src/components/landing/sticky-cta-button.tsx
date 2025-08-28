@@ -1,41 +1,13 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
+import { useStickyCta } from '@/hooks/use-sticky-cta';
 
 export function StickyCtaButton() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      const scrolled = window.scrollY;
-      const offerSection = document.getElementById('oferta');
-      
-      let offerSectionVisible = false;
-      if (offerSection) {
-        const { top, bottom } = offerSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        // Considera a seção visível se pelo menos uma parte dela estiver na tela
-        offerSectionVisible = top < windowHeight && bottom > 0;
-      }
-      
-      // Aparece depois de rolar um pouco, e desaparece se a seção de oferta estiver visível
-      if (scrolled > 400 && !offerSectionVisible) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-
-    return () => {
-      window.removeEventListener('scroll', toggleVisibility);
-    };
-  }, []);
+  const { isVisible } = useStickyCta();
 
   return (
     <div className={cn(
