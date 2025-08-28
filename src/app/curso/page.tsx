@@ -32,7 +32,7 @@ const premiumModules: Module[] = [
     id: 'mapasmentais',
     type: 'premium',
     title: "+400 Resumos em Mapas Mentais",
-    description: "O arsenal visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
+    description: "O material visual para absorver o conteúdo de um ano em poucas horas. Tudo o que você precisa para o ENEM e vestibulares.",
     iframeContent: '',
     coverImage: 'https://i.imgur.com/xkVqPhD.png',
     coverImageHint: 'mind maps collection',
@@ -229,7 +229,7 @@ export default function CoursePage() {
 
 
             <h2 className="text-2xl font-bold mb-2">Módulos Complementares</h2>
-            <p className="text-muted-foreground mb-6">Comprou um material extra? Desbloqueie seu arsenal para potencializar ainda mais seus resultados.</p>
+            <p className="text-muted-foreground mb-6">Comprou um material extra? Desbloqueie seu material para potencializar ainda mais seus resultados.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {orderBumps.map((bump) => (
                     <ModuleCard key={bump.id} module={bump} />

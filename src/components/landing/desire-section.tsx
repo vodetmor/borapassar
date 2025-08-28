@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 const benefits = [
-  { icon: Target, text: 'Metodologia Secreta: Um sistema de estudos validado, baseado em neurociência, para você absorver o conteúdo e aplicá-lo de forma brutal.' },
-  { icon: MapPin, text: '+400 Mapas Mentais Prontos: Sua arma visual para hackear a memorização e aprender o conteúdo de 1 ano em poucas horas.'},
-  { icon: PenSquare, text: 'Redação Destruidora: Um modelo de +960 pontos para aniquilar a prova de redação, mesmo que você não saiba por onde começar.' },
-  { icon: ShieldCheck, text: 'Blindagem Emocional: Controle o nervosismo, vença a procrastinação e anule qualquer chance de dar "branco" na hora H.' },
+  { icon: Target, text: 'Metodologia de Estudo Validada: Um sistema de estudos completo, baseado em neurociência, para você absorver o conteúdo e aplicá-lo com eficácia.' },
+  { icon: MapPin, text: '+400 Mapas Mentais Prontos: Um material visual para otimizar a memorização e revisar o conteúdo de 1 ano em poucas horas.'},
+  { icon: PenSquare, text: 'Modelo de Redação +960: Um modelo de redação validado para você alcançar uma nota excelente, mesmo que não saiba por onde começar.' },
+  { icon: ShieldCheck, text: 'Controle Emocional e Foco: Técnicas para gerenciar o nervosismo, vencer a procrastinação e evitar o "branco" na hora da prova.' },
 ];
 
 export function DesireSection() {
@@ -15,9 +15,9 @@ export function DesireSection() {
     <section id="desejo" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">O Arsenal de Guerra para a sua <span className="text-primary">Aprovação</span></h2>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">O Material Completo para Sua <span className="text-primary">Aprovação</span></h2>
           <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground">
-            Isto não é um "livrinho de dicas". É o seu arsenal. Cada item abaixo é uma arma para você usar contra seus concorrentes.
+            Este é o seu material de estudo. Cada item abaixo é uma ferramenta para você alcançar seus objetivos.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

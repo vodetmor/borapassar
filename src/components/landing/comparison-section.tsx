@@ -44,8 +44,8 @@ export function ComparisonSection() {
               <p>✅ Salta para +800 em matemática usando a lógica certa.</p>
               <p>✅ Tira +960 na redação com um modelo validado.</p>
               <p>✅ Compra e usa os +400 resumos para aprender toda a matéria em tempo recorde.</p>
-              <p>✅ Chega na prova calmo, no controle e pronto para destruir.</p>
-               <p className="text-sm sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado na Universidade dos Sonhos.</p>
+              <p>✅ Chega na prova calmo, no controle e pronto para a aprovação.</p>
+               <p className="text-sm sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado(a) na Universidade dos Sonhos.</p>
             </CardContent>
           </Card>
         </div>
