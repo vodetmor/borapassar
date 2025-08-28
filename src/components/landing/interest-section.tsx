@@ -19,7 +19,7 @@ export function InterestSection() {
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
          <h2 
-            className="inline-block rounded-lg border-2 border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground"
+            className="inline-block rounded-full border-2 border-primary bg-primary/10 px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-primary"
         >
             Veja a avaliação de quem já comprou
         </h2>
