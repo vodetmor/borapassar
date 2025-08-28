@@ -4,13 +4,10 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 const benefits = [
-  { icon: Target, text: 'Método 30-70: Pare de estudar igual um idiota. Absorva, fixe e aplique o conhecimento de forma brutal.' },
-  { icon: BrainCircuit, text: 'Neurociência de Combate: Transforme seu cérebro numa máquina de aprender. Esqueça o esquecimento.' },
+  { icon: Target, text: 'Metodologia Secreta: Um sistema de estudos validado, baseado em neurociência, para você absorver o conteúdo e aplicá-lo de forma brutal.' },
   { icon: MapPin, text: '+400 Mapas Mentais Prontos: Sua arma visual para hackear a memorização e aprender o conteúdo de 1 ano em poucas horas.'},
   { icon: PenSquare, text: 'Redação Destruidora: Um modelo de +960 pontos para aniquilar a prova de redação, mesmo que você não saiba por onde começar.' },
-  { icon: TimerOff, text: 'O Fim da Procrastinação: Um comando de execução imediata para vencer a preguiça e a ansiedade que te paralisam.' },
-  { icon: ShieldCheck, text: 'Blindagem Emocional Anti-Branco: Controle o nervosismo e anule qualquer chance de dar "branco" na hora H.' },
-  { icon: Rocket, text: 'Planos de Execução: Não são apenas "planos", são ordens de batalha diárias para qualquer rotina. É só seguir e executar.' },
+  { icon: ShieldCheck, text: 'Blindagem Emocional: Controle o nervosismo, vença a procrastinação e anule qualquer chance de dar "branco" na hora H.' },
 ];
 
 export function DesireSection() {
