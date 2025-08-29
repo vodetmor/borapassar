@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Check, ShieldCheck, X, Star, Map } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const planoCompletoFeatures = [
   'Acesso VIP à Área de Membros Estratégica',
@@ -83,7 +84,15 @@ export function OfferSection() {
                                             QUERO O PLANO PREMIUM
                                         </Link>
                                     </Button>
-                                    <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício a tudo.</p>
+                                    <Image
+                                        src="https://i.imgur.com/eVZDTLT.png"
+                                        alt="Selos de pagamento"
+                                        width={250}
+                                        height={25}
+                                        data-ai-hint="payment methods"
+                                        className="mx-auto mt-4"
+                                    />
+                                    <p className="mt-2 text-xs text-muted-foreground">Pagamento único, acesso vitalício a tudo.</p>
                                 </div>
                         </Card>
                     </div>
@@ -127,7 +136,15 @@ export function OfferSection() {
                                         QUERO O PLANO ESSENCIAL
                                     </Link>
                                 </Button>
-                               <p className="mt-4 text-xs text-muted-foreground">Pagamento único, acesso vitalício ao método.</p>
+                               <Image
+                                    src="https://i.imgur.com/eVZDTLT.png"
+                                    alt="Selos de pagamento"
+                                    width={250}
+                                    height={25}
+                                    data-ai-hint="payment methods"
+                                    className="mx-auto mt-4"
+                                />
+                               <p className="mt-2 text-xs text-muted-foreground">Pagamento único, acesso vitalício ao método.</p>
                             </div>
                     </Card>
                 </div>
