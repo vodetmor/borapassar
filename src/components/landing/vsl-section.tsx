@@ -13,7 +13,7 @@ export function VslSection() {
       <div className="container mx-auto px-4 text-center">
 
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mt-8">
-          Metodologia <span className="text-primary">VALIDADA</span> + 400 resumos para a <span className="text-primary">MELHOR</span> nota no ENEM
+          Metodologia validada +400 resumos para <span className="text-primary">DOBRAR</span> sua nota no <span className="text-primary">ENEM</span>
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
           Descubra no vídeo o atalho para a aprovação com o método exclusivo e 400 mapas mentais que economizam meses de estudo.
