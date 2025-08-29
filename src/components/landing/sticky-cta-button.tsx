@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { ArrowRight } from 'lucide-react';
 import { useStickyCta } from '@/hooks/use-sticky-cta';
+import Image from 'next/image';
 
 export function StickyCtaButton() {
   const { isVisible } = useStickyCta();
@@ -15,7 +16,7 @@ export function StickyCtaButton() {
         "bg-black/90 backdrop-blur-sm border-t border-border/50",
         isVisible ? 'translate-y-0' : 'translate-y-full'
     )}>
-        <div className="container mx-auto px-4 py-3 flex justify-center items-center">
+        <div className="container mx-auto px-4 py-3 flex flex-col justify-center items-center gap-2">
             <Button 
                 asChild 
                 size="lg" 
@@ -26,6 +27,14 @@ export function StickyCtaButton() {
                     <ArrowRight className="ml-2 h-5 w-5"/>
                 </a>
             </Button>
+            <Image
+                src="https://i.imgur.com/eVZDTLT.png"
+                alt="Selos de pagamento"
+                width={250}
+                height={25}
+                data-ai-hint="payment methods"
+                className="max-w-[200px] sm:max-w-[250px]"
+            />
       </div>
     </div>
   );
