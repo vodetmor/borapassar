@@ -38,8 +38,8 @@ export function ComparisonSection() {
               </div>
             </CardHeader>
             <CardContent className="space-y-3 text-sm sm:text-base text-foreground">
-              <p>✅ Usa a metodologia 30-70 para estudar com foco total.</p>
               <p>✅ Paga apenas <span className="font-bold text-primary">R$14,90</span> para sair na frente de 99% dos concorrentes com um arsenal de resumos prontos.</p>
+              <p>✅ Usa a metodologia 30-70 para estudar com foco total.</p>
               <p>✅ Aplica Active Recall e fixa o conteúdo para sempre.</p>
               <p>✅ Salta para +800 em matemática usando a lógica certa.</p>
               <p>✅ Chega na prova calmo, no controle e pronto para a aprovação.</p>
