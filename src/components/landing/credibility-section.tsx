@@ -39,13 +39,13 @@ const mainProofs = [
 
 const logos = [
   { name: "G1", src: "https://i.imgur.com/WPzDXmR.png", hint: "G1 logo", bgColor: 'bg-[#C4170C]' },
-  { name: "USP", src: "https://i.imgur.com/4nTFJ5E.png", hint: "USP logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
-  { name: "Harvard", src: "https://i.imgur.com/rUgRCaW.png", hint: "Harvard logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
+  { name: "USP", src: "https://i.imgur.com/4nTFJ5E.png", hint: "USP logo", bgColor: 'bg-white', needsPadding: true },
+  { name: "Harvard", src: "https://i.imgur.com/rUgRCaW.png", hint: "Harvard logo", bgColor: 'bg-white', needsPadding: true },
   { name: "Forbes", src: "https://i.imgur.com/WZOOTO8.png", hint: "Forbes logo", bgColor: 'bg-black' },
   { name: "Nature", src: "https://i.imgur.com/oeUjfFr.png", hint: "Nature logo", bgColor: 'bg-black' },
-  { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
-  { name: "UnB", src: "https://i.imgur.com/Gs7pAdJ.png", hint: "UnB logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
-  { name: "Unicamp", src: "https://i.imgur.com/bh8WgxT.png", hint: "Unicamp logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
+  { name: "UFRGS", src: "https://i.imgur.com/MsOOUBU.png", hint: "UFRGS logo", bgColor: 'bg-white', needsPadding: true },
+  { name: "UnB", src: "https://i.imgur.com/Gs7pAdJ.png", hint: "UnB logo", bgColor: 'bg-white', needsPadding: true },
+  { name: "Unicamp", src: "https://i.imgur.com/bh8WgxT.png", hint: "Unicamp logo", bgColor: 'bg-white', needsPadding: true },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
@@ -120,28 +120,28 @@ export function CredibilitySection() {
                 >
                     <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll">
                          {duplicatedLogos.map((logo, index) => (
-                            <li key={index} className={cn("flex-shrink-0 flex justify-center items-center h-24 w-48 p-4 rounded-lg", logo.bgColor)}>
+                            <li key={index} className={cn("flex-shrink-0 flex justify-center items-center h-24 w-48 rounded-lg", logo.bgColor)}>
                                 <Image 
                                     src={logo.src}
                                     alt={`Logo ${logo.name}`}
                                     width={150}
                                     height={60}
                                     data-ai-hint={logo.hint}
-                                    className={cn("object-contain h-full w-auto", logo.customClass)}
+                                    className={cn("object-contain h-full w-auto", logo.needsPadding && "p-4")}
                                 />
                             </li>
                         ))}
                     </ul>
                      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
                          {duplicatedLogos.map((logo, index) => (
-                            <li key={index} className={cn("flex-shrink-0 flex justify-center items-center h-24 w-48 p-4 rounded-lg", logo.bgColor)}>
+                            <li key={index} className={cn("flex-shrink-0 flex justify-center items-center h-24 w-48 rounded-lg", logo.bgColor)}>
                                 <Image 
                                     src={logo.src}
                                     alt={`Logo ${logo.name}`}
                                     width={150}
                                     height={60}
                                     data-ai-hint={logo.hint}
-                                    className={cn("object-contain h-full w-auto", logo.customClass)}
+                                    className={cn("object-contain h-full w-auto", logo.needsPadding && "p-4")}
                                 />
                             </li>
                         ))}
