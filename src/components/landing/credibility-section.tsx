@@ -6,6 +6,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 import Image from 'next/image';
@@ -43,8 +45,11 @@ const logos = [
 ];
 
 export function CredibilitySection() {
-    const plugin = React.useRef(
+    const pluginLogos = React.useRef(
         Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })
+    );
+     const pluginProofs = React.useRef(
+        Autoplay({ delay: 3000, stopOnInteraction: true })
     );
 
     return (
@@ -59,20 +64,36 @@ export function CredibilitySection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
-                  {mainProofs.map((proof, index) => (
-                    <div key={index} className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
-                      <Image
-                        src={proof.src}
-                        alt={proof.alt}
-                        width={1280}
-                        height={720}
-                        className="rounded-md w-full h-auto object-cover"
-                        data-ai-hint={proof.hint}
-                      />
-                    </div>
-                  ))}
+                 <div className="max-w-3xl mx-auto">
+                    <Carousel
+                        plugins={[pluginProofs.current]}
+                        opts={{
+                            align: "start",
+                            loop: true,
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent>
+                            {mainProofs.map((proof, index) => (
+                                <CarouselItem key={index}>
+                                    <div className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
+                                        <Image
+                                            src={proof.src}
+                                            alt={proof.alt}
+                                            width={1280}
+                                            height={720}
+                                            className="rounded-md w-full h-auto object-cover"
+                                            data-ai-hint={proof.hint}
+                                        />
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="absolute left-2 sm:-left-12 top-1/2 -translate-y-1/2 z-10" />
+                        <CarouselNext className="absolute right-2 sm:-right-12 top-1/2 -translate-y-1/2 z-10" />
+                    </Carousel>
                 </div>
+
 
                 <div className="text-center mt-16 mb-12">
                     <p className="text-lg text-muted-foreground">E recomendado por especialistas nas maiores universidades e portais de notícias:</p>
@@ -80,7 +101,7 @@ export function CredibilitySection() {
                 
                 <div className="w-full">
                      <Carousel
-                        plugins={[plugin.current]}
+                        plugins={[pluginLogos.current]}
                         opts={{
                             align: "start",
                             loop: true,
