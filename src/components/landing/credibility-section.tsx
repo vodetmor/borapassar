@@ -132,6 +132,20 @@ export function CredibilitySection() {
                             </li>
                         ))}
                     </ul>
+                     <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
+                         {duplicatedLogos.map((logo, index) => (
+                            <li key={index} className={cn("flex-shrink-0 flex justify-center items-center h-24 w-48 p-4 rounded-lg", logo.bgColor)}>
+                                <Image 
+                                    src={logo.src}
+                                    alt={`Logo ${logo.name}`}
+                                    width={150}
+                                    height={60}
+                                    data-ai-hint={logo.hint}
+                                    className={cn("object-contain h-full w-auto", logo.customClass)}
+                                />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>
