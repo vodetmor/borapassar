@@ -28,7 +28,7 @@ export function OfferSection() {
         <section id="oferta" className="py-16 sm:py-24 bg-secondary">
             <div className="container mx-auto px-4">
                 <div className="text-center">
-                    <h2 className="inline-block rounded-full bg-primary/10 border border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+                     <h2 className="inline-block rounded-full bg-primary/10 border border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
                         Escolha o Plano que Vai Garantir Sua <span className="text-primary">Aprovação</span>
                     </h2>
                     <p className="mt-6 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
@@ -67,11 +67,11 @@ export function OfferSection() {
                             </CardContent>
                         </div>
                         <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-border/50">
+                                <p className="font-bold text-lg text-accent/80 mb-1">R$19,10 de desconto</p>
                                 <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$27,00</span> por apenas:</p>
                                 <p className="text-5xl sm:text-8xl font-black my-2 text-primary/80">
                                     R$7,90
                                 </p>
-                                <p className="font-bold text-lg text-accent/80 -mt-2 mb-4">Você economiza R$19,10</p>
                                 <Button asChild size="lg" className="w-full bg-primary/80 text-primary-foreground hover:bg-primary/70 text-base sm:text-xl font-bold shadow-lg shadow-primary/10 py-4 sm:py-7">
                                     <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
                                         QUERO O PLANO ESSENCIAL
@@ -125,11 +125,11 @@ export function OfferSection() {
                                 </CardContent>
                             </div>
                             <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-primary/20">
+                                    <p className="font-bold text-lg text-accent mb-1">R$52,10 de desconto</p>
                                     <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$67,00</span> por apenas:</p>
                                     <p className="text-5xl sm:text-8xl font-black my-2 text-primary">
                                         R$14,90
                                     </p>
-                                    <p className="font-bold text-lg text-accent -mt-2 mb-4">Você economiza R$52,10</p>
                                     <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
                                         <Link href="https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh">
                                             QUERO O PLANO PREMIUM
