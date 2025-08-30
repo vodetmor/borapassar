@@ -48,10 +48,9 @@ const logos = [
   { name: "Unicamp", src: "https://i.imgur.com/bh8WgxT.png", hint: "Unicamp logo", bgColor: 'bg-white', customClass: "h-24 w-auto p-2" },
 ];
 
+const duplicatedLogos = [...logos, ...logos];
+
 export function CredibilitySection() {
-    const pluginLogos = React.useRef(
-        Autoplay({ delay: 2000, stopOnInteraction: false, stopOnMouseEnter: true })
-    );
      const pluginProofs = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: true })
     );
@@ -116,32 +115,23 @@ export function CredibilitySection() {
                     <p className="text-lg text-muted-foreground">E recomendado por especialistas nas maiores universidades e portais de notícias:</p>
                 </div>
                 
-                <div className="w-full">
-                     <Carousel
-                        plugins={[pluginLogos.current]}
-                        opts={{
-                            align: "start",
-                            loop: true,
-                        }}
-                        className="w-full"
-                    >
-                        <CarouselContent className="-ml-8">
-                             {logos.map((logo, index) => (
-                                <CarouselItem key={index} className="pl-8 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
-                                    <div className={cn("flex justify-center items-center h-24 p-4 rounded-lg", logo.bgColor)}>
-                                        <Image 
-                                            src={logo.src}
-                                            alt={`Logo ${logo.name}`}
-                                            width={150}
-                                            height={60}
-                                            data-ai-hint={logo.hint}
-                                            className={cn("object-contain h-full w-auto", (logo as any).customClass)}
-                                        />
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                    </Carousel>
+                <div 
+                    className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+                >
+                    <ul className="flex items-center justify-center md:justify-start [&_li]:mx-4 [&_img]:max-w-none animate-infinite-scroll">
+                         {duplicatedLogos.map((logo, index) => (
+                            <li key={index} className={cn("flex-shrink-0 flex justify-center items-center h-24 w-48 p-4 rounded-lg", logo.bgColor)}>
+                                <Image 
+                                    src={logo.src}
+                                    alt={`Logo ${logo.name}`}
+                                    width={150}
+                                    height={60}
+                                    data-ai-hint={logo.hint}
+                                    className={cn("object-contain h-full w-auto", logo.customClass)}
+                                />
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>
