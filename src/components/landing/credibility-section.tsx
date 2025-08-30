@@ -13,7 +13,11 @@ import Autoplay from "embla-carousel-autoplay"
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 const mainProofs = [
   { 
@@ -76,16 +80,29 @@ export function CredibilitySection() {
                         <CarouselContent>
                             {mainProofs.map((proof, index) => (
                                 <CarouselItem key={index}>
-                                    <div className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20">
-                                        <Image
-                                            src={proof.src}
-                                            alt={proof.alt}
-                                            width={1280}
-                                            height={720}
-                                            className="rounded-md w-full h-auto object-cover"
-                                            data-ai-hint={proof.hint}
-                                        />
-                                    </div>
+                                    <Dialog>
+                                        <DialogTrigger asChild>
+                                            <div className="bg-zinc-900/50 p-2 rounded-lg shadow-lg border border-primary/20 cursor-pointer hover:border-primary/50 transition-all">
+                                                <Image
+                                                    src={proof.src}
+                                                    alt={proof.alt}
+                                                    width={1280}
+                                                    height={720}
+                                                    className="rounded-md w-full h-auto object-cover"
+                                                    data-ai-hint={proof.hint}
+                                                />
+                                            </div>
+                                        </DialogTrigger>
+                                        <DialogContent className="max-w-4xl p-2 sm:p-4 bg-background/80 backdrop-blur-sm border-primary/30 w-[95vw] sm:w-full">
+                                            <Image
+                                                src={proof.src}
+                                                alt={proof.alt}
+                                                width={1920}
+                                                height={1080}
+                                                className="w-full object-contain max-h-[85vh] rounded-md"
+                                            />
+                                        </DialogContent>
+                                    </Dialog>
                                 </CarouselItem>
                             ))}
                         </CarouselContent>
