@@ -23,10 +23,9 @@ export function ComparisonSection() {
             </CardHeader>
             <CardContent className="space-y-3 text-sm sm:text-base text-muted-foreground">
               <p>❌ Estuda 10h por dia e sente que não aprendeu nada.</p>
+              <p>❌ Acha caro pagar R$20+ por um material e prefere perder horas procurando conteúdo incompleto na internet.</p>
               <p>❌ Lê, relê, grifa... e esquece tudo na semana seguinte.</p>
               <p>❌ Tira 500 em matemática e acha que é "de humanas".</p>
-              <p>❌ Zera a redação por não saber argumentar.</p>
-              <p>❌ Acha caro pagar por resumos e prefere perder horas procurando material incompleto na internet.</p>
               <p>❌ Chega na prova exausto, ansioso e sem confiança.</p>
               <p className="text-sm sm:text-lg font-bold text-center text-red-400 pt-4">Resultado: Mais um ano de cursinho em vão.</p>
             </CardContent>
@@ -40,10 +39,9 @@ export function ComparisonSection() {
             </CardHeader>
             <CardContent className="space-y-3 text-sm sm:text-base text-foreground">
               <p>✅ Usa a metodologia 30-70 para estudar com foco total.</p>
+              <p>✅ Paga apenas <span className="font-bold text-primary">R$14,90</span> para sair na frente de 99% dos concorrentes com um arsenal de resumos prontos.</p>
               <p>✅ Aplica Active Recall e fixa o conteúdo para sempre.</p>
               <p>✅ Salta para +800 em matemática usando a lógica certa.</p>
-              <p>✅ Tira +960 na redação com um modelo validado.</p>
-              <p>✅ Investe o preço de um lanche nos +400 resumos e economiza semanas de estudo.</p>
               <p>✅ Chega na prova calmo, no controle e pronto para a aprovação.</p>
                <p className="text-sm sm:text-lg font-bold text-center text-primary pt-4">Resultado: Aprovado(a) na Universidade dos Sonhos.</p>
             </CardContent>
