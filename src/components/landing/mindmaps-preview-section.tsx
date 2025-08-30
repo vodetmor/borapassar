@@ -5,7 +5,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import {
   Dialog,
@@ -49,6 +49,10 @@ export function MindMapsPreviewSection() {
                         centeredSlides={true}
                         loop={true}
                         preventInteractionOnTransition={true}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
                         coverflowEffect={{
                             rotate: 0,
                             stretch: 0,
@@ -74,7 +78,7 @@ export function MindMapsPreviewSection() {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
                         }}
-                        modules={[EffectCoverflow, Pagination, Navigation]}
+                        modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
                         className="w-full max-w-xs sm:max-w-xl md:max-w-4xl lg:max-w-6xl h-[450px] relative"
                     >
                         {mindMaps.map((map, index) => (

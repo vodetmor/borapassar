@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { cn } from '@/lib/utils';
+import Autoplay from "embla-carousel-autoplay"
 
 const testimonials = [
   { src: 'https://i.imgur.com/24ZYd7c.png', alt: 'Depoimento de cliente no WhatsApp 1', hint: 'whatsapp testimonial' },
@@ -15,6 +16,10 @@ const testimonials = [
 ];
 
 export function InterestSection() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 2500, stopOnInteraction: true, stopOnMouseEnter: true })
+  )
+
   return (
     <section id="interesse" className="py-16 sm:py-24 bg-secondary">
       <div className="container mx-auto px-4 text-center">
@@ -43,6 +48,7 @@ export function InterestSection() {
         {/* Mobile Carousel */}
         <div className="mt-12 lg:hidden">
             <Carousel
+                plugins={[plugin.current]}
                 opts={{
                     align: "start",
                     loop: true,
