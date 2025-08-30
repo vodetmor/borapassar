@@ -69,9 +69,9 @@ export function OfferSection() {
                         <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-border/50">
                                 <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$47,00</span> por apenas:</p>
                                 <p className="text-5xl sm:text-8xl font-black my-2 text-primary/80">
-                                    R$16,90
+                                    R$7,90
                                 </p>
-                                <p className="font-bold text-lg text-accent/80 -mt-2 mb-4">Você economiza R$30,10 (64% OFF)</p>
+                                <p className="font-bold text-lg text-accent/80 -mt-2 mb-4">Você economiza R$39,10 (83% OFF)</p>
                                 <Button asChild size="lg" className="w-full bg-primary/80 text-primary-foreground hover:bg-primary/70 text-base sm:text-xl font-bold shadow-lg shadow-primary/10 py-4 sm:py-7">
                                     <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
                                         QUERO O PLANO ESSENCIAL
@@ -127,9 +127,9 @@ export function OfferSection() {
                             <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-primary/20">
                                     <p className="text-base sm:text-lg text-muted-foreground">De <span className="line-through text-red-400 text-lg sm:text-xl">R$97,00</span> por apenas:</p>
                                     <p className="text-5xl sm:text-8xl font-black my-2 text-primary">
-                                        R$26,90
+                                        R$14,90
                                     </p>
-                                    <p className="font-bold text-lg text-accent -mt-2 mb-4">Você economiza R$70,10 (72% OFF)</p>
+                                    <p className="font-bold text-lg text-accent -mt-2 mb-4">Você economiza R$82,10 (85% OFF)</p>
                                     <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
                                         <Link href="https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh">
                                             QUERO O PLANO PREMIUM
