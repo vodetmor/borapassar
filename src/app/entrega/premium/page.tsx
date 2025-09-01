@@ -46,7 +46,7 @@ export default function EntregaPremiumPage() {
         <Card className="w-full max-w-2xl bg-zinc-900/50 border-primary/20 shadow-2xl shadow-primary/10 text-center animate-in fade-in-50 zoom-in-95 duration-500">
           <CardHeader className="p-6 sm:p-8">
             <Star className="mx-auto h-16 w-16 text-yellow-400 mb-6" />
-            <CardTitle className="text-3xl sm:text-4xl font-black text-primary tracking-tight">PLANO PREMIUM LIBERADO!</CardTitle>
+            <CardTitle className="text-3xl sm:text-4xl font-black text-primary tracking-tight">PACOTE COMPLETO LIBERADO!</CardTitle>
             <CardDescription className="mt-4 text-base sm:text-lg max-w-xl mx-auto text-muted-foreground">
               Parabéns! Aqui estão todas as suas informações de acesso. Guarde-as em um local seguro.
             </CardDescription>
@@ -81,7 +81,7 @@ export default function EntregaPremiumPage() {
                         {copiedField === 'code' ? <Check className="h-4 w-4 text-green-500" /> : <Copy className="h-4 w-4" />}
                     </Button>
                 </div>
-                <p className="text-muted-foreground text-sm mt-2">Use este código para desbloquear TODOS os módulos premium na sua Área de Membros.</p>
+                <p className="text-muted-foreground text-sm mt-2">Use este código para desbloquear TODOS os módulos do Pacote Completo na sua Área de Membros.</p>
             </div>
             
             <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-lg font-bold shadow-xl shadow-accent/20 px-8 py-7 animate-pulse-cta">

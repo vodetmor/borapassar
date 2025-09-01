@@ -109,8 +109,8 @@ const notifications = [
 ];
 
 const products = [
-    "Plano Premium",
-    "Plano Essencial"
+    "Pacote Completo",
+    "Pacote Essencial"
 ];
 
 const excludedPaths = ['/login', '/curso', '/entrega'];

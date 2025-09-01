@@ -185,7 +185,7 @@ export default function CoursePage() {
             </div>
             
             <h2 className="text-2xl font-bold mb-2">Módulos Premium</h2>
-            <p className="text-muted-foreground mb-6">Acelere sua aprovação com os bônus do Plano Premium.</p>
+            <p className="text-muted-foreground mb-6">Acelere sua aprovação com os bônus do Pacote Completo.</p>
              
             <div className="relative mb-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -200,7 +200,7 @@ export default function CoursePage() {
                              <DialogTrigger asChild>
                                 <div className="cursor-pointer">
                                     <Star className="mx-auto h-12 w-12 text-yellow-400 mb-4" />
-                                    <h3 className="text-2xl sm:text-3xl font-bold">Desbloquear o Plano Premium</h3>
+                                    <h3 className="text-2xl sm:text-3xl font-bold">Desbloquear o Pacote Completo</h3>
                                     <p className="mt-2 text-base text-primary-foreground/80 max-w-xl mx-auto">
                                         Clique aqui e insira seu código para liberar todos os bônus ou adquira seu acesso agora mesmo.
                                     </p>
@@ -214,7 +214,7 @@ export default function CoursePage() {
                         <DialogContent className="max-w-4xl p-0 border-primary/30 bg-background w-[95vw] sm:w-full">
                             <UnlockableModule 
                                 id="premium"
-                                title="Acesso Premium"
+                                title="Acesso ao Pacote Completo"
                                 description="Insira seu código para desbloquear todos os módulos premium."
                                 iframeContent=""
                                 unlockCode="ESTRATEGIAVIP"
