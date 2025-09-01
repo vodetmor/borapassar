@@ -44,7 +44,7 @@ export function OfferSection() {
                              <CardHeader className="p-0 mb-6 text-center">
                                 <CardTitle className="text-2xl sm:text-3xl font-bold">Pacote Essencial</CardTitle>
                                 <CardDescription>Acesso ao método principal.</CardDescription>
-                                <div className="text-sm text-yellow-400 font-bold mt-2">4.89 ⭐⭐⭐⭐⭐ (1.435)</div>
+                                <div className="text-sm text-muted-foreground font-bold mt-2">4.89 <span className="text-yellow-400">⭐⭐⭐⭐⭐</span> (1.435)</div>
                             </CardHeader>
                             <CardContent className="p-0">
                                  <p className="text-sm text-muted-foreground mb-4">Acesso ao método principal:</p>
@@ -103,7 +103,7 @@ export function OfferSection() {
                                 <CardHeader className="p-0 mb-6 text-center">
                                     <CardTitle className="text-2xl sm:text-3xl font-bold">Pacote Completo</CardTitle>
                                     <CardDescription>Acesso completo + Bônus exclusivos.</CardDescription>
-                                    <div className="text-sm text-yellow-400 font-bold mt-2">4.93 ⭐⭐⭐⭐⭐ (1.778)</div>
+                                    <div className="text-sm text-muted-foreground font-bold mt-2">4.93 <span className="text-yellow-400">⭐⭐⭐⭐⭐</span> (1.778)</div>
                                 </CardHeader>
                                 <CardContent className="p-0">
                                     <p className="text-sm text-muted-foreground mb-4">Acesso ao método principal:</p>
