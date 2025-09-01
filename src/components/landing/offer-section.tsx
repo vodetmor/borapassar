@@ -29,7 +29,7 @@ export function OfferSection() {
             <div className="container mx-auto px-4">
                 <div className="text-center">
                      <h2 className="inline-block rounded-full bg-primary/10 border border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-                        Escolha o Plano que Vai Garantir Sua <span className="text-primary">Aprovação</span>
+                        Escolha o Pacote que Vai Garantir Sua <span className="text-primary">Aprovação</span>
                     </h2>
                     <p className="mt-6 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
                         Quanto vale o seu futuro? Hoje, você tem duas opções para deixar a concorrência para trás. A decisão é sua.
@@ -38,11 +38,11 @@ export function OfferSection() {
 
                 <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
                     
-                    {/* Plano Essencial */}
+                    {/* Pacote Essencial */}
                     <Card className="border-border/50 border bg-zinc-900/80 overflow-hidden flex flex-col h-full mt-6 lg:mt-0">
                         <div className="p-6 sm:p-8 flex-grow">
                              <CardHeader className="p-0 mb-6 text-center">
-                                <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Essencial</CardTitle>
+                                <CardTitle className="text-2xl sm:text-3xl font-bold">Pacote Essencial</CardTitle>
                                 <CardDescription>Acesso ao método principal.</CardDescription>
                             </CardHeader>
                             <CardContent className="p-0">
@@ -74,7 +74,7 @@ export function OfferSection() {
                                 </p>
                                 <Button asChild size="lg" className="w-full bg-primary/80 text-primary-foreground hover:bg-primary/70 text-base sm:text-xl font-bold shadow-lg shadow-primary/10 py-4 sm:py-7">
                                     <Link href="https://www.ggcheckout.com/checkout/v2/2rEYiE7T5GkEJ7NSqKPQ">
-                                        QUERO O PLANO ESSENCIAL
+                                        QUERO O PACOTE ESSENCIAL
                                     </Link>
                                 </Button>
                                <Image
@@ -89,7 +89,7 @@ export function OfferSection() {
                             </div>
                     </Card>
 
-                    {/* Plano Completo */}
+                    {/* Pacote Completo */}
                     <div className="relative">
                         <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full flex justify-center z-10">
                             <div className="bg-primary text-primary-foreground text-sm font-bold px-6 py-2 rounded-full uppercase flex items-center gap-2 shadow-lg">
@@ -100,7 +100,7 @@ export function OfferSection() {
                         <Card className="border-primary/80 border-2 shadow-2xl shadow-primary/20 bg-background overflow-hidden flex flex-col h-full pt-6">
                             <div className="p-6 sm:p-8 flex-grow">
                                 <CardHeader className="p-0 mb-6 text-center">
-                                    <CardTitle className="text-2xl sm:text-3xl font-bold">Plano Premium</CardTitle>
+                                    <CardTitle className="text-2xl sm:text-3xl font-bold">Pacote Completo</CardTitle>
                                     <CardDescription>Acesso completo + Bônus exclusivos.</CardDescription>
                                 </CardHeader>
                                 <CardContent className="p-0">
@@ -132,7 +132,7 @@ export function OfferSection() {
                                     </p>
                                     <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base sm:text-xl font-bold shadow-lg shadow-accent/20 py-4 sm:py-7 animate-pulse-cta">
                                         <Link href="https://www.ggcheckout.com/checkout/v2/SQykU01oXNvbkC6PPoGh">
-                                            QUERO O PLANO PREMIUM
+                                            QUERO O PACOTE COMPLETO
                                         </Link>
                                     </Button>
                                     <Image
@@ -163,3 +163,5 @@ export function OfferSection() {
         </section>
     );
 }
+
+    
