@@ -23,7 +23,7 @@ export function ComparisonSection() {
             </CardHeader>
             <CardContent className="space-y-3 text-sm sm:text-base text-muted-foreground">
               <p>❌ Estuda 10h por dia e sente que não aprendeu nada.</p>
-              <p>❌ Acha caro pagar R$20+ por um material e prefere perder horas procurando conteúdo incompleto na internet.</p>
+              <p>❌ Acha caro pagar R$7+ por um material e prefere perder horas procurando conteúdo incompleto na internet.</p>
               <p>❌ Lê, relê, grifa... e esquece tudo na semana seguinte.</p>
               <p>❌ Tira 500 em matemática e acha que é "de humanas".</p>
               <p>❌ Chega na prova exausto, ansioso e sem confiança.</p>
