@@ -35,7 +35,7 @@ export function MindMapsPreviewSection() {
         <section id="previa-mapas" className="py-16 sm:py-24 bg-secondary">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+                    <h2 className="inline-block rounded-full bg-primary/10 border border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
                         BÔNUS: +400 MAPAS MENTAIS
                     </h2>
                     <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
