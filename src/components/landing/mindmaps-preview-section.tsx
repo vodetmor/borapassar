@@ -36,7 +36,7 @@ export function MindMapsPreviewSection() {
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="inline-block rounded-full bg-primary/10 border border-primary px-8 py-3 text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-                        BÔNUS: +400 MAPAS MENTAIS
+                        🎁 BÔNUS: +400 MAPAS MENTAIS
                     </h2>
                     <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
                         Um material de revisão visual para absorver o conteúdo de um ano em poucas horas. Antes <span className="line-through">R$67</span>, hoje <span className="font-bold text-primary">GRÁTIS</span> no Pacote Completo.
