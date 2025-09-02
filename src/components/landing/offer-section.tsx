@@ -124,6 +124,7 @@ export function OfferSection() {
                                             </li>
                                         ))}
                                      </ul>
+                                     <p className="text-sm text-center font-bold text-primary mt-4">Total em bônus: de <span className="line-through">R$67,00</span> por R$0</p>
                                 </CardContent>
                             </div>
                             <div className="flex flex-col text-center bg-zinc-900/50 p-6 sm:p-8 mt-auto border-t border-primary/20">
