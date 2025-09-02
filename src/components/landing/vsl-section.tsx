@@ -4,7 +4,7 @@
 import { Button } from '@/components/ui/button';
 import { VslPlayer } from './vsl-player';
 import Link from 'next/link';
-import { LogIn } from 'lucide-react';
+import { LogIn, ShieldCheck } from 'lucide-react';
 
 export function VslSection() {
 
@@ -23,7 +23,7 @@ export function VslSection() {
             <VslPlayer videoSrc="https://i.imgur.com/woTizNZ.mp4" />
         </div>
 
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col items-center gap-4">
           <Button
             asChild
             size="lg"
@@ -33,6 +33,10 @@ export function VslSection() {
               QUERO O MÉTODO SECRETO
             </a>
           </Button>
+           <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/50 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary-foreground">
+                <ShieldCheck className="w-5 h-5 text-accent" />
+                <span>+1700 alunos aprovados</span>
+            </div>
         </div>
       </div>
     </section>
