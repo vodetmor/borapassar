@@ -91,14 +91,14 @@ export function OfferSection() {
                     </Card>
 
                     {/* Pacote Completo */}
-                    <div className="relative">
-                        <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full flex justify-center z-10">
-                            <div className="bg-primary text-primary-foreground text-sm font-bold px-6 py-2 rounded-full uppercase flex items-center gap-2 shadow-lg">
-                                <Star className="w-4 h-4" />
+                    <div className="relative mt-8 sm:mt-0">
+                         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full flex justify-center z-10 -translate-y-1/2 sm:translate-y-0">
+                            <div className="bg-primary text-primary-foreground text-sm sm:text-base font-bold px-6 sm:px-8 py-2 sm:py-3 rounded-full uppercase flex items-center gap-2 shadow-lg">
+                                <Star className="w-4 h-4 sm:w-5 sm:h-5" />
                                 Mais Vendido
                             </div>
                         </div>
-                        <Card className="border-primary/80 border-2 shadow-2xl shadow-primary/20 bg-background overflow-hidden flex flex-col h-full pt-6">
+                        <Card className="border-primary/80 border-2 shadow-2xl shadow-primary/20 bg-background overflow-visible sm:overflow-hidden flex flex-col h-full pt-6">
                             <div className="p-6 sm:p-8 flex-grow">
                                 <CardHeader className="p-0 mb-6 text-center">
                                     <CardTitle className="text-2xl sm:text-3xl font-bold">Pacote Completo</CardTitle>
@@ -154,7 +154,7 @@ export function OfferSection() {
                 </div>
 
                  <div className="mt-16 flex justify-center">
-                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 border border-border/50 rounded-lg p-6 max-w-3xl">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 border border-border/50 rounded-lg p-6 max-w-3xl text-center sm:text-left">
                              <Image
                                 src="https://i.imgur.com/oEfu8cn.png"
                                 alt="Selo de garantia de 7 dias"
@@ -163,7 +163,7 @@ export function OfferSection() {
                                 className="w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0"
                                 data-ai-hint="guarantee seal"
                              />
-                             <div className="text-center sm:text-left">
+                             <div>
                                 <h3 className="text-lg sm:text-xl font-bold">Satisfação garantida ou seu dinheiro de volta.</h3>
                                 <p className="text-muted-foreground text-sm sm:text-base">Se em 7 dias você não estiver no caminho certo para a <span className="font-bold text-primary">APROVAÇÃO</span>, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
                              </div>
