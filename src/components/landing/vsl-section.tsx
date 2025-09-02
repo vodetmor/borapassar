@@ -30,7 +30,7 @@ export function VslSection() {
             className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full text-base sm:text-lg font-bold shadow-xl shadow-primary/20 px-8 py-4 sm:px-10 sm:py-6 animate-pulse-cta"
           >
             <a href="#oferta">
-              Quero dobrar minha nota
+              QUERO DOBRAR MINHA NOTA
             </a>
           </Button>
            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/50 px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary-foreground">
