@@ -153,12 +153,19 @@ export function OfferSection() {
 
                 </div>
 
-                 <div className="mt-12 flex justify-center">
-                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 border border-border/50 rounded-lg p-4 max-w-2xl">
-                             <ShieldCheck className="w-16 h-16 text-primary flex-shrink-0" />
-                             <div>
-                                <h3 className="text-lg sm:text-xl font-bold text-center sm:text-left">Garantia Incondicional de 7 Dias</h3>
-                                <p className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">Teste o método. Se em 7 dias você não sentir que está no caminho certo para a <span className="font-bold text-primary">aprovação</span>, devolvemos 100% do seu dinheiro. O risco é todo nosso.</p>
+                 <div className="mt-16 flex justify-center">
+                        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-background/50 border border-border/50 rounded-lg p-6 max-w-3xl">
+                             <Image
+                                src="https://i.imgur.com/oEfu8cn.png"
+                                alt="Selo de garantia de 7 dias"
+                                width={120}
+                                height={120}
+                                className="w-20 h-20 sm:w-28 sm:h-28 flex-shrink-0"
+                                data-ai-hint="guarantee seal"
+                             />
+                             <div className="text-center sm:text-left">
+                                <h3 className="text-lg sm:text-xl font-bold">Satisfação garantida ou seu dinheiro de volta.</h3>
+                                <p className="text-muted-foreground text-sm sm:text-base">Se em 7 dias você não estiver no caminho certo para a <span className="font-bold text-primary">APROVAÇÃO</span>, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
                              </div>
                         </div>
                     </div>
