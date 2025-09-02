@@ -15,7 +15,7 @@ export function ComparisonSection() {
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Estudar sem método = esquece. Com método = <span className="text-primary">Sua Nota Sobe.</span></h2>
           <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
-            De um lado, o método tradicional da força bruta. Do outro, a estratégia que GERA RESULTADOS.
+            Se você passa horas estudando e a nota não sai do lugar, o problema não é você — é a falta de um plano simples e repetível. Veja a diferença entre o estudo solto e o estudo guiado:
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
