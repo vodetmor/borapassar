@@ -16,7 +16,7 @@ export function VslSection() {
           Metodologia validada +400 resumos para <span className="text-primary">DOBRAR</span> sua nota no <span className="text-primary">ENEM</span>
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
-          Descubra no vídeo o atalho para a aprovação com o método exclusivo e 400 mapas mentais que economizam meses de estudo.
+          Veja o vídeo e aprenda como estudar menos, acertar mais, fazer uma redação 900+ e ter confiança no dia da prova.
         </p>
 
         <div className="mt-8 mb-8 mx-auto max-w-sm aspect-[9/16]">
