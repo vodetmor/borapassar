@@ -9,10 +9,10 @@ import { LogIn, ShieldCheck } from 'lucide-react';
 export function VslSection() {
 
   return (
-    <section id="vsl" className="pt-12 pb-12 sm:pt-16 sm:pb-16 bg-background">
-      <div className="container mx-auto px-4 text-center">
+    <section id="vsl" className="py-16 sm:py-24 bg-secondary border-y border-border/50">
+      <div className="container mx-auto px-4 text-center bg-zinc-900/50 border border-border/50 rounded-xl shadow-2xl shadow-primary/10 py-12">
 
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mt-8">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
           Metodologia validada +400 resumos para <span className="text-primary">DOBRAR</span> sua nota no <span className="text-primary">ENEM</span>
         </h1>
         <p className="mt-4 max-w-3xl mx-auto text-base sm:text-xl text-muted-foreground">
