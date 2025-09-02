@@ -8,6 +8,7 @@ export function ComparisonSection() {
     <section id="comparacao" className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <p className="mb-2 text-lg font-semibold text-primary">Problema → Sonho</p>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Estudar sem método = esquece. Com método = <span className="text-primary">Sua Nota Sobe.</span></h2>
           <p className="mt-4 max-w-3xl mx-auto text-base sm:text-lg text-muted-foreground">
             De um lado, o método tradicional da força bruta. Do outro, a estratégia que GERA RESULTADOS.
