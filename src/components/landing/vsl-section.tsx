@@ -4,12 +4,12 @@
 import { Button } from '@/components/ui/button';
 import { VslPlayer } from './vsl-player';
 import Link from 'next/link';
-import { LogIn, ShieldCheck } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 export function VslSection() {
 
   return (
-    <section id="vsl" className="py-16 sm:py-24 bg-secondary border-y border-border/50">
+    <section id="vsl" className="py-16 sm:py-24">
       <div className="container mx-auto px-4 text-center bg-zinc-900/50 border border-border/50 rounded-xl shadow-2xl shadow-primary/10 py-12">
 
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight">
