@@ -29,6 +29,16 @@ export default function RootLayout({
         <WhatsAppButton />
         <Toaster/>
         <SocialProofToast />
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`
+            window.pixelId = "68bcdb2454758c64daf36720";
+            var a = document.createElement("script");
+            a.setAttribute("async", "");
+            a.setAttribute("defer", "");
+            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+            document.head.appendChild(a);
+          `}
+        </Script>
       </body>
     </html>
   );
